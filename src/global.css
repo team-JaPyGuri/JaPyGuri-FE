@@ -7,6 +7,7 @@
 * {
   box-sizing: border-box;
 }
-body {
-  overflow: hidden;
+
+.semibold-20 {
+  @apply font-pretendard font-semibold text-size-20 leading-normal;
 }
