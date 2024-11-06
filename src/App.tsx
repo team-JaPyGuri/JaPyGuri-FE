@@ -1,3 +1,4 @@
+import "./global.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 

@@ -6,7 +6,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>This is the Home page</h1>
+      <h1 className="text-red">This is the Home page</h1>
       <button onClick={() => setCount(count + 1)}>Increment {count}</button>
     </div>
   );
