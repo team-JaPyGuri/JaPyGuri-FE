@@ -1,14 +1,10 @@
-import { useRecoilState } from "recoil";
-import { stateCouonter } from "../../stores/stateCounter";
+import Layout from "../../components/Layout";
 
 const Home = () => {
-  const [count, setCount] = useRecoilState(stateCouonter);
-
   return (
-    <div>
-      <h1 className="text-red">This is the Home page</h1>
-      <button onClick={() => setCount(count + 1)}>Increment {count}</button>
-    </div>
+    <Layout>
+      <h1 className="text-red">This is the Layout component</h1>
+    </Layout>
   );
 };
 
