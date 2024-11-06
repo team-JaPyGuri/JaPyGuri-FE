@@ -3,6 +3,22 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        pretendard: ["Pretendard Variable", "sans"],
+      },
+      fontSize: {
+        "size-20": "1.25rem",
+        "size-18": "1.125rem",
+        "size-16": "1rem",
+        "size-14": "0.875rem",
+        "size-13": "0.813rem",
+        "size-11": "0.688rem",
+      },
+      fontWeight: {
+        semibold: "600",
+        medium: "500",
+        regular: "400",
+      },
       colors: {
         red: "#f31110",
         yellow: "#FFD700",
