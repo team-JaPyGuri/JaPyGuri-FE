@@ -11,3 +11,7 @@
 .semibold-20 {
   @apply font-pretendard font-semibold text-size-20 leading-normal;
 }
+
+.semibold-11 {
+  @apply font-pretendard font-semibold text-size-11 leading-normal;
+}
