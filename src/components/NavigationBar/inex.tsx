@@ -40,7 +40,7 @@ const NavigationBar = () => {
           <a
             key={name}
             href={href}
-            className="h-[3.5rem] flex flex-col items-center justify-center flex-1 semibold-11 text-center text-gray-500"
+            className="h-[3.5rem] flex flex-col items-center justify-center flex-1 semibold-11 text-center text-gray-600"
           >
             <Icon />
             <span>{name}</span>

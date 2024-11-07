@@ -29,7 +29,7 @@ const Header = ({ children }: HeaderProps) => {
     <header
       className={`w-full min-w-[20rem] max-w-[37.5rem] flex flex-row transition-transform duration-300 sticky top-0 ${isVisible ? "translate-y-0" : "-translate-y-[3.875rem]"}`}
     >
-      <div className="w-full pl-2 pr-4 py-2 flex flex-row justify-between align-middle bg-grayscale-700">
+      <div className="w-full pl-2 pr-4 py-2 flex flex-row justify-between align-middle bg-grayscale-800">
         <button className="semibold-20 text-grayscale-100 p-2">NAILO</button>
         <button>
           <UserIcon />
