@@ -3,6 +3,7 @@ const Footer = () => {
     <footer className="w-full p-4 pb-20 flex flex-col gap-2 bg-grayscale-300 text-grayscale-600">
       <p className="regular-13">© NAILO ALL RIGHTS RESERVED</p>
       <a
+        target="_blank"
         href="https://github.com/team-JaPyGuri"
         className="semibold-13 underline"
       >
