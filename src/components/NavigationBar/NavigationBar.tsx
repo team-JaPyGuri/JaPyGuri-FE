@@ -34,13 +34,13 @@ const NavigationBar = () => {
   ];
 
   return (
-    <nav className="w-full fixed bottom-0 px-4 flex flex-row gap-3 bg-grayscale-100 border-t border-gray-300">
+    <nav className="fixed bottom-0 flex w-full flex-row gap-3 border-t border-gray-300 bg-grayscale-100 px-4">
       {LINKS &&
         LINKS.map(({ name, icon: Icon, href }) => (
           <a
             key={name}
             href={href}
-            className="h-[3.5rem] flex flex-col items-center justify-center flex-1 semibold-11 text-center text-gray-600"
+            className="semibold-11 flex h-[3.5rem] flex-1 flex-col items-center justify-center text-center text-gray-600"
           >
             <Icon />
             <span>{name}</span>

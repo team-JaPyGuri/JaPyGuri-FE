@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { useRecoilValue } from "recoil";
 import { toastListState } from "../../stores/stateToast";
-import usePortal from "./usePortal";
+import usePortal from "../../utils/usePortal";
 
 interface ToastProps {
   toastKey: number;
