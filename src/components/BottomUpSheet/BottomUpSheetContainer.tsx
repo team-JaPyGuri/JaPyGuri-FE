@@ -34,12 +34,13 @@ const BottomUpSheet = ({ title, content, className }: BottomUpSheetProps) => {
           <CancelIcon />
         </button>
       </div>
-      <div className="w-full px-4 py-2">{content}</div>
+      {content}
     </div>
   );
 };
 
 const BottomUpSheetContainer = () => {
+  const setBottomUpSheet = useSetRecoilState(bottomUpSheetState);
   const bottomUpSheetContent = useRecoilValue(bottomUpSheetState);
   const portalRoot = usePortal("bottom-up-sheet-portal");
 
@@ -57,6 +58,12 @@ const BottomUpSheetContainer = () => {
   return portalRoot
     ? ReactDOM.createPortal(
         <div
+          onClick={() =>
+            setBottomUpSheet((oldBottomUpSheetState) => ({
+              ...oldBottomUpSheetState,
+              visible: false,
+            }))
+          }
           className={`fixed bottom-0 left-1/2 flex h-full w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 flex-col justify-end overflow-hidden bg-grayscale-900 bg-opacity-60 transition-opacity duration-300 ${
             bottomUpSheetContent.visible ? "animate-fadeIn" : "animate-fadeOut"
           } ${showZIndex ? "!z-20" : "!-z-10"}`}

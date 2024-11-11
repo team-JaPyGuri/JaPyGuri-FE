@@ -22,9 +22,9 @@ export const useToast = () => {
 
     setTimeout(() => {
       setToastList((currentList) =>
-        currentList.filter((toast) => toast.id !== newToast.id)
+        currentList.filter((toast) => toast.id !== newToast.id),
       );
-    }, 3000);
+    }, 6000);
   };
 
   return showToast;

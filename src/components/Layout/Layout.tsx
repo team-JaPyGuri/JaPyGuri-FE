@@ -36,20 +36,7 @@ const Layout = ({ children }: LayoutProps) => {
             onClick={() =>
               showBottomUpSheet({
                 title: "테스트",
-                content: (
-                  <div>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                    <p>테스트</p>
-                  </div>
-                ),
+                content: <div></div>,
               })
             }
           >

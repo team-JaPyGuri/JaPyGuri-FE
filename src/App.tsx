@@ -9,8 +9,8 @@ import BottomUpSheetContainer from "./components/BottomUpSheet/BottomUpSheetCont
 const App = () => {
   return (
     <RecoilRoot>
-      <ToastContainer />
       <BottomUpSheetContainer />
+      <ToastContainer />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
