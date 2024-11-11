@@ -23,6 +23,30 @@ export default {
         medium: "500",
         regular: "400",
       },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        fadeOut: {
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
+        },
+        slideIn: {
+          "0%": { transform: "translateY(100%)" },
+          "100%": { transform: "translateY(0)" },
+        },
+        slideOut: {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(100%)" },
+        },
+      },
+      animation: {
+        fadeIn: "fadeIn 0.3s ease-in-out forwards",
+        fadeOut: "fadeOut 0.3s ease-in-out forwards",
+        slideIn: "slideIn 0.3s ease-in-out forwards",
+        slideOut: "slideOut 0.3s ease-in-out forwards",
+      },
       colors: {
         red: "#f31110",
         yellow: "#FFD700",

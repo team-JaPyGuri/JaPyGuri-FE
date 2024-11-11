@@ -1,7 +1,8 @@
 import ReactDOM from "react-dom";
 import { useRecoilValue } from "recoil";
 import { toastListState } from "../../stores/stateToast";
-import usePortal from "./usePortal";
+import usePortal from "../../utils/usePortal";
+import { useEffect, useState } from "react";
 
 interface ToastProps {
   toastKey: number;
@@ -10,10 +11,17 @@ interface ToastProps {
 }
 
 const Toast = ({ toastKey, message, link }: ToastProps) => {
+  const [animation, setAnimation] = useState("fadeIn");
+
+  useEffect(() => {
+    const timer = setTimeout(() => setAnimation("fadeOut"), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div
       key={toastKey}
-      className="z-50 w-full px-4 flex flex-row justify-between items-center rounded-[0.25rem] h-11 regular-13 text-grayscale-100 bg-grayscale-700"
+      className={`regular-13 flex h-11 w-full flex-row items-center justify-between rounded-[0.25rem] bg-grayscale-700 px-4 text-grayscale-100 animate-${animation}`}
     >
       {message}
       {link && (
@@ -29,9 +37,22 @@ const ToastContainer = () => {
   const toastList = useRecoilValue(toastListState);
   const portalRoot = usePortal("toast-portal");
 
+  const [showZIndex, setShowZIndex] = useState(toastList.length > 0);
+
+  useEffect(() => {
+    if (toastList.length > 0) {
+      setShowZIndex(true);
+    } else {
+      const timeout = setTimeout(() => setShowZIndex(false), 300);
+      return () => clearTimeout(timeout);
+    }
+  }, [toastList]);
+
   return portalRoot
     ? ReactDOM.createPortal(
-        <div className="fixed w-full min-w-[20rem] max-w-[37.5rem] bottom-14 left-1/2 -translate-x-1/2 space-y-3 px-4 py-3">
+        <div
+          className={`fixed bottom-14 left-1/2 w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 space-y-3 px-4 py-3 ${showZIndex ? "!z-20" : "!-z-10"}`}
+        >
           {toastList.map((toast) => (
             <Toast
               key={toast.id}
@@ -41,7 +62,7 @@ const ToastContainer = () => {
             />
           ))}
         </div>,
-        portalRoot
+        portalRoot,
       )
     : null;
 };

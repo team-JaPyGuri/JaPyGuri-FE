@@ -4,6 +4,7 @@ import NavigationBar from "../NavigationBar/NavigationBar";
 import Footer from "../Footer/Footer";
 import Button from "../Button/Button";
 import { useToast } from "../Toast/useToast";
+import { useBottomUpSheet } from "../BottomUpSheet/useBottomUpSheet";
 
 interface LayoutProps {
   children: ReactNode;
@@ -11,9 +12,10 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   const showToast = useToast();
+  const showBottomUpSheet = useBottomUpSheet();
 
   return (
-    <div className="w-full min-w-[20rem] max-w-[37.5rem] min-h-[100dvh] bg-grayscale-200 flex-col sc:border-x sc:border-opacity-50 sc:border-solid sc:border-grayscale-300 sc:fixed sc:left-1/2 sc:transform sc:-translate-x-1/2">
+    <div className="min-h-[100dvh] w-full min-w-[20rem] max-w-[37.5rem] flex-col bg-grayscale-200 sc:fixed sc:left-1/2 sc:-translate-x-1/2 sc:transform sc:border-x sc:border-solid sc:border-grayscale-300 sc:border-opacity-50">
       <Header />
       <NavigationBar />
       <main className="w-full">
@@ -27,7 +29,18 @@ const Layout = ({ children }: LayoutProps) => {
               })
             }
           >
-            테스트
+            Toast test button
+          </Button>
+          <Button
+            className="mt-2"
+            onClick={() =>
+              showBottomUpSheet({
+                title: "테스트",
+                content: <div></div>,
+              })
+            }
+          >
+            BottomUpSheet test button
           </Button>
         </div>
       </main>

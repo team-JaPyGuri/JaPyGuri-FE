@@ -4,10 +4,12 @@ import { RecoilRoot } from "recoil";
 
 import Home from "./pages/Home";
 import ToastContainer from "./components/Toast/ToastContainer";
+import BottomUpSheetContainer from "./components/BottomUpSheet/BottomUpSheetContainer";
 
 const App = () => {
   return (
     <RecoilRoot>
+      <BottomUpSheetContainer />
       <ToastContainer />
       <BrowserRouter>
         <Routes>
