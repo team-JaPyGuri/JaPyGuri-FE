@@ -20,8 +20,16 @@
   @apply font-pretendard text-size-11 font-semibold leading-normal;
 }
 
+.medium-18 {
+  @apply font-pretendard text-size-18 font-medium leading-normal;
+}
+
 .medium-16 {
   @apply font-pretendard text-size-16 font-medium leading-normal;
+}
+
+.regular-16 {
+  @apply font-pretendard text-size-16 font-regular leading-normal;
 }
 
 .regular-14 {
