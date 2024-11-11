@@ -1,6 +1,8 @@
 import LikeNotActiveIcon from "../../../assets/svgs/likeNotActive.svg?react";
 import LikeActiveIcon from "../../../assets/svgs/likeActive.svg?react";
 import { useState } from "react";
+import { useBottomUpSheet } from "../../../components/BottomUpSheet/useBottomUpSheet";
+import NailDetail from "./NailDetail";
 
 interface HotNailListProps {
   data: Array<{ id: number; img: string; tags: string[]; like: number }> | null;
@@ -13,10 +15,27 @@ interface CardProps {
 }
 
 const Card = ({ img, tags, likes }: CardProps) => {
+  const showBottomUpSheet = useBottomUpSheet();
   const [likeActive, setLikeActive] = useState(false);
 
   return (
-    <div className="flex w-[30%] shrink-0 flex-col bg-grayscale-100">
+    <div
+      onClick={() =>
+        showBottomUpSheet({
+          title: "상세정보",
+          content: (
+            <NailDetail
+              img={img}
+              tags={tags}
+              likes={likes}
+              likeActive={likeActive}
+              setLikeActive={setLikeActive}
+            />
+          ),
+        })
+      }
+      className="flex w-[30%] shrink-0 flex-col bg-grayscale-100"
+    >
       <div className="relative aspect-square w-full overflow-hidden bg-grayscale-900 bg-opacity-[0.02]">
         <img
           className="absolute left-0 top-0 h-full w-full object-cover object-center"
