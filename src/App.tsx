@@ -2,7 +2,7 @@ import "./global.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import ToastContainer from "./components/Toast/ToastContainer";
 import BottomUpSheetContainer from "./components/BottomUpSheet/BottomUpSheetContainer";
 
