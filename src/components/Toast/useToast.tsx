@@ -1,8 +1,13 @@
 import { useSetRecoilState } from "recoil";
 import { toastListState } from "../../stores/stateToast";
-import { ToastMessage } from "./ToastTypes";
 
 interface UseToastProps {
+  message: string;
+  link?: string;
+}
+
+interface ToastMessage {
+  id: number;
   message: string;
   link?: string;
 }
