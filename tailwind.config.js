@@ -40,12 +40,18 @@ export default {
           "0%": { transform: "translateY(0)" },
           "100%": { transform: "translateY(100%)" },
         },
+        likeActive: {
+          "0%": { transform: "scale(1)" },
+          "10%": { transform: "scale(1.2)" },
+          "100%": { transform: "scale(1)" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.3s ease-in-out forwards",
         fadeOut: "fadeOut 0.3s ease-in-out forwards",
         slideIn: "slideIn 0.3s ease-in-out forwards",
         slideOut: "slideOut 0.3s ease-in-out forwards",
+        likeActive: "likeActive 0.2s ease-in-out forwards",
       },
       colors: {
         red: "#f31110",
@@ -97,5 +103,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide")],
 };
