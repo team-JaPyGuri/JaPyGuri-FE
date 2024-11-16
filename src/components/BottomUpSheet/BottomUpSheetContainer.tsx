@@ -4,6 +4,8 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { bottomUpSheetState } from "../../stores/stateBottomUpSheet";
 import usePortal from "../../utils/usePortal";
 import CancelIcon from "../../assets/svgs/cancel.svg?react";
+import { stopPropagation } from "../../utils/stopPropagation";
+import { useLocation } from "react-router-dom";
 
 interface BottomUpSheetProps {
   title: string;
@@ -16,6 +18,7 @@ const BottomUpSheet = ({ title, content, className }: BottomUpSheetProps) => {
 
   return (
     <div
+      onClick={stopPropagation}
       className={`${className} flex w-full flex-col items-center justify-center rounded-t-lg bg-grayscale-100`}
     >
       <div className="flex w-full flex-col items-center justify-start py-2">
@@ -43,6 +46,7 @@ const BottomUpSheetContainer = () => {
   const setBottomUpSheet = useSetRecoilState(bottomUpSheetState);
   const bottomUpSheetContent = useRecoilValue(bottomUpSheetState);
   const portalRoot = usePortal("bottom-up-sheet-portal");
+  const location = useLocation();
 
   const [showZIndex, setShowZIndex] = useState(bottomUpSheetContent.visible);
 
@@ -54,6 +58,13 @@ const BottomUpSheetContainer = () => {
       return () => clearTimeout(timeout);
     }
   }, [bottomUpSheetContent.visible]);
+
+  useEffect(() => {
+    setBottomUpSheet((oldBottomUpSheetState) => ({
+      ...oldBottomUpSheetState,
+      visible: false,
+    }));
+  }, [location, setBottomUpSheet]);
 
   return portalRoot
     ? ReactDOM.createPortal(

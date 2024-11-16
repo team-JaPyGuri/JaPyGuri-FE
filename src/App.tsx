@@ -10,9 +10,9 @@ import RequestMap from "./pages/RequestMap/RequestMap";
 const App = () => {
   return (
     <RecoilRoot>
-      <BottomUpSheetContainer />
-      <ToastContainer />
       <BrowserRouter>
+        <BottomUpSheetContainer />
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/request-map" element={<RequestMap />} />

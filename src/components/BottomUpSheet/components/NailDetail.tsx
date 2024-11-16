@@ -1,6 +1,8 @@
 import LikeNotActiveIcon from "../../../assets/svgs/likeNotActive.svg?react";
 import LikeActiveIcon from "../../../assets/svgs/likeActive.svg?react";
 import Button from "../../../components/Button/Button";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface NailDetailProps {
   img: string;
@@ -17,6 +19,13 @@ const NailDetail = ({
   likeActive,
   setLikeActive,
 }: NailDetailProps) => {
+  const navigate = useNavigate();
+  const [localLikeActive, setLocalLikeActive] = useState(likeActive);
+
+  useEffect(() => {
+    setLikeActive(localLikeActive);
+  }, [setLikeActive, localLikeActive]);
+
   return (
     <>
       <div className="w-full flex-row px-4 py-3">
@@ -36,16 +45,16 @@ const NailDetail = ({
           </span>
         </div>
         <button
-          onClick={() => setLikeActive(!likeActive)}
+          onClick={() => setLocalLikeActive(!localLikeActive)}
           className="flex flex-row items-center gap-1 rounded-[4px] border border-gray-400 p-[6px]"
         >
-          {likeActive ? (
+          {localLikeActive ? (
             <LikeActiveIcon
-              className={`${likeActive && "animate-likeActive"} h-4 w-4`}
+              className={`${localLikeActive && "animate-likeActive"} h-4 w-4`}
             />
           ) : (
             <LikeNotActiveIcon
-              className={`${likeActive && "animate-likeActive"} h-4 w-4`}
+              className={`${localLikeActive && "animate-likeActive"} h-4 w-4`}
             />
           )}
           <span className="regular-13">좋아요</span>
@@ -54,7 +63,9 @@ const NailDetail = ({
       <img className="w-full" />
       <div className="flex w-full flex-col gap-2 px-4 py-3">
         <div className="flex w-full flex-row gap-2">
-          <Button>바로 예약하기</Button>
+          <Button onClick={() => navigate("/request-map")}>
+            바로 예약하기
+          </Button>
           <Button>AI 피팅 체험하기</Button>
         </div>
         <Button>해당 네일아트 요청하기</Button>

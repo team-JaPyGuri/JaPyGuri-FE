@@ -9,7 +9,7 @@ const RequestMap = () => {
   useEffect(() => {
     if (mapElement.current) {
       const mapOptions = {
-        center: new naver.maps.LatLng(37.566535, 126.9779692), // Seoul default position
+        center: new naver.maps.LatLng(37.566535, 126.9779692),
         zoom: 15,
       };
       const mapInstance = new naver.maps.Map(mapElement.current, mapOptions);
