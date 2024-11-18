@@ -11,7 +11,7 @@ export const useMap = (
   showToast: (options: { message: string }) => void,
 ) => {
   const mapContainerRef = useRef<HTMLDivElement | null>(null);
-  const mapInstanceRef = useRef<naver.maps.Map | null>(null);
+  const mapInstanceRef = useRef<naver.maps.Map | undefined>();
   const isMapInitialized = useRef(false);
 
   const initializeMap = useCallback(() => {
@@ -81,6 +81,7 @@ export const useMap = (
 
   return {
     mapContainerRef,
+    mapInstanceRef,
     initializeMap,
     fetchCurrentLocation,
     setupMapEvents,
