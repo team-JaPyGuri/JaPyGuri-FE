@@ -1,0 +1,450 @@
+[
+    {
+      "shop_key": "04d4a60a-f612-4119-967b-2971a6c3b41d",
+      "shop_name": "유어썸뷰티",
+      "shop_id": "1",
+      "lat": "37.734154",
+      "lng": "127.082600",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230818_17%2F1692320629751Y8z8t_JPEG%2F1690633434499.jpg"
+    },
+    {
+      "shop_key": "06688189-e1c2-421b-b8d6-e3c97c2fd1ea",
+      "shop_name": "네일핏",
+      "shop_id": "2",
+      "lat": "37.448162",
+      "lng": "126.649122",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240825_224%2F1724557571825z2z65_JPEG%2F65F0353A-1E6E-4EEC-A02A-8E23A406D7C8.jpeg"
+    },
+    {
+      "shop_key": "078a05f4-c826-4d5a-b2ea-3a0091bceac0",
+      "shop_name": "네일미니",
+      "shop_id": "3",
+      "lat": "37.452203",
+      "lng": "126.661425",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221126_165%2F1669390436524HSciX_JPEG%2F20221124_124907.jpg"
+    },
+    {
+      "shop_key": "0796c55e-7a66-496c-933c-a40fdd5699c2",
+      "shop_name": "크라스니네일",
+      "shop_id": "4",
+      "lat": "37.503339",
+      "lng": "127.048455",
+      "shop_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMTA1MThfNjgg%2FMDAxNjIxMzE3NjMyMTQy.sghhEnRsft8CFlJ98o4nzazcYfuQMnVM7kegqCha994g.UWEAa_WHb2GtewKvzL9j48J58N_4hRuclZ35gdjtp3Yg.JPEG.13si_s2%2F_MG_1094.JPG"
+    },
+    {
+      "shop_key": "0852a0d0-daa7-495f-ac16-13685b372cff",
+      "shop_name": "네일도예뻐",
+      "shop_id": "5",
+      "lat": "37.462501",
+      "lng": "126.697277",
+      "shop_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fimage.nmv.naver.net%2Fblog_2021_05_25_344%2Fcd4bdd75-bd01-11eb-96b3-a0369ff95ec0_01.jpg"
+    },
+    {
+      "shop_key": "0c1ccaa1-a1fa-46e6-a48f-39dc12dfc1c2",
+      "shop_name": "디어마인샵",
+      "shop_id": "6",
+      "lat": "37.450879",
+      "lng": "126.659654",
+      "shop_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MTJfNDUg%2FMDAxNzI2MDk4Nzg0NjU2.2XcqB5_TjBGcMZaLhx5ZlR8_ipa8Eg7nkdZlmFd9IKgg.onroVkwrmaaqt21JyE7FB86bLHzSoYShWmIPe0_ikOkg.JPEG%2FIMG_3482.jpg"
+    },
+    {
+      "shop_key": "0e6e49b4-26a8-4d21-8891-1a9ac60e3fb6",
+      "shop_name": "부평네일 센스티브",
+      "shop_id": "7",
+      "lat": "37.489690",
+      "lng": "126.722685",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221101_212%2F1667270782020li7EN_JPEG%2F120DF262-297D-4106-ABCE-9EB6151D813D.jpeg"
+    },
+    {
+      "shop_key": "11ff0a65-d6e9-4d7b-bbe3-0d298a142e57",
+      "shop_name": "헨넬 동암점",
+      "shop_id": "8",
+      "lat": "37.475413",
+      "lng": "126.697845",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20231219_34%2F17029518438085KQsu_JPEG%2FKakaoTalk_20231219_105342959_01.jpg"
+    },
+    {
+      "shop_key": "1ca12f43-c61c-4250-98df-5a3e2717ed6d",
+      "shop_name": "유블리네일",
+      "shop_id": "9",
+      "lat": "37.483818",
+      "lng": "126.709317",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200528_267%2F1590600373193zyGKj_JPEG%2FzNGTp65et7CcJ1Y9KbM5dBYz.jpeg"
+    },
+    {
+      "shop_key": "2175455e-4a7c-4eba-983f-cb30e871d9c1",
+      "shop_name": "도쿄네일",
+      "shop_id": "10",
+      "lat": "37.504155",
+      "lng": "127.052116",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200528_14%2F1590600402811mSCTR_JPEG%2FOO_nA6AqeCCHPzo7fh_nLPyM.jpeg"
+    },
+    {
+      "shop_key": "228ee3be-0058-485d-a02a-1548bc84b2e7",
+      "shop_name": "말랑네일",
+      "shop_id": "11",
+      "lat": "37.462179",
+      "lng": "126.690259",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20200528_266%2F1590600450791uBppr_JPEG%2FLlF8rBcdqFl3TcxENrnrLazy.jpeg"
+    },
+    {
+      "shop_key": "2b582ce4-70cf-4762-909b-9dca8a8c4069",
+      "shop_name": "유리네일",
+      "shop_id": "12",
+      "lat": "37.479138",
+      "lng": "126.636175",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230217_173%2F16766432188872d7mg_JPEG%2F80754A02-602D-43FC-9ECC-4C6BD228607B.jpeg"
+    },
+    {
+      "shop_key": "2f4cf1a1-a04c-455f-86c9-700136e6a99b",
+      "shop_name": "윤빛네일",
+      "shop_id": "13",
+      "lat": "37.541339",
+      "lng": "126.948989",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201119_50%2F1605760862919Fv5fy_JPEG%2Fd9ijAjrK4T-Znnv3scm1LRrW.jpg"
+    },
+    {
+      "shop_key": "305f6685-1fe2-470a-bc82-8c1f0cde4db6",
+      "shop_name": "모드니에네일",
+      "shop_id": "14",
+      "lat": "37.453478",
+      "lng": "126.638721",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241104_166%2F17307293832241lBlO_JPEG%2F5E664C69-438A-44D3-9091-1A378F569A87.jpeg"
+    },
+    {
+      "shop_key": "38d2dc0b-f469-4fc5-b045-8cf4d8e403ad",
+      "shop_name": "민트네일 백운역점",
+      "shop_id": "15",
+      "lat": "37.480996",
+      "lng": "126.703931",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241102_53%2F1730532250125MY93g_JPEG%2F1D55965C-1C9A-4BA0-8E7C-ED9086DF7AB8.jpeg"
+    },
+    {
+      "shop_key": "3a4a7911-8666-449d-a255-706088e4c670",
+      "shop_name": "드림드로잉",
+      "shop_id": "16",
+      "lat": "37.444270",
+      "lng": "126.652385",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240530_80%2F1717062183563lp1Pq_JPEG%2F%25C5%25BE%25B3%25D7%25C0%25CF-%25C3%25B9%25B9%25E6%25B9%25AE-%25B9%25E8%25B3%25CA.jpg"
+    },
+    {
+      "shop_key": "3db04128-d4ae-4e24-bd3c-227141db1d8f",
+      "shop_name": "걸스네일",
+      "shop_id": "17",
+      "lat": "37.443320",
+      "lng": "126.663825",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240229_287%2F17091847160170kBIY_JPEG%2F%25B3%25D7%25C0%25CF%25B9%25D9%25BB%25E7%25C1%25F82.jpg"
+    },
+    {
+      "shop_key": "4311df90-52fb-42c9-8e2e-d01cc91d6c05",
+      "shop_name": "기노네일",
+      "shop_id": "18",
+      "lat": "37.540352",
+      "lng": "126.947739",
+      "shop_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAzMTRfMjM5%2FMDAxNzEwMzkwMDczNzky.w3y7eCF7lj7GA_Np_pBdzefHSPzCOQspdqU1GQ0MykIg.VDEE0Eupjn4llDsc9MQD6y3IOBv-GauPE7Scmrs3SHMg.JPEG%2FIMG_0878.jpg"
+    },
+    {
+      "shop_key": "4fe93e8c-228a-434e-8586-3a339f4cee3f",
+      "shop_name": "ON네일 가로수길점",
+      "shop_id": "19",
+      "lat": "37.517655",
+      "lng": "127.021806",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240229_65%2F17091847260680vLb3_JPEG%2F%25C5%25D7%25B6%25F3%25BD%25BA_%25BB%25E7%25C1%25F81.jpg"
+    },
+    {
+      "shop_key": "515e40b3-c3b3-40b4-835d-e801665b6213",
+      "shop_name": "네일라인",
+      "shop_id": "20",
+      "lat": "37.474513",
+      "lng": "126.629127",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240229_200%2F1709184617878P0mFW_JPEG%2F%25C6%25D0%25B5%25F0%25B9%25D9%25BB%25E7%25C1%25F8.jpg"
+    },
+    {
+      "shop_key": "59f6b19e-0356-45af-9d95-ab88c3c2b738",
+      "shop_name": "네일날다",
+      "shop_id": "21",
+      "lat": "37.475061",
+      "lng": "126.617393",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240305_230%2F1709612334292Svyn5_JPEG%2FKakaoTalk_20240304_140259785_09.jpg"
+    },
+    {
+      "shop_key": "5c167baf-70d1-4d9a-95ea-eb7e91bcf0b2",
+      "shop_name": "네일또방",
+      "shop_id": "22",
+      "lat": "37.456957",
+      "lng": "126.679750",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20201203_157%2F1606974887161dcxCk_JPEG%2FamfZokK7-2NX8vcNg0Lb7CB0.jpg"
+    },
+    {
+      "shop_key": "5cd2067e-d3f4-4e7a-a524-e56056bd0447",
+      "shop_name": "용쥬르샵",
+      "shop_id": "23",
+      "lat": "37.458194",
+      "lng": "126.678971",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20231219_7%2F1702951886781KpOuh_JPEG%2FKakaoTalk_20231205_100423258.jpg"
+    },
+    {
+      "shop_key": "6172c47e-d181-4c0b-b566-d3bc6d3df24e",
+      "shop_name": "네일도꽃길",
+      "shop_id": "24",
+      "lat": "37.451989",
+      "lng": "126.638800",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fpup-review-phinf.pstatic.net%2FMjAyNDA5MDVfMTA2%2FMDAxNzI1NTMxODA4ODcx.ISVxnoqrTwMtDk2KNAPMUGOePKc19olZ92bIO56-7o0g.bhfAnHijwZv15Uhl1sW-HxTFV-WyhUuIWmMMWYf0A3Ug.JPEG"
+    },
+    {
+      "shop_key": "64b5f105-5127-461f-82d5-faf8b9a4bcd7",
+      "shop_name": "네일에스떼",
+      "shop_id": "25",
+      "lat": "37.540049",
+      "lng": "126.945477",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241107_272%2F17309481048935TQ1f_JPEG%2F1000018784.jpg"
+    },
+    {
+      "shop_key": "664fbd34-ba1f-4bf4-a1f0-3d98777108d0",
+      "shop_name": "아르떼네일",
+      "shop_id": "26",
+      "lat": "37.459957",
+      "lng": "126.678572",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241107_38%2F1730948105917sMRD5_JPEG%2F1000018793.jpg"
+    },
+    {
+      "shop_key": "6d014f74-7197-4e19-9da7-4435d37e8646",
+      "shop_name": "백설공주네일",
+      "shop_id": "27",
+      "lat": "37.477816",
+      "lng": "126.634792",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20231219_199%2F1702951884459LuoGh_PNG%2FKakaoTalk_20231219_105342959_04.png"
+    },
+    {
+      "shop_key": "6eaf6d9e-9fab-4392-a969-2074e4a46a39",
+      "shop_name": "네일 해봄",
+      "shop_id": "28",
+      "lat": "37.452708",
+      "lng": "126.636598",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fnaverbooking-phinf.pstatic.net%2F20240214_51%2F1707899945783NxFQ6_JPEG%2F2423432.jpg"
+    },
+    {
+      "shop_key": "6fe90a65-ec5c-4f7c-a09d-4ad9b13b0cc6",
+      "shop_name": "채움네일",
+      "shop_id": "29",
+      "lat": "37.438778",
+      "lng": "126.673069",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241030_150%2F1730265183238NfEjI_JPEG%2FIMG_1396_polarr.jpeg"
+    },
+    {
+      "shop_key": "7366bd55-ddaf-4586-b933-ece0783c1732",
+      "shop_name": "비비드네일",
+      "shop_id": "30",
+      "lat": "37.453406",
+      "lng": "126.637323",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241030_150%2F1730265183238NfEjI_JPEG%2FIMG_1396_polarr.jpeg"
+    },
+    {
+      "shop_key": "7da3b1c0-1a99-4298-a7e3-b68cffc83186",
+      "shop_name": "쿠키네일",
+      "shop_id": "31",
+      "lat": "37.467207",
+      "lng": "126.670281",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241006_266%2F17282266086895a2np_JPEG%2F1000001970.jpg"
+    },
+    {
+      "shop_key": "7e2f8a65-df39-4b1d-9740-a1cb10eff8f2",
+      "shop_name": "네일더블링",
+      "shop_id": "32",
+      "lat": "37.474313",
+      "lng": "126.632694",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240605_96%2F1717590976993QiQQi_JPEG%2FIMG_20240520_195151_241.jpg"
+    },
+    {
+      "shop_key": "86fa2c69-aef3-4d77-8de5-508264c93b72",
+      "shop_name": "나라네일",
+      "shop_id": "33",
+      "lat": "37.738762",
+      "lng": "127.085929",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20210819_260%2F1629359192631zujpz_JPEG%2FSk05wYiM2DryU5vq8q_Vxruy.jpg"
+    },
+    {
+      "shop_key": "8f99757d-b72c-463b-972c-05bafd7bd0a4",
+      "shop_name": "네일미기",
+      "shop_id": "34",
+      "lat": "37.464279",
+      "lng": "126.693576",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240402_151%2F1712044268642XU07o_JPEG%2F20240303_111006.jpg"
+    },
+    {
+      "shop_key": "918103e0-a8a4-4c31-bbef-5ea23bc1a391",
+      "shop_name": "람츄네일",
+      "shop_id": "35",
+      "lat": "37.469681",
+      "lng": "126.701087",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221011_159%2F1665489406828WHc3e_JPEG%2FIMG_20220924_190856_693.jpg"
+    },
+    {
+      "shop_key": "98d1e925-40d3-49dc-b4b2-d10844b58718",
+      "shop_name": "네일포시즌 역삼점",
+      "shop_id": "36",
+      "lat": "37.507249",
+      "lng": "127.034671",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240402_143%2F1712044153815cxW6R_JPEG%2FIMG_20240326_124241_719.jpg"
+    },
+    {
+      "shop_key": "99da56ab-b5d1-47d4-8569-41161f0533eb",
+      "shop_name": "네일,정",
+      "shop_id": "37",
+      "lat": "37.478667",
+      "lng": "126.700118",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240402_89%2F17120441408529M5mn_JPEG%2FIMG_20240401_173740_413.jpg"
+    },
+    {
+      "shop_key": "9a3877a1-e7ef-47b4-a398-3731dafd0b61",
+      "shop_name": "문네일살롱 부평점",
+      "shop_id": "38",
+      "lat": "37.489665",
+      "lng": "126.727965",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230515_121%2F1684135158278cj5VW_JPEG%2F20230514_211340_081.jpg"
+    },
+    {
+      "shop_key": "9b1251c6-3a79-42f1-b0dd-7839336deef8",
+      "shop_name": "네일,꽃이피다",
+      "shop_id": "39",
+      "lat": "37.444270",
+      "lng": "126.652385",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230615_238%2F1686813469065hUCSp_JPEG%2F20230604_160947.jpg"
+    },
+    {
+      "shop_key": "9efe93a1-64c8-4fab-87bd-e9c64638c8b2",
+      "shop_name": "네일은미",
+      "shop_id": "40",
+      "lat": "37.440775",
+      "lng": "126.674814",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220506_113%2F16518314668038q3cl_JPEG%2FIMG_20220501_195608_010.jpg"
+    },
+    {
+      "shop_key": "afbb7272-99f4-45a3-a51a-d5df674b0e55",
+      "shop_name": "포쉬네일 인하대점",
+      "shop_id": "41",
+      "lat": "37.447714",
+      "lng": "126.650764",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20220526_161%2F1653566345321vnHkW_JPEG%2F20220526_164359_435.jpg"
+    },
+    {
+      "shop_key": "b9cfada2-566d-40b3-abc1-c5b3e0fa3333",
+      "shop_name": "라비에네일",
+      "shop_id": "42",
+      "lat": "37.737731",
+      "lng": "127.087598",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240307_175%2F1709819022147jCrar_JPEG%2FIMG_8726.jpeg"
+    },
+    {
+      "shop_key": "bb1f44b9-467d-401e-b90a-b5c44620db7b",
+      "shop_name": "흰네일",
+      "shop_id": "43",
+      "lat": "37.463848",
+      "lng": "126.689419",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240307_31%2F1709818516831udmJt_JPEG%2FIMG_1006.jpeg"
+    },
+    {
+      "shop_key": "c0e35075-8d2a-460f-9040-bd4ecc52e1d5",
+      "shop_name": "모도리 네일",
+      "shop_id": "44",
+      "lat": "37.453648",
+      "lng": "126.649207",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20221222_85%2F167170402489200pSn_JPEG%2F18EB63E3-5171-4141-BAD6-51BADCD555AB.jpeg"
+    },
+    {
+      "shop_key": "c6f779d1-30a0-4f46-9d03-3d7967181323",
+      "shop_name": "네일 그리고, 봄",
+      "shop_id": "45",
+      "lat": "37.475975",
+      "lng": "126.634639",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20230109_191%2F1673276212130rJScg_JPEG%2Fimage.jpg"
+    },
+    {
+      "shop_key": "c8dde6d9-758b-4bba-95da-acf61dcf25a3",
+      "shop_name": "매직네일아트",
+      "shop_id": "46",
+      "lat": "37.541339",
+      "lng": "126.948989",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240226_61%2F1708875380856IPJhn_JPEG%2FIMG_7595.jpeg"
+    },
+    {
+      "shop_key": "d77122c8-9a70-4130-9261-6aac5a2ba9b6",
+      "shop_name": "다바다네일 삼성점",
+      "shop_id": "47",
+      "lat": "37.509638",
+      "lng": "127.051956",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20211212_31%2F1639305051992j7zXt_JPEG%2FA9F0F886-741F-4933-B633-584B375482C8.jpeg"
+    },
+    {
+      "shop_key": "dcb93860-b42d-4c7e-906f-e3e2d1ba15f2",
+      "shop_name": "라이크네일",
+      "shop_id": "48",
+      "lat": "37.735609",
+      "lng": "127.082930",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20211212_180%2F1639312453046ovyiz_JPEG%2FDFBD4042-4EE4-4018-A45D-06B0C2E225AD.jpeg"
+    },
+    {
+      "shop_key": "e12653cc-8378-426d-90d3-5d5b955411ef",
+      "shop_name": "햅번네일",
+      "shop_id": "49",
+      "lat": "37.462501",
+      "lng": "126.697277",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20241101_5%2F1730449408832zfYST_PNG%2F1000028179.png"
+    },
+    {
+      "shop_key": "e9620064-8423-4123-bc8d-9196ef3b85be",
+      "shop_name": "미미네일",
+      "shop_id": "50",
+      "lat": "37.485336",
+      "lng": "126.708487",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240610_30%2F1717996920830sokp3_JPEG%2FKakaoTalk_20240507_173544862_22.jpg"
+    },
+    {
+      "shop_key": "eab2f42e-e705-467f-bdb6-b5c71f67a87a",
+      "shop_name": "바이롱네일 뷰티살롱",
+      "shop_id": "51",
+      "lat": "37.484627",
+      "lng": "126.707467",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240610_135%2F17179969934362n5uA_JPEG%2FKakaoTalk_20240529_120920559.jpg"
+    },
+    {
+      "shop_key": "ed56f6f6-63d6-4adb-a7df-04fab8755ac5",
+      "shop_name": "탱샵",
+      "shop_id": "52",
+      "lat": "37.461706",
+      "lng": "126.678430",
+      "shop_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDExMDRfODMg%2FMDAxNzMwNzA4Mjc1MTU2.DdSw9s_45GdF-3wTRD3p5iAsUAmn9MFVh01fOJCVI3wg.mD2GIuH3z6_XuUGUtgZp4RYUs8bSQ5njKe-34ojEFdYg.JPEG%2FKakaoTalk_20241022_122232119_03.jpg"
+    },
+    {
+      "shop_key": "f1eaba19-f50a-462a-896b-6eb8c5bcf912",
+      "shop_name": "인블리네일",
+      "shop_id": "53",
+      "lat": "37.461982",
+      "lng": "126.679805",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240610_4%2F1717996957282I1BNi_JPEG%2FKakaoTalk_20240507_173610466_01.jpg"
+    },
+    {
+      "shop_key": "fc57a1e2-096d-4117-ba61-0741267c8b63",
+      "shop_name": "원스프롬 부평본점",
+      "shop_id": "54",
+      "lat": "37.491996",
+      "lng": "126.724517",
+      "shop_url": "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDEwMjRfNTUg%2FMDAxNzI5NzQ1NzcyMjE4.UdKyn_1S5nrn_RCWUalW1_B-1ps07fEQ-H_CK4yZBqcg.kpfd91EOeuwfRiq2iyXnPsPneyjU-MhDz2XEmDxlS7sg.JPEG%2FKakaoTalk_20241015_115424621_01.jpg"
+    },
+    {
+      "shop_key": "fcad8c9d-024b-418f-8ed5-9fa028a027a6",
+      "shop_name": "에스더네일",
+      "shop_id": "55",
+      "lat": "37.465240",
+      "lng": "126.668865",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240610_75%2F1717996888092uQTU7_JPEG%2FKakaoTalk_20240610_141327147_09.jpg"
+    },
+    {
+      "shop_key": "fee44a8e-c7bf-4e0a-8c62-25cef45510ad",
+      "shop_name": "네일언니2",
+      "shop_id": "56",
+      "lat": "37.447515",
+      "lng": "126.649847",
+      "shop_url": "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20240421_116%2F1713675969134bD5XE_JPEG%2F%25B0%25A1%25B0%25DD%25C7%25A5.jpg"
+    }
+  ]
