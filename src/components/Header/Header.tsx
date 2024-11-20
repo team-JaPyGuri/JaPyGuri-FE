@@ -2,10 +2,11 @@ import { ReactNode, useEffect, useState } from "react";
 import UserIcon from "../../assets/svgs/user.svg?react";
 
 interface HeaderProps {
+  subTitle?: string;
   children?: ReactNode;
 }
 
-const Header = ({ children }: HeaderProps) => {
+const Header = ({ subTitle, children }: HeaderProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -27,7 +28,7 @@ const Header = ({ children }: HeaderProps) => {
 
   return (
     <header
-      className={`sticky top-0 z-10 flex w-full min-w-[20rem] max-w-[37.5rem] flex-row transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-[3.875rem]"}`}
+      className={`sticky top-0 z-10 flex w-full min-w-[20rem] max-w-[37.5rem] flex-col transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-[3.875rem]"}`}
     >
       <div className="flex w-full flex-row justify-between bg-grayscale-800 py-2 pl-2 pr-4 align-middle">
         <button className="semibold-20 p-2 text-grayscale-100">NAILO</button>
@@ -35,6 +36,11 @@ const Header = ({ children }: HeaderProps) => {
           <UserIcon />
         </button>
       </div>
+      {subTitle && (
+        <div className="semibold-14 flex h-12 w-full items-center justify-start bg-grayscale-800 px-4 text-grayscale-100">
+          {subTitle}
+        </div>
+      )}
       {children}
     </header>
   );

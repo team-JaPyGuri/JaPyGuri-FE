@@ -1,10 +1,12 @@
 import "./global.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { RecoilRoot } from "recoil";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home/Home";
 import ToastContainer from "./components/Toast/ToastContainer";
 import BottomUpSheetContainer from "./components/BottomUpSheet/BottomUpSheetContainer";
+
+import Home from "./pages/Home/Home";
+import Like from "./pages/Like/Like";
 import RequestMap from "./pages/RequestMap/RequestMap";
 
 const App = () => {
@@ -15,6 +17,7 @@ const App = () => {
         <ToastContainer />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/like" element={<Like />} />
           <Route path="/request-map" element={<RequestMap />} />
         </Routes>
       </BrowserRouter>
