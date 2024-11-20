@@ -1,3 +1,6 @@
+import axios from "axios";
+import { useEffect } from "react";
+
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -12,6 +15,17 @@ import HotNailMockData from "./hotNail.json";
 
 const Home = () => {
   const HotNailData = HotNailMockData.data;
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_NAILO_API_URL}/api/home`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <Layout>
