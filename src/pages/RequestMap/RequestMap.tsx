@@ -6,7 +6,7 @@ import { useMap } from "./useMap";
 import MainPinIcon from "../../assets/svgs/mainPin.svg?react";
 import MapFooter from "./components/MapFooter";
 
-import ShopMockData from "./shop_list.json";
+import ShopMockData from "../../mockData/shop_list.json";
 
 const RequestMap = () => {
   const markersRef = useRef<naver.maps.Marker[]>([]);

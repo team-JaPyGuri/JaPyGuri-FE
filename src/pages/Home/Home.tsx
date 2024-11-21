@@ -11,14 +11,21 @@ import HotNailList from "./components/HotNailList";
 import NailSnap from "./components/NailSnap";
 import SubTitle from "./components/SubTitle";
 
-import HotNailMockData from "./hotNail.json";
+import HotNailMockData from "../../mockData/hotNail.json";
+import NailMockData from "../../mockData/nail.json";
 
 const Home = () => {
   const HotNailData = HotNailMockData.data;
+  const NailData = NailMockData.data;
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_NAILO_API_URL}/api/home`)
+      .get(`${import.meta.env.VITE_NAILO_API_URL}/api/home/`, {
+        params: {
+          type: "all",
+          page: 1,
+        },
+      })
       .then((res) => {
         console.log(res);
       })
@@ -34,7 +41,7 @@ const Home = () => {
       <SubTitle title="HOT 인기 네일아트" className="mt-6" />
       <HotNailList data={HotNailData} />
       <SubTitle title="네일아트 스냅 " className="mt-6" />
-      <NailSnap />
+      <NailSnap data={NailData} />
       <Footer />
       <NavigationBar />
     </Layout>

@@ -1,19 +1,18 @@
-import LikeNotActiveIcon from "../../assets/svgs/likeNotActive.svg?react";
-import LikeActiveIcon from "../../assets/svgs/likeActive.svg?react";
-import NailDetail from "../../components/BottomUpSheet/components/NailDetail";
-
 import { useState } from "react";
-import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpSheet";
+import { useBottomUpSheet } from "../BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
 
-interface CardProps {
+import LikeNotActiveIcon from "../../assets/svgs/likeNotActive.svg?react";
+import LikeActiveIcon from "../../assets/svgs/likeActive.svg?react";
+import NailDetail from "../BottomUpSheet/components/NailDetail";
+
+interface NailSnapCardProps {
   img: string;
   tags: string[];
   like: number;
-  rowScroll?: boolean;
 }
 
-const NailInfoCard = ({ img, tags, like, rowScroll = false }: CardProps) => {
+const NailSnapCard = ({ img, tags, like }: NailSnapCardProps) => {
   const showBottomUpSheet = useBottomUpSheet();
   const [likeActive, setLikeActive] = useState(false);
 
@@ -38,16 +37,12 @@ const NailInfoCard = ({ img, tags, like, rowScroll = false }: CardProps) => {
           ),
         })
       }
-      className={`flex ${rowScroll ? "w-[30%]" : "w-1/3"} shrink-0 flex-col bg-grayscale-100`}
+      className="flex w-1/3 shrink-0 flex-col bg-grayscale-100"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-grayscale-900 bg-opacity-[0.02]">
-        <img
-          className="absolute left-0 top-0 h-full w-full object-cover object-center"
-          src={img}
-          alt="nail"
-        />
+        <img src={img} alt="nail" className="h-full w-full object-cover" />
         <button
-          onClick={handleLikeClicked}
+          onClick={(event) => handleLikeClicked(event)}
           className="absolute bottom-1 right-1"
         >
           {likeActive ? (
@@ -61,17 +56,8 @@ const NailInfoCard = ({ img, tags, like, rowScroll = false }: CardProps) => {
           )}
         </button>
       </div>
-      <div className="flex flex-col justify-start p-2">
-        <span className="regular-13 flex flex-row items-center gap-1 text-red">
-          <LikeActiveIcon className="h-3 w-3" />
-          {like}
-        </span>
-        <span className="semibold-13 truncate text-grayscale-900">
-          {tags && tags.map((tag) => `#${tag} `)}
-        </span>
-      </div>
     </div>
   );
 };
 
-export default NailInfoCard;
+export default NailSnapCard;

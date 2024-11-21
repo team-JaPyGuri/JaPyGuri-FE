@@ -13,7 +13,7 @@ const HotNailList = ({ data }: HotNailListProps) => {
             key={id}
             img={img}
             tags={tags}
-            likes={like}
+            like={like}
             rowScroll={true}
           />
         ))}

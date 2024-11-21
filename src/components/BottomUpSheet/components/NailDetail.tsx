@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 interface NailDetailProps {
   img: string;
   tags: string[];
-  likes: number;
+  like: number;
   likeActive: boolean;
   setLikeActive: (likeActive: boolean) => void;
 }
@@ -15,7 +15,7 @@ interface NailDetailProps {
 const NailDetail = ({
   img,
   tags,
-  likes,
+  like,
   likeActive,
   setLikeActive,
 }: NailDetailProps) => {
@@ -41,7 +41,7 @@ const NailDetail = ({
             {tags && tags.map((tag) => `#${tag} `)}
           </span>
           <span className="regular-13 text-grayscale-600">
-            이 네일아트를 {likes}명이 좋아해요.
+            이 네일아트를 {like}명이 좋아해요.
           </span>
         </div>
         <button

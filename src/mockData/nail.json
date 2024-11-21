@@ -1,0 +1,184 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "img": "https://images.unsplash.com/photo-1696341980130-4bdff3322802?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["프렌치", "네일아트", "프렌치네일"],
+      "like": 100
+    },
+    {
+      "id": 2,
+      "img": "https://images.unsplash.com/photo-1696342003838-4a8f9f36588c?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["글리터", "네일아트", "글리터네일"],
+      "like": 150
+    },
+    {
+      "id": 3,
+      "img": "https://images.unsplash.com/photo-1696341995063-b60c66e85838?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["젤네일", "네일아트", "젤네일디자인"],
+      "like": 200
+    },
+    {
+      "id": 4,
+      "img": "https://images.unsplash.com/photo-1696342000662-dc2417d34692?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["매트", "네일아트", "매트네일"],
+      "like": 250
+    },
+    {
+      "id": 5,
+      "img": "https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["스톤", "네일아트", "스톤네일"],
+      "like": 300
+    },
+    {
+      "id": 6,
+      "img": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["그라데이션", "네일아트", "그라데이션네일"],
+      "like": 350
+    },
+    {
+      "id": 7,
+      "img": "https://images.unsplash.com/photo-1696341980130-4bdff3322802?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["프렌치", "네일아트", "프렌치네일"],
+      "like": 100
+    },
+    {
+      "id": 8,
+      "img": "https://images.unsplash.com/photo-1696342003838-4a8f9f36588c?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["글리터", "네일아트", "글리터네일"],
+      "like": 150
+    },
+    {
+      "id": 9,
+      "img": "https://images.unsplash.com/photo-1696341995063-b60c66e85838?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["젤네일", "네일아트", "젤네일디자인"],
+      "like": 200
+    },
+    {
+      "id": 10,
+      "img": "https://images.unsplash.com/photo-1696342000662-dc2417d34692?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["매트", "네일아트", "매트네일"],
+      "like": 250
+    },
+    {
+      "id": 11,
+      "img": "https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["스톤", "네일아트", "스톤네일"],
+      "like": 300
+    },
+    {
+      "id": 12,
+      "img": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["그라데이션", "네일아트", "그라데이션네일"],
+      "like": 350
+    },
+    {
+      "id": 13,
+      "img": "https://images.unsplash.com/photo-1696341980130-4bdff3322802?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["프렌치", "네일아트", "프렌치네일"],
+      "like": 100
+    },
+    {
+      "id": 14,
+      "img": "https://images.unsplash.com/photo-1696342003838-4a8f9f36588c?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["글리터", "네일아트", "글리터네일"],
+      "like": 150
+    },
+    {
+      "id": 15,
+      "img": "https://images.unsplash.com/photo-1696341995063-b60c66e85838?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["젤네일", "네일아트", "젤네일디자인"],
+      "like": 200
+    },
+    {
+      "id": 16,
+      "img": "https://images.unsplash.com/photo-1696342000662-dc2417d34692?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["매트", "네일아트", "매트네일"],
+      "like": 250
+    },
+    {
+      "id": 17,
+      "img": "https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["스톤", "네일아트", "스톤네일"],
+      "like": 300
+    },
+    {
+      "id": 18,
+      "img": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["그라데이션", "네일아트", "그라데이션네일"],
+      "like": 350
+    },
+    {
+      "id": 19,
+      "img": "https://images.unsplash.com/photo-1696341980130-4bdff3322802?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["프렌치", "네일아트", "프렌치네일"],
+      "like": 100
+    },
+    {
+      "id": 20,
+      "img": "https://images.unsplash.com/photo-1696342003838-4a8f9f36588c?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["글리터", "네일아트", "글리터네일"],
+      "like": 150
+    },
+    {
+      "id": 21,
+      "img": "https://images.unsplash.com/photo-1696341995063-b60c66e85838?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["젤네일", "네일아트", "젤네일디자인"],
+      "like": 200
+    },
+    {
+      "id": 22,
+      "img": "https://images.unsplash.com/photo-1696342000662-dc2417d34692?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["매트", "네일아트", "매트네일"],
+      "like": 250
+    },
+    {
+      "id": 23,
+      "img": "https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["스톤", "네일아트", "스톤네일"],
+      "like": 300
+    },
+    {
+      "id": 24,
+      "img": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["그라데이션", "네일아트", "그라데이션네일"],
+      "like": 350
+    },
+    {
+      "id": 25,
+      "img": "https://images.unsplash.com/photo-1696341980130-4bdff3322802?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["프렌치", "네일아트", "프렌치네일"],
+      "like": 100
+    },
+    {
+      "id": 26,
+      "img": "https://images.unsplash.com/photo-1696342003838-4a8f9f36588c?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["글리터", "네일아트", "글리터네일"],
+      "like": 150
+    },
+    {
+      "id": 27,
+      "img": "https://images.unsplash.com/photo-1696341995063-b60c66e85838?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["젤네일", "네일아트", "젤네일디자인"],
+      "like": 200
+    },
+    {
+      "id": 28,
+      "img": "https://images.unsplash.com/photo-1696342000662-dc2417d34692?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["매트", "네일아트", "매트네일"],
+      "like": 250
+    },
+    {
+      "id": 29,
+      "img": "https://images.unsplash.com/photo-1688583417770-ff6cc18071dc?q=80&w=1180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["스톤", "네일아트", "스톤네일"],
+      "like": 300
+    },
+    {
+      "id": 30,
+      "img": "https://images.unsplash.com/photo-1571290274554-6a2eaa771e5f?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "tags": ["그라데이션", "네일아트", "그라데이션네일"],
+      "like": 350
+    }
+  ]
+}
