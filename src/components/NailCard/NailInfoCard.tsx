@@ -5,8 +5,11 @@ import NailDetail from "../../components/BottomUpSheet/components/NailDetail";
 import { useEffect, useState } from "react";
 import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
+import { toggleLike } from "../../api/likeToggle";
+import { useToast } from "../Toast/useToast";
 
 interface CardProps {
+  id: string;
   img: string;
   likeDefault: boolean;
   price: string;
@@ -15,12 +18,14 @@ interface CardProps {
 }
 
 const NailInfoCard = ({
+  id,
   img,
   price,
   like,
   likeDefault,
   rowScroll = false,
 }: CardProps) => {
+  const showToast = useToast();
   const showBottomUpSheet = useBottomUpSheet();
   const [likeCount, setLikeCount] = useState(+like);
   const [likeActive, setLikeActive] = useState(likeDefault);
@@ -29,9 +34,21 @@ const NailInfoCard = ({
     setLikeCount((oldLikeCount) => oldLikeCount + (likeActive ? 1 : -1));
   }, [likeActive]);
 
-  const handleLikeClicked = (event: React.MouseEvent) => {
+  const handleLikeClicked = async (id: string, event: React.MouseEvent) => {
     stopPropagation(event);
-    setLikeActive(!likeActive);
+    try {
+      await toggleLike(id);
+      setLikeActive(!likeActive);
+      showToast({
+        message: likeActive
+          ? "좋아요가 취소되었어요."
+          : "좋아요에 추가되었어요.",
+      });
+    } catch {
+      showToast({
+        message: "현재 서버가 불안정해요. 잠시 후 다시 시도해주세요.",
+      });
+    }
   };
 
   return (
@@ -41,6 +58,7 @@ const NailInfoCard = ({
           title: "상세정보",
           content: (
             <NailDetail
+              id={id}
               img={img}
               price={price}
               likeCount={likeCount}
@@ -59,7 +77,7 @@ const NailInfoCard = ({
           alt="nail"
         />
         <button
-          onClick={handleLikeClicked}
+          onClick={(event: React.MouseEvent) => handleLikeClicked(id, event)}
           className="absolute bottom-1 right-1"
         >
           {likeActive ? (

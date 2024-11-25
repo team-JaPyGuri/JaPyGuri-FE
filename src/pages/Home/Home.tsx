@@ -30,10 +30,10 @@ const Home = () => {
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_NAILO_API_URL}/api/home/`, {
-        params: { type: "all", page: 3 },
+        params: { type: "random" },
       })
       .then((res) => {
-        setHotNailList(res.data.results);
+        setHotNailList(res.data);
       })
       .catch((err) => {
         console.error("Hot Nail List API Error:", err);

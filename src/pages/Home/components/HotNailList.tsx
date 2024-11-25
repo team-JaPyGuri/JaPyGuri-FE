@@ -17,6 +17,7 @@ const HotNailList = ({ data }: HotNailListProps) => {
         data.map(({ design_key, design_url, is_active, price, like_count }) => (
           <NailInfoCard
             key={design_key}
+            id={design_key}
             img={design_url}
             likeDefault={is_active}
             price={price}

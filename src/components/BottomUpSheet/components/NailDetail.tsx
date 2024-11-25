@@ -3,8 +3,11 @@ import LikeActiveIcon from "../../../assets/svgs/likeActive.svg?react";
 import Button from "../../../components/Button/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "../../Toast/useToast";
+import { toggleLike } from "../../../api/likeToggle";
 
 interface NailDetailProps {
+  id: string;
   img: string;
   price: string;
   likeCount: number;
@@ -13,6 +16,7 @@ interface NailDetailProps {
 }
 
 const NailDetail = ({
+  id,
   img,
   price,
   likeCount,
@@ -20,13 +24,26 @@ const NailDetail = ({
   setLikeActive,
 }: NailDetailProps) => {
   const navigate = useNavigate();
+  const showToast = useToast();
   const [localLikeCount, setLocalLikeCount] = useState(likeCount);
   const [localLikeActive, setLocalLikeActive] = useState(likeActive);
 
-  const handleLikeClicked = () => {
-    setLocalLikeActive(!localLikeActive);
-    setLikeActive(!localLikeActive);
-    setLocalLikeCount(localLikeCount + (localLikeActive ? -1 : 1));
+  const handleLikeClicked = async (id: string) => {
+    try {
+      await toggleLike(id);
+      setLocalLikeActive(!localLikeActive);
+      setLikeActive(!localLikeActive);
+      setLocalLikeCount(localLikeCount + (localLikeActive ? -1 : 1));
+      showToast({
+        message: localLikeActive
+          ? "좋아요가 취소되었어요."
+          : "좋아요에 추가되었어요.",
+      });
+    } catch {
+      showToast({
+        message: "현재 서버가 불안정해요. 잠시 후 다시 시도해주세요.",
+      });
+    }
   };
 
   return (
@@ -51,7 +68,7 @@ const NailDetail = ({
           </span>
         </div>
         <button
-          onClick={() => handleLikeClicked()}
+          onClick={() => handleLikeClicked(id)}
           className="flex flex-row items-center gap-1 rounded-[4px] border border-gray-400 p-[6px]"
         >
           {localLikeActive ? (
