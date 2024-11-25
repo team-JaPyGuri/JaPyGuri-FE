@@ -10,6 +10,7 @@ import Like from "./pages/Like/Like";
 import RequestMap from "./pages/RequestMap/RequestMap";
 import AiResult from "./pages/AiResult/AiResult";
 import RequestResult from "./pages/RequestResult/RequestResult";
+import SelectNail from "./pages/SelectNail/SelectNail";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path="/request-map" element={<RequestMap />} />
           <Route path="/ai-result" element={<AiResult />} />
           <Route path="/request-result" element={<RequestResult />} />
+          <Route path="/select-nail" element={<SelectNail />} />
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

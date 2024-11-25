@@ -4,8 +4,11 @@ import ListView from "../../components/ListView/ListView";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
+import { useNavigate } from "react-router-dom";
 
 const AiResult = () => {
+  const navigate = useNavigate();
+
   return (
     <Layout>
       <Header subTitle="네일아트 AI 피팅" />
@@ -20,7 +23,9 @@ const AiResult = () => {
       <Footer />
       <NavigationBar />
       <div className="fixed bottom-14 w-full px-4 py-3">
-        <Button>네일아트 AI 피팅 시작하기</Button>
+        <Button onClick={() => navigate("/select-nail")}>
+          네일아트 AI 피팅 시작하기
+        </Button>
       </div>
     </Layout>
   );
