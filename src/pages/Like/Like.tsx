@@ -4,18 +4,23 @@ import Footer from "../../components/Footer/Footer";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 import { useState, useEffect } from "react";
-import axios from "axios";
 import ListView from "../../components/ListView/ListView";
+import { getLikeList } from "../../api/getLikeList";
 
 const Like = () => {
-  const [nailData, setNailData] = useState(null);
+  const [nailData, setNailData] = useState([]);
 
   useEffect(() => {
-    axios.get(`${import.meta.env.VITE_API_URL}/like-list.`).then((res) => {
-      const resultData = res.data;
-      if (typeof resultData !== "string") setNailData(resultData);
-      else setNailData(null);
-    });
+    const fetchData = async () => {
+      try {
+        const res = await getLikeList();
+        setNailData(res);
+      } catch (err) {
+        console.error("Error fetching like list:", err);
+      }
+    };
+
+    fetchData();
   }, []);
 
   return (

@@ -26,7 +26,7 @@ const NailSnapCard = ({
 }: NailSnapCardProps) => {
   const showToast = useToast();
   const showBottomUpSheet = useBottomUpSheet();
-  const [likeCount, setLikeCount] = useState(+like);
+  const [likeCount, setLikeCount] = useState(+like + (likeDefault ? -1 : 1));
   const [likeActive, setLikeActive] = useState(likeDefault);
 
   useEffect(() => {
