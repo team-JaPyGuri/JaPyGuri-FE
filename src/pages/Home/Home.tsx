@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";
@@ -11,29 +11,87 @@ import HotNailList from "./components/HotNailList";
 import NailSnap from "./components/NailSnap";
 import SubTitle from "./components/SubTitle";
 
-import NailMockData from "../../mockData/nail.json";
+interface NailData {
+  design_key: string;
+  design_url: string;
+  is_active: boolean;
+  price: string;
+  like_count: number;
+}
 
 const Home = () => {
-  const NailData = NailMockData.data;
-
-  const [hotNailList, setHotNailList] = useState(null);
+  const [hotNailList, setHotNailList] = useState<NailData[]>([]);
+  const [nailSnapList, setNailSnapList] = useState<NailData[]>([]);
+  const [page, setPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const observerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_NAILO_API_URL}/api/home/`, {
-        params: {
-          type: "all",
-          page: 1,
-        },
+        params: { type: "all", page: 3 },
       })
       .then((res) => {
-        console.log(res.data.results);
         setHotNailList(res.data.results);
       })
       .catch((err) => {
-        console.log(err);
+        console.error("Hot Nail List API Error:", err);
       });
   }, []);
+
+  const loadNailSnapList = useCallback(async () => {
+    if (isLoading || !hasMore) return;
+    setIsLoading(true);
+
+    try {
+      const res = await axios.get(
+        `${import.meta.env.VITE_NAILO_API_URL}/api/home/`,
+        {
+          params: { type: "all", page },
+        },
+      );
+
+      if (res.data.results.length === 0) {
+        setHasMore(false);
+        return;
+      }
+
+      setNailSnapList((prevList) => [...prevList, ...res.data.results]);
+      setPage((prevPage) => prevPage + 1);
+    } catch (err) {
+      setHasMore(false);
+      console.error("API Error:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  }, [page, isLoading, hasMore]);
+
+  useEffect(() => {
+    const currentObserverTarget = observerRef.current;
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      const target = entries[0];
+      if (target.isIntersecting && !isLoading && hasMore) {
+        loadNailSnapList();
+      }
+    };
+
+    const observer = new IntersectionObserver(observerCallback, {
+      root: null,
+      threshold: 1.0,
+    });
+
+    if (currentObserverTarget) {
+      observer.observe(currentObserverTarget);
+    }
+
+    return () => {
+      if (currentObserverTarget) {
+        observer.unobserve(currentObserverTarget);
+      }
+    };
+  }, [loadNailSnapList, isLoading, hasMore]);
 
   return (
     <Layout>
@@ -41,8 +99,9 @@ const Home = () => {
       <Banner />
       <SubTitle title="HOT 인기 네일아트" className="mt-6" />
       <HotNailList data={hotNailList} />
-      <SubTitle title="네일아트 스냅 " className="mt-6" />
-      <NailSnap data={NailData} />
+      <SubTitle title="네일아트 스냅" className="mt-6" />
+      <NailSnap data={nailSnapList} />
+      <div ref={observerRef} className="h-1 w-full" />
       <Footer />
       <NavigationBar />
     </Layout>

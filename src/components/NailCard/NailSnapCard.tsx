@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useBottomUpSheet } from "../BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
 
@@ -8,13 +8,20 @@ import NailDetail from "../BottomUpSheet/components/NailDetail";
 
 interface NailSnapCardProps {
   img: string;
-  tags: string[];
+  likeDefault: boolean;
+  price: string;
   like: number;
+  rowScroll?: boolean;
 }
 
-const NailSnapCard = ({ img, tags, like }: NailSnapCardProps) => {
+const NailSnapCard = ({ img, price, like, likeDefault }: NailSnapCardProps) => {
   const showBottomUpSheet = useBottomUpSheet();
-  const [likeActive, setLikeActive] = useState(false);
+  const [likeCount, setLikeCount] = useState(+like);
+  const [likeActive, setLikeActive] = useState(likeDefault);
+
+  useEffect(() => {
+    setLikeCount((oldLikeCount) => oldLikeCount + (likeActive ? 1 : -1));
+  }, [likeActive]);
 
   const handleLikeClicked = (event: React.MouseEvent) => {
     stopPropagation(event);
@@ -29,8 +36,8 @@ const NailSnapCard = ({ img, tags, like }: NailSnapCardProps) => {
           content: (
             <NailDetail
               img={img}
-              tags={tags}
-              like={like}
+              price={price}
+              likeCount={likeCount}
               likeActive={likeActive}
               setLikeActive={setLikeActive}
             />
