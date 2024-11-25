@@ -51,7 +51,7 @@ const ToastContainer = () => {
   return portalRoot
     ? ReactDOM.createPortal(
         <div
-          className={`fixed bottom-14 left-1/2 w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 space-y-3 px-4 py-3 ${showZIndex ? "!z-20" : "!-z-10"}`}
+          className={`fixed left-1/2 top-16 flex w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 flex-col justify-start space-y-3 px-4 py-3 ${showZIndex ? "!z-20" : "!-z-10"}`}
         >
           {toastList.map((toast) => (
             <Toast

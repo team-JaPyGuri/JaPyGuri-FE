@@ -14,7 +14,8 @@ const NavigationBar = () => {
     {
       name: "카테고리",
       icon: CategoryIcon,
-      handler: () => showToast({ message: "준비중인 기능이에요." }),
+      handler: () =>
+        showToast({ message: "데모 버전에서는 해당 기능을 제공할 수 없어요." }),
     },
     {
       name: "AI 피팅",
@@ -34,7 +35,7 @@ const NavigationBar = () => {
     {
       name: "샵 요청",
       icon: RequestIcon,
-      handler: () => navigate("/request"),
+      handler: () => navigate("/request-result"),
     },
   ];
 

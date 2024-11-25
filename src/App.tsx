@@ -9,6 +9,7 @@ import Home from "./pages/Home/Home";
 import Like from "./pages/Like/Like";
 import RequestMap from "./pages/RequestMap/RequestMap";
 import AiResult from "./pages/AiResult/AiResult";
+import RequestResult from "./pages/RequestResult/RequestResult";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/like" element={<Like />} />
           <Route path="/request-map" element={<RequestMap />} />
           <Route path="/ai-result" element={<AiResult />} />
+          <Route path="/request-result" element={<RequestResult />} />
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

@@ -86,12 +86,20 @@ const NailDetail = ({
       <img className="w-full" />
       <div className="flex w-full flex-col gap-2 px-4 py-3">
         <div className="flex w-full flex-row gap-2">
-          <Button onClick={() => navigate("/request-map")}>
+          <Button
+            onClick={() =>
+              showToast({
+                message: "데모 버전에서는 해당 기능을 제공할 수 없어요.",
+              })
+            }
+          >
             바로 예약하기
           </Button>
           <Button>AI 피팅 체험하기</Button>
         </div>
-        <Button>해당 네일아트 요청하기</Button>
+        <Button onClick={() => navigate(`/request-map/?${id}`)}>
+          해당 네일아트 요청하기
+        </Button>
       </div>
     </>
   );

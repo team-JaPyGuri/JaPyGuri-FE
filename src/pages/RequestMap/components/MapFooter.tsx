@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Button/Button";
+import { useToast } from "./../../../components/Toast/useToast";
 
 interface MapFooterProps {
   currentAddress: string;
@@ -11,6 +13,16 @@ const MapFooter = ({
   activeMarkerCount,
   className,
 }: MapFooterProps) => {
+  const showToast = useToast();
+  const navigate = useNavigate();
+
+  const handleRequestButtonClicked = () => {
+    navigate("/");
+    showToast({
+      message: "네일아트 요청이 완료되었어요. 응답이 오면 알려드릴게요.",
+    });
+  };
+
   return (
     <div
       className={`${className} flex w-full flex-col items-center justify-center rounded-t-lg border-x border-t border-grayscale-300 bg-grayscale-100`}
@@ -26,7 +38,9 @@ const MapFooter = ({
         </span>
       </div>
       <div className="w-full px-4 py-3">
-        <Button>네일아트 요청하기</Button>
+        <Button onClick={() => handleRequestButtonClicked()}>
+          네일아트 요청하기
+        </Button>
       </div>
     </div>
   );

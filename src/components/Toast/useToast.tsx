@@ -18,13 +18,17 @@ export const useToast = () => {
   const showToast = ({ message, link }: UseToastProps) => {
     const newToast: ToastMessage = { id: Date.now(), message, link };
 
-    setToastList((oldToastList) => [...oldToastList, newToast]);
+    setToastList((oldToastList) => {
+      if (oldToastList.length && oldToastList[0].message === newToast.message) {
+        return [newToast, ...oldToastList.slice(1)];
+      } else return [newToast, ...oldToastList];
+    });
 
     setTimeout(() => {
       setToastList((currentList) =>
         currentList.filter((toast) => toast.id !== newToast.id),
       );
-    }, 6000);
+    }, 4000);
   };
 
   return showToast;
