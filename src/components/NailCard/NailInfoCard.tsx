@@ -2,20 +2,32 @@ import LikeNotActiveIcon from "../../assets/svgs/likeNotActive.svg?react";
 import LikeActiveIcon from "../../assets/svgs/likeActive.svg?react";
 import NailDetail from "../../components/BottomUpSheet/components/NailDetail";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
 
 interface CardProps {
   img: string;
-  tags: string[];
+  likeDefault: boolean;
+  price: string;
   like: number;
   rowScroll?: boolean;
 }
 
-const NailInfoCard = ({ img, tags, like, rowScroll = false }: CardProps) => {
+const NailInfoCard = ({
+  img,
+  price,
+  like,
+  likeDefault,
+  rowScroll = false,
+}: CardProps) => {
   const showBottomUpSheet = useBottomUpSheet();
-  const [likeActive, setLikeActive] = useState(false);
+  const [likeCount, setLikeCount] = useState(+like);
+  const [likeActive, setLikeActive] = useState(likeDefault);
+
+  useEffect(() => {
+    setLikeCount((oldLikeCount) => oldLikeCount + (likeActive ? 1 : -1));
+  }, [likeActive]);
 
   const handleLikeClicked = (event: React.MouseEvent) => {
     stopPropagation(event);
@@ -30,8 +42,8 @@ const NailInfoCard = ({ img, tags, like, rowScroll = false }: CardProps) => {
           content: (
             <NailDetail
               img={img}
-              tags={tags}
-              like={like}
+              price={price}
+              likeCount={likeCount}
               likeActive={likeActive}
               setLikeActive={setLikeActive}
             />
@@ -64,10 +76,13 @@ const NailInfoCard = ({ img, tags, like, rowScroll = false }: CardProps) => {
       <div className="flex flex-col justify-start p-2">
         <span className="regular-13 flex flex-row items-center gap-1 text-red">
           <LikeActiveIcon className="h-3 w-3" />
-          {like}
+          {Intl.NumberFormat().format(likeCount)}
         </span>
-        <span className="semibold-13 truncate text-grayscale-900">
-          {tags && tags.map((tag) => `#${tag} `)}
+        <span className="regular-13 truncate text-grayscale-600">
+          예상가{" "}
+          <span className="semibold-13 truncate text-grayscale-900">
+            {Intl.NumberFormat().format(+price)}원
+          </span>
         </span>
       </div>
     </div>

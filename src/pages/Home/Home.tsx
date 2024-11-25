@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";
@@ -11,12 +11,12 @@ import HotNailList from "./components/HotNailList";
 import NailSnap from "./components/NailSnap";
 import SubTitle from "./components/SubTitle";
 
-import HotNailMockData from "../../mockData/hotNail.json";
 import NailMockData from "../../mockData/nail.json";
 
 const Home = () => {
-  const HotNailData = HotNailMockData.data;
   const NailData = NailMockData.data;
+
+  const [hotNailList, setHotNailList] = useState(null);
 
   useEffect(() => {
     axios
@@ -27,7 +27,8 @@ const Home = () => {
         },
       })
       .then((res) => {
-        console.log(res);
+        console.log(res.data.results);
+        setHotNailList(res.data.results);
       })
       .catch((err) => {
         console.log(err);
@@ -39,7 +40,7 @@ const Home = () => {
       <Header />
       <Banner />
       <SubTitle title="HOT 인기 네일아트" className="mt-6" />
-      <HotNailList data={HotNailData} />
+      <HotNailList data={hotNailList} />
       <SubTitle title="네일아트 스냅 " className="mt-6" />
       <NailSnap data={NailData} />
       <Footer />
