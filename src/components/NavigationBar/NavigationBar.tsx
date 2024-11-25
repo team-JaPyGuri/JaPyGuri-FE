@@ -3,48 +3,53 @@ import AiIcon from "../../assets/svgs/ai.svg?react";
 import HomeIcon from "../../assets/svgs/home.svg?react";
 import LikeIcon from "../../assets/svgs/like.svg?react";
 import RequestIcon from "../../assets/svgs/request.svg?react";
+import { useNavigate } from "react-router-dom";
+import { useToast } from "../Toast/useToast";
 
 const NavigationBar = () => {
+  const navigate = useNavigate();
+  const showToast = useToast();
+
   const LINKS = [
     {
       name: "카테고리",
       icon: CategoryIcon,
-      href: "/category",
+      handler: () => showToast({ message: "준비중인 기능이에요." }),
     },
     {
       name: "AI 피팅",
       icon: AiIcon,
-      href: "/ai",
+      handler: () => navigate("/ai"),
     },
     {
       name: "홈",
       icon: HomeIcon,
-      href: "/",
+      handler: () => navigate("/"),
     },
     {
       name: "좋아요",
       icon: LikeIcon,
-      href: "/like",
+      handler: () => navigate("/like"),
     },
     {
       name: "샵 요청",
       icon: RequestIcon,
-      href: "/request",
+      handler: () => navigate("/request"),
     },
   ];
 
   return (
     <nav className="fixed bottom-0 left-1/2 z-10 flex w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 flex-row gap-3 border-t border-gray-300 bg-grayscale-100 px-4">
       {LINKS &&
-        LINKS.map(({ name, icon: Icon, href }) => (
-          <a
+        LINKS.map(({ name, icon: Icon, handler }) => (
+          <button
             key={name}
-            href={href}
+            onClick={handler}
             className="semibold-11 flex h-[3.5rem] flex-1 flex-col items-center justify-center text-center text-gray-600"
           >
             <Icon />
             <span>{name}</span>
-          </a>
+          </button>
         ))}
     </nav>
   );
