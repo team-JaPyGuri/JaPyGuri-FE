@@ -5,11 +5,17 @@ import { stopPropagation } from "../../../utils/stopPropagation";
 
 interface ToggleHeaderProps {
   title: string;
+  sort: boolean;
   sortType: "byDate" | "byPopularity";
   setSortType: React.Dispatch<React.SetStateAction<"byDate" | "byPopularity">>;
 }
 
-const ToggleHeader = ({ title, sortType, setSortType }: ToggleHeaderProps) => {
+const ToggleHeader = ({
+  title,
+  sort,
+  sortType,
+  setSortType,
+}: ToggleHeaderProps) => {
   const [toggleActive, setToggleActive] = useState(false);
 
   const byDateButtonHandler = (event: React.MouseEvent) => {
@@ -33,13 +39,15 @@ const ToggleHeader = ({ title, sortType, setSortType }: ToggleHeaderProps) => {
     <div className="flex w-full flex-row justify-between px-4 py-3">
       <span className="medium-13 text-grayscale-600">{title}</span>
       <button
-        onClick={() => setToggleActive(!toggleActive)}
+        onClick={() => sort && setToggleActive(!toggleActive)}
         className="regular-13 relative flex flex-row items-center text-grayscale-600"
       >
         {sortType === "byDate" ? "등록순" : "인기순"}
-        <ArrowDownIcon
-          className={`${toggleActive && "rotate-180"} duration-300`}
-        />
+        {sort && (
+          <ArrowDownIcon
+            className={`${toggleActive && "rotate-180"} duration-300`}
+          />
+        )}
         {toggleActive && (
           <div
             onClick={(event) => dimmerClickedHandler(event)}

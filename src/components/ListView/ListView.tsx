@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ToggleHeader from "./components/ToggleHeader";
 import NailSnapCard from "../NailCard/NailSnapCard";
+import NoContents from "../NoContents/NoContents";
 
 interface ListViewProps {
   title: string;
+  sort?: boolean;
+  noContent: {
+    title: string;
+    subtitle: string;
+  };
   data: Array<{
     design_key: string;
     design_url: string;
@@ -15,19 +21,31 @@ interface ListViewProps {
 
 type SortType = "byDate" | "byPopularity";
 
-const ListView = ({ title, data }: ListViewProps) => {
+const ListView = ({ title, noContent, data, sort = false }: ListViewProps) => {
   const [sortType, setSortType] = useState<SortType>("byDate");
+  const [showData, setShowData] = useState(data);
+
+  useEffect(() => {
+    if (data) {
+      setShowData((prevData) => {
+        if (sortType === "byDate") prevData = data;
+        else prevData?.sort((a, b) => b.like_count - a.like_count);
+        return prevData;
+      });
+    }
+  }, [data, sortType]);
 
   return (
     <>
       <ToggleHeader
         title={title}
+        sort={sort}
         sortType={sortType}
         setSortType={setSortType}
       />
       <div className="mb-32 flex w-full flex-wrap justify-start">
-        {data &&
-          data.map(
+        {showData?.length ? (
+          showData.map(
             ({ design_key, design_url, is_active, price, like_count }) => (
               <NailSnapCard
                 key={design_key}
@@ -38,7 +56,10 @@ const ListView = ({ title, data }: ListViewProps) => {
                 like={like_count}
               />
             ),
-          )}
+          )
+        ) : (
+          <NoContents title={noContent.title} subtitle={noContent.subtitle} />
+        )}
       </div>
     </>
   );

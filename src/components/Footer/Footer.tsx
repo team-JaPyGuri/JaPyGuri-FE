@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex w-full flex-col gap-2 bg-grayscale-300 p-4 pb-20 text-grayscale-600">
+    <footer className="mt-auto flex w-full flex-col gap-2 bg-grayscale-300 p-4 pb-32 text-grayscale-600">
       <p className="regular-13">© NAILO ALL RIGHTS RESERVED</p>
       <a
         target="_blank"

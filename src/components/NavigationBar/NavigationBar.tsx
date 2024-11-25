@@ -19,7 +19,7 @@ const NavigationBar = () => {
     {
       name: "AI 피팅",
       icon: AiIcon,
-      handler: () => navigate("/ai"),
+      handler: () => navigate("/ai-result"),
     },
     {
       name: "홈",

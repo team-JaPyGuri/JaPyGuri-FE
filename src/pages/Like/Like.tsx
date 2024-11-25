@@ -26,7 +26,15 @@ const Like = () => {
   return (
     <Layout>
       <Header subTitle="좋아요" />
-      <ListView title="내가 좋아요한 네일아트" data={nailData} />
+      <ListView
+        title="내가 좋아요한 네일아트"
+        sort={true}
+        noContent={{
+          title: "아직 좋아요한 네일아트가 없어요.",
+          subtitle: "'홈 화면'에서 좋아하는 네일아트를 찾아보세요.",
+        }}
+        data={nailData}
+      />
       <Footer />
       <NavigationBar />
     </Layout>
