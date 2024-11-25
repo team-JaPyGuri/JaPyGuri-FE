@@ -1,19 +1,28 @@
-import { useRef, useEffect, useState } from "react";
 import SubHeader from "../../components/Header/SubHeader";
 import Layout from "../../components/Layout/Layout";
-import { useToast } from "../../components/Toast/useToast";
-import { useMap } from "./useMap";
 import MainPinIcon from "../../assets/svgs/mainPin.svg?react";
 import MapFooter from "./components/MapFooter";
 
-import ShopMockData from "../../mockData/shop_list.json";
+import { useRef, useEffect, useState } from "react";
+import { useToast } from "../../components/Toast/useToast";
+import { useMap } from "./useMap";
+import { getShopList } from "../../api/getShopList";
+
+interface MarkersInfo {
+  shop_id: number;
+  shop_key: string;
+  shop_name: string;
+  shop_url: string;
+  lat: string;
+  lng: string;
+}
 
 const RequestMap = () => {
   const markersRef = useRef<naver.maps.Marker[]>([]);
+  const markersInfo = useRef<Record<string, MarkersInfo>>({});
 
-  const isMapInitialized = useRef(false);
+  const [isMapInitialized, setIsMapInitialized] = useState(false);
   const showToast = useToast();
-  const ShopData = ShopMockData;
 
   const [currentAddress, setCurrentAddress] = useState<string>("-");
   const [activeMarkerCount, setActiveMarkerCount] = useState<number>(0);
@@ -34,51 +43,60 @@ const RequestMap = () => {
   } = useMap(centerCoords, setCenterCoords, showToast);
 
   useEffect(() => {
-    if (mapInstanceRef.current) {
-      const updateMarkers = (
-        map: naver.maps.Map | undefined,
-        markers: naver.maps.Marker[],
-      ) => {
-        if (!map) return;
-        const mapBounds = map.getBounds();
-        markers.forEach((marker) => {
+    if (!isMapInitialized) {
+      console.error("Map instance is not initialized.");
+      return;
+    }
+
+    console.log("Adding idle event listener...");
+
+    const updateMarkers = (
+      map: naver.maps.Map | undefined,
+      markers: naver.maps.Marker[],
+    ) => {
+      if (!map) {
+        console.error("Map instance is not available.");
+        return;
+      }
+
+      const mapBounds = map.getBounds();
+      if (!mapBounds) {
+        console.error("Failed to get map bounds.");
+        return;
+      }
+
+      markers.forEach((marker) => {
+        try {
           const position = marker.getPosition();
           if (mapBounds.hasPoint(position)) {
-            showMarker(map, marker);
+            marker.setMap(map);
           } else {
-            hideMarker(marker);
+            marker.setMap(null);
           }
-        });
-      };
-
-      const showMarker = (map: naver.maps.Map, marker: naver.maps.Marker) => {
-        if (!marker.getMap()) {
-          marker.setMap(map);
+        } catch (error) {
+          console.error("Error updating marker:", error);
         }
-      };
+      });
+    };
 
-      const hideMarker = (marker: naver.maps.Marker) => {
-        if (marker.getMap()) {
-          marker.setMap(null);
-        }
-      };
+    const MoveEventListener = naver.maps.Event.addListener(
+      mapInstanceRef.current,
+      "idle",
+      () => {
+        console.log("Idle event triggered.");
+        updateMarkers(mapInstanceRef.current, markersRef.current);
+        setActiveMarkerCount(
+          markersRef.current.filter((marker) => marker.getMap() !== null)
+            .length,
+        );
+      },
+    );
 
-      const MoveEventListener = naver.maps.Event.addListener(
-        mapInstanceRef.current,
-        "idle",
-        () => {
-          updateMarkers(mapInstanceRef.current, markersRef.current);
-          setActiveMarkerCount(
-            markersRef.current.filter((marker) => marker.getMap() !== null)
-              .length,
-          );
-        },
-      );
-      return () => {
-        naver.maps.Event.removeListener(MoveEventListener);
-      };
-    }
-  }, [mapInstanceRef]);
+    return () => {
+      console.log("Removing idle event listener...");
+      naver.maps.Event.removeListener(MoveEventListener);
+    };
+  }, [mapInstanceRef, isMapInitialized]);
 
   useEffect(() => {
     if (mapContainerRef.current) {
@@ -100,29 +118,50 @@ const RequestMap = () => {
   }, [centerCoords, mapContainerRef]);
 
   useEffect(() => {
-    if (!isMapInitialized.current) {
+    if (!isMapInitialized) {
       initializeMap();
       fetchCurrentLocation();
       setupMapEvents();
 
-      ShopData.forEach((shop) => {
-        const marker = new naver.maps.Marker({
-          map: mapInstanceRef.current,
-          position: new naver.maps.LatLng(+shop.lat, +shop.lng),
-          title: shop.shop_key,
-          zIndex: 10,
-        });
-        markersRef.current.push(marker);
-      });
+      const fetchShopList = async () => {
+        const res = await getShopList();
+        res.forEach(
+          ({
+            shop_id,
+            shop_key,
+            shop_name,
+            shop_url,
+            lat,
+            lng,
+          }: MarkersInfo) => {
+            const marker = new naver.maps.Marker({
+              map: mapInstanceRef.current,
+              position: new naver.maps.LatLng(+lat, +lng),
+              title: shop_key,
+              zIndex: 10,
+            });
+            markersRef.current.push(marker);
+            markersInfo.current[shop_key] = {
+              shop_id,
+              shop_key,
+              shop_name,
+              shop_url,
+              lat,
+              lng,
+            };
+          },
+        );
+      };
 
-      isMapInitialized.current = true;
+      fetchShopList();
+      setIsMapInitialized(true);
     }
   }, [
+    isMapInitialized,
     initializeMap,
     mapInstanceRef,
     fetchCurrentLocation,
     setupMapEvents,
-    ShopData,
   ]);
 
   return (
