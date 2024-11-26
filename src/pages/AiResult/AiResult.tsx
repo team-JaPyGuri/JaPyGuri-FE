@@ -22,7 +22,7 @@ const AiResult = () => {
       />
       <Footer />
       <NavigationBar />
-      <div className="fixed bottom-14 w-full px-4 py-3">
+      <div className="absolute bottom-14 w-full px-4 py-3">
         <Button onClick={() => navigate("/select-nail")}>
           네일아트 AI 피팅 시작하기
         </Button>
