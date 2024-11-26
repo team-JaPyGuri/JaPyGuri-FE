@@ -54,10 +54,16 @@ const BottomUpSheetContainer = () => {
     if (bottomUpSheetContent.visible) {
       setShowZIndex(true);
     } else {
-      const timeout = setTimeout(() => setShowZIndex(false), 300);
+      const timeout = setTimeout(() => {
+        setShowZIndex(false);
+        setBottomUpSheet((oldBottomUpSheetState) => ({
+          ...oldBottomUpSheetState,
+          content: null,
+        }));
+      }, 300);
       return () => clearTimeout(timeout);
     }
-  }, [bottomUpSheetContent.visible]);
+  }, [setBottomUpSheet, bottomUpSheetContent.visible]);
 
   useEffect(() => {
     setBottomUpSheet((oldBottomUpSheetState) => ({

@@ -36,6 +36,10 @@
   @apply font-pretendard text-size-16 font-medium leading-normal;
 }
 
+.medium-13 {
+  @apply font-pretendard text-size-13 font-medium leading-normal;
+}
+
 .regular-16 {
   @apply font-pretendard text-size-16 font-regular leading-normal;
 }

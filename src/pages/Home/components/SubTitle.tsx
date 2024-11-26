@@ -16,7 +16,9 @@ const SubTitle = ({ title, className }: SubTitleProps) => {
       <button
         className="regular-13 text-grayscale-600 underline"
         onClick={() =>
-          showToast({ message: "데모 버전 제공 불가 기능입니다." })
+          showToast({
+            message: "데모 버전에서는 해당 기능을 제공할 수 없어요.",
+          })
         }
       >
         더보기
