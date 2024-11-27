@@ -25,7 +25,7 @@ const Home = () => {
   const [nailSnapList, setNailSnapList] = useState<NailData[]>([]);
   const [nailLikeList, setNailLikeList] = useState<string[]>([]);
   const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
@@ -41,6 +41,7 @@ const Home = () => {
     };
 
     fetchNailLikeList();
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {

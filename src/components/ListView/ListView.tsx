@@ -3,6 +3,14 @@ import ToggleHeader from "./components/ToggleHeader";
 import NailSnapCard from "../NailCard/NailSnapCard";
 import NoContents from "../NoContents/NoContents";
 
+interface NailData {
+  design_key: string;
+  design_url: string;
+  is_active: boolean;
+  price: string;
+  like_count: number;
+}
+
 interface ListViewProps {
   title: string;
   sort?: boolean;
@@ -23,14 +31,13 @@ type SortType = "byDate" | "byPopularity";
 
 const ListView = ({ title, noContent, data, sort = false }: ListViewProps) => {
   const [sortType, setSortType] = useState<SortType>("byDate");
-  const [showData, setShowData] = useState(data);
+  const [currentData, setCurrentData] = useState<NailData[] | null>(null);
 
   useEffect(() => {
-    if (data) {
-      setShowData((prevData) => {
-        if (sortType === "byDate") prevData = data;
-        else prevData?.sort((a, b) => b.like_count - a.like_count);
-        return prevData;
+    if (data && sort) {
+      setCurrentData(() => {
+        if (sortType === "byDate") return data;
+        else return [...data].sort((a, b) => b.like_count - a.like_count);
       });
     }
   }, [data, sortType]);
@@ -44,8 +51,8 @@ const ListView = ({ title, noContent, data, sort = false }: ListViewProps) => {
         setSortType={setSortType}
       />
       <div className="mb-32 flex w-full flex-wrap justify-start">
-        {showData?.length ? (
-          showData.map(
+        {currentData ? (
+          currentData.map(
             ({ design_key, design_url, is_active, price, like_count }) => (
               <NailSnapCard
                 key={design_key}
