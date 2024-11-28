@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useBottomUpSheet } from "../BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
-import { toggleLike } from "../../api/likeToggle";
+import { toggleLike } from "../../hooks/api/likeToggle";
 import { useToast } from "../Toast/useToast";
 
 import LikeNotActiveIcon from "../../assets/svgs/likeNotActive.svg?react";

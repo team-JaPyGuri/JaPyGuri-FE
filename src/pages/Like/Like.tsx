@@ -5,7 +5,7 @@ import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
 import { useState, useEffect } from "react";
 import ListView from "../../components/ListView/ListView";
-import { getLikeList } from "../../api/getLikeList";
+import { getLikeList } from "../../hooks/api/getLikeList";
 
 const Like = () => {
   const [nailData, setNailData] = useState([]);

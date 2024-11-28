@@ -5,7 +5,7 @@ import NailDetail from "../../components/BottomUpSheet/components/NailDetail";
 import { useEffect, useState } from "react";
 import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
-import { toggleLike } from "../../api/likeToggle";
+import { toggleLike } from "../../hooks/api/likeToggle";
 import { useToast } from "../Toast/useToast";
 
 interface CardProps {

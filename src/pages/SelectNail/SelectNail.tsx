@@ -3,7 +3,7 @@ import SubHeader from "../../components/Header/SubHeader";
 import ListView from "../../components/ListView/ListView";
 
 import { useState, useEffect } from "react";
-import { getLikeList } from "../../api/getLikeList";
+import { getLikeList } from "../../hooks/api/getLikeList";
 
 const SelectNail = () => {
   const [nailData, setNailData] = useState([]);

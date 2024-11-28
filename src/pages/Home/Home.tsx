@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { getLikeList } from "../../api/getLikeList";
+import { getLikeList } from "../../hooks/api/getLikeList";
 
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";

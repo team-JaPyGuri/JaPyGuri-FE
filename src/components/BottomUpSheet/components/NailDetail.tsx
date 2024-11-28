@@ -4,7 +4,7 @@ import Button from "../../../components/Button/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../../Toast/useToast";
-import { toggleLike } from "../../../api/likeToggle";
+import { toggleLike } from "../../../hooks/api/likeToggle";
 
 interface NailDetailProps {
   id: string;
