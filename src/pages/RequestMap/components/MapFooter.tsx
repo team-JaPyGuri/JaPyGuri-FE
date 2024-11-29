@@ -21,6 +21,9 @@ const MapFooter = ({
 
   const handleRequestButtonClicked = () => {
     if (!activeMarker.length) {
+      showToast({
+        message: "근처에 네일샵이 없어요. 다른 위치로 지도를 이동해주세요.",
+      });
       return;
     }
     const { latitude, longitude } = centerCoords;
