@@ -6,7 +6,7 @@ export const useSetupMapEvents = (
   setCenterCoords: (coords: Coordinates) => void,
   setCurrentAddress: React.Dispatch<React.SetStateAction<string>>,
   markersRef: React.MutableRefObject<naver.maps.Marker[]>,
-  setActiveMarkerCount: React.Dispatch<React.SetStateAction<number>>,
+  setActiveMarker: React.Dispatch<React.SetStateAction<naver.maps.Marker[]>>,
 ) => {
   const setupMapEvents = useCallback(() => {
     if (!mapInstanceRef.current) return;
@@ -47,14 +47,14 @@ export const useSetupMapEvents = (
         .filter((marker) => !visibleMarkers.includes(marker))
         .forEach((marker) => marker.setMap(null));
 
-      setActiveMarkerCount(visibleMarkers.length);
+      setActiveMarker(visibleMarkers);
     });
   }, [
     mapInstanceRef,
     setCenterCoords,
     setCurrentAddress,
     markersRef,
-    setActiveMarkerCount,
+    setActiveMarker,
   ]);
 
   return { setupMapEvents };

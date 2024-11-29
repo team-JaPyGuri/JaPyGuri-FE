@@ -1,25 +1,44 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import { useToast } from "./../../../components/Toast/useToast";
+import Coordinates from "../../../types/Coordinates";
 
 interface MapFooterProps {
+  centerCoords: Coordinates;
   currentAddress: string;
-  activeMarkerCount: number;
+  activeMarker: naver.maps.Marker[];
   className?: string;
 }
 
 const MapFooter = ({
+  centerCoords,
   currentAddress,
-  activeMarkerCount,
+  activeMarker,
   className,
 }: MapFooterProps) => {
   const showToast = useToast();
   const navigate = useNavigate();
 
   const handleRequestButtonClicked = () => {
+    if (!activeMarker.length) {
+      return;
+    }
+    const { latitude, longitude } = centerCoords;
+    const requestShopList = [...activeMarker]
+      .sort((a, b) => {
+        const { y: alat, x: alng } = a.getPosition();
+        const { y: blat, x: blng } = b.getPosition();
+        const aDistance = (latitude - alat) ^ (2 + (longitude - alng)) ^ 2;
+        const bDistance = (latitude - blat) ^ (2 + (longitude - blng)) ^ 2;
+        return aDistance - bDistance;
+      })
+      .slice(0, 5);
+
+    console.log(requestShopList);
+
     navigate("/");
     showToast({
-      message: "네일아트 요청이 완료되었어요. 응답이 오면 알려드릴게요.",
+      message: `${requestShopList.length}개의 네일샵에 요청을 보냈어요. 응답이 오면 알려드릴게요.`,
     });
   };
 
@@ -34,11 +53,16 @@ const MapFooter = ({
         <span className="semibold-16 text-grayscale-900">현재 위치</span>
         <span className="regular-13 text-grayscale-600">{currentAddress}</span>
         <span className="semibold-13 text-grayscale-900">
-          {activeMarkerCount}개의 네일샵이 근처에 있어요.
+          {activeMarker.length
+            ? `${activeMarker.length}개의 네일샵이 근처에 있어요.`
+            : "근처에 네일샵이 없어요. 다른 위치로 지도를 이동해주세요."}
         </span>
       </div>
       <div className="w-full px-4 py-3">
-        <Button onClick={() => handleRequestButtonClicked()}>
+        <Button
+          className={activeMarker.length ? "" : "!bg-grayscale-500"}
+          onClick={() => handleRequestButtonClicked()}
+        >
           네일아트 요청하기
         </Button>
       </div>

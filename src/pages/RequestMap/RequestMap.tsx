@@ -30,7 +30,7 @@ const RequestMap = () => {
   const [centerCoords, setCenterCoords] = useState(INITIAL_COORDINATES);
   const [currentAddress, setCurrentAddress] = useState("-");
   const [currentShop, setCurrentShop] = useState<MarkerInfo | null>(null);
-  const [activeMarkerCount, setActiveMarkerCount] = useState(0);
+  const [activeMarker, setActiveMarker] = useState<naver.maps.Marker[]>([]);
 
   const { fetchCurrentLocation } = useFetchCurrentLocation(
     setCenterCoords,
@@ -42,7 +42,7 @@ const RequestMap = () => {
     setCenterCoords,
     setCurrentAddress,
     markersRef,
-    setActiveMarkerCount,
+    setActiveMarker,
   );
   const { shopMarkers } = useShopMarkers({
     mapInstanceRef,
@@ -75,8 +75,9 @@ const RequestMap = () => {
         </div>
       </div>
       <MapFooter
+        centerCoords={centerCoords}
         currentAddress={currentAddress}
-        activeMarkerCount={activeMarkerCount}
+        activeMarker={activeMarker}
       />
     </Layout>
   );

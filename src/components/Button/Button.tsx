@@ -8,7 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = ({ children, className, ...props }: ButtonProps) => {
   return (
     <button
-      className={`${className} regular-14 flex h-11 w-full flex-row items-center justify-center rounded-[0.25rem] bg-grayscale-900 px-4 text-grayscale-100`}
+      className={`regular-14 flex h-11 w-full flex-row items-center justify-center rounded-[0.25rem] bg-grayscale-900 px-4 text-grayscale-100 duration-300 ${className}`}
       {...props}
     >
       {children}
