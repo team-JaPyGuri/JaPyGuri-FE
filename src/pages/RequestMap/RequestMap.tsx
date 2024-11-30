@@ -13,6 +13,7 @@ import { useInitializeMap } from "../../hooks/map/useInitializeMap";
 import { useFetchCurrentLocation } from "../../hooks/map/useFetchCurrentLocation";
 import { useSetupMapEvents } from "../../hooks/map/useSetupMapEvents";
 import { useShopMarkers } from "../../hooks/map/useShopMarkers";
+import { useParams } from "react-router-dom";
 
 const INITIAL_COORDINATES: Coordinates = {
   latitude: 37.5665,
@@ -20,6 +21,8 @@ const INITIAL_COORDINATES: Coordinates = {
 };
 
 const RequestMap = () => {
+  const { designId } = useParams();
+
   const showToast = useToast();
 
   const markersRef = useRef<naver.maps.Marker[]>([]);
@@ -78,6 +81,7 @@ const RequestMap = () => {
         centerCoords={centerCoords}
         currentAddress={currentAddress}
         activeMarker={activeMarker}
+        designId={designId ?? ""}
       />
     </Layout>
   );

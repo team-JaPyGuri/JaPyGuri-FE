@@ -2,11 +2,14 @@ import { useNavigate } from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import { useToast } from "./../../../components/Toast/useToast";
 import Coordinates from "../../../types/Coordinates";
+import { useRecoilValue } from "recoil";
+import { socketSelector } from "../../../stores/stateSocket";
 
 interface MapFooterProps {
   centerCoords: Coordinates;
   currentAddress: string;
   activeMarker: naver.maps.Marker[];
+  designId: string;
   className?: string;
 }
 
@@ -14,10 +17,12 @@ const MapFooter = ({
   centerCoords,
   currentAddress,
   activeMarker,
+  designId,
   className,
 }: MapFooterProps) => {
   const showToast = useToast();
   const navigate = useNavigate();
+  const socket = useRecoilValue(socketSelector);
 
   const handleRequestButtonClicked = () => {
     if (!activeMarker.length) {
@@ -38,6 +43,30 @@ const MapFooter = ({
       .slice(0, 5);
 
     console.log(requestShopList);
+    requestShopList.forEach((marker) => {
+      console.log(
+        JSON.stringify({
+          action: "request_service",
+          data: {
+            customer_key: localStorage.getItem("socketUserId"),
+            design_key: designId,
+            shop_key: marker.getOptions("title"),
+            contents: "",
+          },
+        }),
+      );
+      socket.send(
+        JSON.stringify({
+          action: "request_service",
+          data: {
+            customer_key: localStorage.getItem("socketUserId"),
+            design_key: designId,
+            shop_key: marker.getOptions("title"),
+            contents: "",
+          },
+        }),
+      );
+    });
 
     navigate("/");
     showToast({

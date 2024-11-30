@@ -97,7 +97,7 @@ const NailDetail = ({
           </Button>
           <Button>AI 피팅 체험하기</Button>
         </div>
-        <Button onClick={() => navigate(`/request-map/?${id}`)}>
+        <Button onClick={() => navigate(`/request-map/${id}`)}>
           해당 네일아트 요청하기
         </Button>
       </div>
