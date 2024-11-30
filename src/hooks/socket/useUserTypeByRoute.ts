@@ -10,10 +10,9 @@ const useUserTypeByRoute = () => {
 
   useEffect(() => {
     if (location.pathname === "/dashboard") {
-      console.log(1);
       setUser({ userType: "shop", userId: import.meta.env.VITE_API_USER_ID });
     } else {
-      if (user[0].userType === "shop") {
+      if (user[0] === null || user[0].userType === "shop") {
         setUser({
           userType: "customer",
           userId: import.meta.env.VITE_API_USER_ID,

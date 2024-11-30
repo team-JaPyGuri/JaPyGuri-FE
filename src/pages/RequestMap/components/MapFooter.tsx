@@ -3,7 +3,7 @@ import Button from "../../../components/Button/Button";
 import { useToast } from "./../../../components/Toast/useToast";
 import Coordinates from "../../../types/Coordinates";
 import { useRecoilValue } from "recoil";
-import { socketSelector } from "../../../stores/stateSocket";
+import { stateSocket } from "../../../stores/stateSocket";
 
 interface MapFooterProps {
   centerCoords: Coordinates;
@@ -22,7 +22,7 @@ const MapFooter = ({
 }: MapFooterProps) => {
   const showToast = useToast();
   const navigate = useNavigate();
-  const socket = useRecoilValue(socketSelector);
+  const socket = useRecoilValue(stateSocket);
 
   const handleRequestButtonClicked = () => {
     if (!activeMarker.length) {
@@ -44,28 +44,18 @@ const MapFooter = ({
 
     console.log(requestShopList);
     requestShopList.forEach((marker) => {
-      console.log(
-        JSON.stringify({
-          action: "request_service",
-          data: {
-            customer_key: localStorage.getItem("socketUserId"),
-            design_key: designId,
-            shop_key: marker.getOptions("title"),
-            contents: "",
-          },
-        }),
-      );
-      socket.send(
-        JSON.stringify({
-          action: "request_service",
-          data: {
-            customer_key: localStorage.getItem("socketUserId"),
-            design_key: designId,
-            shop_key: marker.getOptions("title"),
-            contents: "",
-          },
-        }),
-      );
+      if (socket)
+        socket.send(
+          JSON.stringify({
+            action: "request_service",
+            data: {
+              customer_key: localStorage.getItem("socketUserId"),
+              design_key: designId,
+              shop_key: marker.getOptions("title"),
+              contents: "",
+            },
+          }),
+        );
     });
 
     navigate("/");
