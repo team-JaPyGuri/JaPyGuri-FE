@@ -5,26 +5,24 @@ import { stopPropagation } from "../../../utils/stopPropagation";
 
 interface ToggleHeaderProps {
   title: string;
-  sort: boolean;
   sortType: "byDate" | "byPopularity";
-  setSortType: React.Dispatch<React.SetStateAction<"byDate" | "byPopularity">>;
+  setSortType: React.Dispatch<
+    React.SetStateAction<"byDate" | "byPopularity">
+  > | null;
 }
 
-const ToggleHeader = ({
-  title,
-  sort,
-  sortType,
-  setSortType,
-}: ToggleHeaderProps) => {
+const ToggleHeader = ({ title, sortType, setSortType }: ToggleHeaderProps) => {
   const [toggleActive, setToggleActive] = useState(false);
 
   const byDateButtonHandler = (event: React.MouseEvent) => {
+    if (setSortType === null) return;
     stopPropagation(event);
     setSortType("byDate");
     setToggleActive(false);
   };
 
   const byPopularityButtonHandler = (event: React.MouseEvent) => {
+    if (setSortType === null) return;
     stopPropagation(event);
     setSortType("byPopularity");
     setToggleActive(false);
@@ -39,11 +37,11 @@ const ToggleHeader = ({
     <div className="flex w-full flex-row justify-between px-4 py-3">
       <span className="medium-13 text-grayscale-600">{title}</span>
       <button
-        onClick={() => sort && setToggleActive(!toggleActive)}
+        onClick={() => setSortType && setToggleActive(!toggleActive)}
         className="regular-13 relative flex flex-row items-center text-grayscale-600"
       >
         {sortType === "byDate" ? "등록순" : "인기순"}
-        {sort && (
+        {setSortType && (
           <ArrowDownIcon
             className={`${toggleActive && "rotate-180"} duration-300`}
           />

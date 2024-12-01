@@ -14,7 +14,6 @@ const RequestResult = () => {
           title: "아직 샵 요청 내역이 없어요.",
           subtitle: "'홈 화면'에서 네일아트를 찾아 요청해보세요.",
         }}
-        data={null}
       />
       <Footer />
       <NavigationBar />

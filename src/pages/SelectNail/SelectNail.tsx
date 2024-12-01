@@ -1,12 +1,30 @@
+import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import SubHeader from "../../components/Header/SubHeader";
 import ListView from "../../components/ListView/ListView";
 
-import { useState, useEffect } from "react";
+import NailData from "../../types/NailData";
+import { SortType } from "../../types/Sorttype";
+
 import { getLikeList } from "../../hooks/api/getLikeList";
+import NailLikeCard from "../../components/NailCard/NailLikeCard";
 
 const SelectNail = () => {
   const [nailData, setNailData] = useState([]);
+  const [sortType, setSortType] = useState<SortType>("byDate");
+  const [currentData, setCurrentData] = useState<NailData[] | null>(null);
+
+  useEffect(() => {
+    if (nailData) {
+      setCurrentData(() => {
+        if (sortType === "byDate") return nailData;
+        else
+          return [...nailData].sort(
+            (a: NailData, b: NailData) => b.like_count - a.like_count,
+          );
+      });
+    }
+  }, [nailData, sortType]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,13 +51,19 @@ const SelectNail = () => {
       </div>
       <ListView
         title="내가 좋아요한 네일아트"
-        sort={true}
+        sortType={sortType}
+        setSortType={setSortType}
         noContent={{
           title: "아직 생성된 AI 피팅이 없어요.",
           subtitle: "하단 ‘시작하기’ 버튼을 눌러 체험해보세요.",
         }}
-        data={nailData}
-      />
+      >
+        {currentData
+          ? currentData.map(({ design_key, design_url }) => (
+              <NailLikeCard key={design_key} id={design_key} img={design_url} />
+            ))
+          : null}
+      </ListView>
     </Layout>
   );
 };

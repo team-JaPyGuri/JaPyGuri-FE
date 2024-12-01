@@ -3,8 +3,10 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { stateSocket } from "../../stores/stateSocket";
 import { stateUser } from "../../stores/stateUser";
 
-const KEY_REGEXP =
+const USER_KEY_REGEXP =
   /Connected as customer: 자파구리, key=(?<key>[0-9a-zA-Z/-]+)/;
+const SHOP_KEY_REGEXP =
+  /Connected as shop: 유어썸뷰티, key=(?<key>[0-9a-zA-Z/-]+)/;
 
 const SocketInitializer = () => {
   const user = useRecoilValue(stateUser);
@@ -24,10 +26,15 @@ const SocketInitializer = () => {
       const result = JSON.parse(event.data);
       console.log("WebSocket message received:", result);
 
-      if (KEY_REGEXP.test(result.message)) {
+      if (USER_KEY_REGEXP.test(result.message)) {
         localStorage.setItem(
           "socketUserId",
-          result.message.match(KEY_REGEXP).groups.key,
+          result.message.match(USER_KEY_REGEXP).groups.key,
+        );
+      } else if (SHOP_KEY_REGEXP.test(result.message)) {
+        localStorage.setItem(
+          "socketShopId",
+          result.message.match(SHOP_KEY_REGEXP).groups.key,
         );
       } else if (result.type === "completed_request") {
         console.log("WebSocket send request_service complete.");
