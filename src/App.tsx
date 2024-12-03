@@ -15,6 +15,7 @@ import SelectNail from "./pages/SelectNail/SelectNail";
 import SocketInitializer from "./components/SocketInitializer/SocketInitializer";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Camera from "./pages/Camera/Camera";
+import NotFound from "./pages/NotFound/NotFound";
 
 const AppRouter = () => {
   useUserTypeByRoute();
@@ -32,6 +33,7 @@ const AppRouter = () => {
         <Route path="/select-nail" element={<SelectNail />} />
         <Route path="/camera/:designId" element={<Camera />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
