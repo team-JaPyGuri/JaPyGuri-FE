@@ -14,6 +14,7 @@ import RequestResult from "./pages/RequestResult/RequestResult";
 import SelectNail from "./pages/SelectNail/SelectNail";
 import SocketInitializer from "./components/SocketInitializer/SocketInitializer";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Camera from "./pages/Camera/Camera";
 
 const AppRouter = () => {
   useUserTypeByRoute();
@@ -29,6 +30,7 @@ const AppRouter = () => {
         <Route path="/ai-result" element={<AiResult />} />
         <Route path="/request-result" element={<RequestResult />} />
         <Route path="/select-nail" element={<SelectNail />} />
+        <Route path="/camera/:designId" element={<Camera />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </>

@@ -7,6 +7,7 @@ import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpShee
 import { stopPropagation } from "../../utils/stopPropagation";
 import { toggleLike } from "../../hooks/api/likeToggle";
 import { useToast } from "../Toast/useToast";
+import { onErrorImg } from "../../utils/onErrorImg";
 
 interface CardProps {
   id: string;
@@ -74,6 +75,7 @@ const NailInfoCard = ({
         <img
           className="absolute left-0 top-0 h-full w-full object-cover object-center"
           src={img}
+          onError={onErrorImg}
           alt="nail"
         />
         <button

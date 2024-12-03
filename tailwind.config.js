@@ -53,6 +53,9 @@ export default {
         slideOut: "slideOut 0.3s ease-in-out forwards",
         likeActive: "likeActive 0.2s ease-in-out forwards",
       },
+      aspectRatio: {
+        camera: "3 / 4",
+      },
       colors: {
         red: "#f31110",
         yellow: "#FFD700",

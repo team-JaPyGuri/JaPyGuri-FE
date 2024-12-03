@@ -1,17 +1,21 @@
-import { useNavigate } from "react-router-dom";
-import LikeActiveIcon from "../../assets/svgs/likeActive.svg?react";
+import { useBottomUpSheet } from "./../BottomUpSheet/useBottomUpSheet";
+import AiFittingResult from "../BottomUpSheet/components/AiFittingResult";
 import { onErrorImg } from "../../utils/onErrorImg";
 
 interface NailLikeCardProps {
-  id: string;
-  img: string;
+  id?: string;
+  before: string;
+  after: string;
 }
 
-const NailLikeCard = ({ id, img }: NailLikeCardProps) => {
-  const navigate = useNavigate();
+const AiResultCard = ({ id = "0", before, after }: NailLikeCardProps) => {
+  const showBottomUpSheet = useBottomUpSheet();
 
   const handleNailCardClicked = () => {
-    navigate(`/camera/${id}`);
+    showBottomUpSheet({
+      title: "AI 피팅 결과 확인하기",
+      content: <AiFittingResult before={before} after={after} />,
+    });
   };
 
   return (
@@ -21,19 +25,14 @@ const NailLikeCard = ({ id, img }: NailLikeCardProps) => {
     >
       <div className="relative aspect-square w-full cursor-pointer overflow-hidden bg-grayscale-900 bg-opacity-[0.02]">
         <img
-          src={img}
+          src={after}
           onError={onErrorImg}
           alt="nail"
           className="h-full w-full object-cover"
         />
-        <div className="absolute bottom-1 right-1">
-          <LikeActiveIcon
-            className={`relative left-0 top-0 animate-likeActive`}
-          />
-        </div>
       </div>
     </div>
   );
 };
 
-export default NailLikeCard;
+export default AiResultCard;
