@@ -42,7 +42,6 @@ const MapFooter = ({
       })
       .slice(0, 5);
 
-    console.log(requestShopList);
     requestShopList.forEach((marker) => {
       if (socket)
         socket.send(
@@ -57,6 +56,18 @@ const MapFooter = ({
           }),
         );
     });
+    if (socket)
+      socket.send(
+        JSON.stringify({
+          action: "request_service",
+          data: {
+            customer_key: localStorage.getItem("socketUserId"),
+            design_key: designId,
+            shop_key: "04d4a60a-f612-4119-967b-2971a6c3b41d",
+            contents: "",
+          },
+        }),
+      );
 
     navigate("/");
     showToast({
@@ -66,7 +77,7 @@ const MapFooter = ({
 
   return (
     <div
-      className={`${className} flex w-full flex-col items-center justify-center rounded-t-lg border-x border-t border-grayscale-300 bg-grayscale-100`}
+      className={`${className} flex w-full flex-col items-center justify-center rounded-t-lg border-x border-t border-grayscale-300 bg-grayscale-100 pb-2`}
     >
       <div className="flex w-full flex-col items-center justify-start py-2">
         <div className="h-1 w-9 rounded-sm bg-grayscale-400" />

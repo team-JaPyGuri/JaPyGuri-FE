@@ -40,7 +40,7 @@ const NavigationBar = () => {
   ];
 
   return (
-    <nav className="fixed bottom-0 left-1/2 z-10 flex w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 flex-row gap-3 border-t border-gray-300 bg-grayscale-100 px-4">
+    <nav className="fixed bottom-0 left-1/2 z-10 flex w-full min-w-[20rem] max-w-[37.5rem] -translate-x-1/2 flex-row gap-3 border-t border-gray-300 bg-grayscale-100 px-4 pb-2">
       {LINKS &&
         LINKS.map(({ name, icon: Icon, handler }) => (
           <button

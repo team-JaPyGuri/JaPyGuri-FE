@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import LikeActiveIcon from "../../assets/svgs/likeActive.svg?react";
 import { onErrorImg } from "../../utils/onErrorImg";
 
 interface NailLikeCardProps {
@@ -26,11 +25,6 @@ const NailLikeCard = ({ id, img }: NailLikeCardProps) => {
           alt="nail"
           className="h-full w-full object-cover"
         />
-        <div className="absolute bottom-1 right-1">
-          <LikeActiveIcon
-            className={`relative left-0 top-0 animate-likeActive`}
-          />
-        </div>
       </div>
     </div>
   );

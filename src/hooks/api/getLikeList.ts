@@ -1,4 +1,14 @@
 import axios from "axios";
+import { changeImgUrl } from "./../../utils/changeImgUrl";
+
+interface NailData {
+  design_key: string;
+  design_url: string;
+  is_active: boolean;
+  like_active: boolean;
+  price: string;
+  like_count: number;
+}
 
 export const getLikeList = async () => {
   try {
@@ -11,7 +21,13 @@ export const getLikeList = async () => {
         },
       },
     );
-    return response.data;
+    if (Array.isArray(response.data))
+      return response.data.map((item: NailData) => ({
+        ...item,
+        like_active: true,
+        design_url: changeImgUrl(item.design_url),
+      }));
+    else return null;
   } catch (error) {
     console.error("Error getting like list:", error);
     throw error;

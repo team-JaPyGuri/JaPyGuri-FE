@@ -11,7 +11,7 @@ import NailData from "../../types/NailData";
 import { SortType } from "../../types/Sorttype";
 
 const Like = () => {
-  const [nailData, setNailData] = useState([]);
+  const [nailData, setNailData] = useState<NailData[] | null>(null);
   const [sortType, setSortType] = useState<SortType>("byDate");
   const [currentData, setCurrentData] = useState<NailData[] | null>(null);
 
@@ -31,7 +31,7 @@ const Like = () => {
     const fetchData = async () => {
       try {
         const res = await getLikeList();
-        setNailData(res);
+        if (res !== null) setNailData(res);
       } catch (err) {
         console.error("Error fetching like list:", err);
       }
@@ -54,12 +54,20 @@ const Like = () => {
       >
         {currentData
           ? currentData.map(
-              ({ design_key, design_url, is_active, price, like_count }) => (
+              ({
+                design_key,
+                design_url,
+                like_active,
+                is_active,
+                price,
+                like_count,
+              }) => (
                 <NailSnapCard
                   key={design_key}
                   id={design_key}
                   img={design_url}
-                  likeDefault={is_active}
+                  likeDefault={like_active}
+                  aiFitActive={is_active}
                   price={price}
                   like={like_count}
                 />

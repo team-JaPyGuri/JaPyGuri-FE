@@ -134,7 +134,7 @@ const Camera = () => {
         />
       </div>
       <canvas ref={canvasRef} style={{ display: "none" }} />
-      <div className="flex w-full flex-row gap-3 px-4 py-3">
+      <div className="flex w-full flex-row gap-3 px-4 py-3 pb-5">
         <Button
           className={`${isCameraOn || "!bg-grayscale-500"}`}
           onClick={takePhoto}

@@ -13,6 +13,7 @@ interface NailSnapCardProps {
   id: string;
   img: string;
   likeDefault: boolean;
+  aiFitActive: boolean;
   price: string;
   like: number;
   rowScroll?: boolean;
@@ -24,6 +25,7 @@ const NailSnapCard = ({
   price,
   like,
   likeDefault,
+  aiFitActive,
 }: NailSnapCardProps) => {
   const showToast = useToast();
   const showBottomUpSheet = useBottomUpSheet();
@@ -63,6 +65,7 @@ const NailSnapCard = ({
               price={price}
               likeCount={likeCount}
               likeActive={likeActive}
+              aiFitActive={aiFitActive}
               setLikeActive={setLikeActive}
             />
           ),

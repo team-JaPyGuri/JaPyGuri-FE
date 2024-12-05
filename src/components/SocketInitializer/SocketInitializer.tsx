@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { stateSocket } from "../../stores/stateSocket";
 import { stateUser } from "../../stores/stateUser";
+import { useToast } from "../Toast/useToast";
 
 const USER_KEY_REGEXP =
   /Connected as customer: 자파구리, key=(?<key>[0-9a-zA-Z/-]+)/;
@@ -11,6 +12,7 @@ const SHOP_KEY_REGEXP =
 const SocketInitializer = () => {
   const user = useRecoilValue(stateUser);
   const setSocket = useSetRecoilState(stateSocket);
+  const showToast = useToast();
 
   useEffect(() => {
     if (!user) return;
@@ -38,6 +40,11 @@ const SocketInitializer = () => {
         );
       } else if (result.type === "completed_request") {
         console.log("WebSocket send request_service complete.");
+      } else if (result.type === "tryon_result") {
+        showToast({
+          message: "AI 피팅이 완료되었어요. 지금 바로 확인해보세요.",
+          link: "/ai-result",
+        });
       }
     };
 

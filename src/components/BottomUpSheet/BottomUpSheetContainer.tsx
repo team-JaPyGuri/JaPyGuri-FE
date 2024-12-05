@@ -19,7 +19,7 @@ const BottomUpSheet = ({ title, content, className }: BottomUpSheetProps) => {
   return (
     <div
       onClick={stopPropagation}
-      className={`${className} flex w-full flex-col items-center justify-center rounded-t-lg border-x border-t border-grayscale-300 bg-grayscale-100`}
+      className={`${className} flex w-full flex-col items-center justify-center rounded-t-lg border-x border-t border-grayscale-300 bg-grayscale-100 pb-2`}
     >
       <div className="flex w-full flex-col items-center justify-start py-2">
         <div className="h-1 w-9 rounded-sm bg-grayscale-400" />

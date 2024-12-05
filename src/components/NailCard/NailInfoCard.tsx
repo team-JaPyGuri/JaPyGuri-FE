@@ -13,6 +13,7 @@ interface CardProps {
   id: string;
   img: string;
   likeDefault: boolean;
+  aiFitActive: boolean;
   price: string;
   like: number;
   rowScroll?: boolean;
@@ -24,6 +25,7 @@ const NailInfoCard = ({
   price,
   like,
   likeDefault,
+  aiFitActive,
   rowScroll = false,
 }: CardProps) => {
   const showToast = useToast();
@@ -64,6 +66,7 @@ const NailInfoCard = ({
               price={price}
               likeCount={likeCount}
               likeActive={likeActive}
+              aiFitActive={aiFitActive}
               setLikeActive={setLikeActive}
             />
           ),

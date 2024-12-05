@@ -13,6 +13,7 @@ interface NailDetailProps {
   price: string;
   likeCount: number;
   likeActive: boolean;
+  aiFitActive: boolean;
   setLikeActive: (likeActive: boolean) => void;
 }
 
@@ -22,6 +23,7 @@ const NailDetail = ({
   price,
   likeCount,
   likeActive,
+  aiFitActive,
   setLikeActive,
 }: NailDetailProps) => {
   const navigate = useNavigate();
@@ -96,9 +98,11 @@ const NailDetail = ({
           >
             바로 예약하기
           </Button>
-          <Button onClick={() => navigate(`/camera/${id}`)}>
-            AI 피팅 체험하기
-          </Button>
+          {aiFitActive && (
+            <Button onClick={() => navigate(`/camera/${id}`)}>
+              AI 피팅 체험하기
+            </Button>
+          )}
         </div>
         <Button onClick={() => navigate(`/request-map/${id}`)}>
           해당 네일아트 요청하기
