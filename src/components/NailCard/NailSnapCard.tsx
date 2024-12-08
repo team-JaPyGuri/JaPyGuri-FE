@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useBottomUpSheet } from "../BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
-import { toggleLike } from "../../api/likeToggle";
+import { toggleLike } from "../../hooks/api/likeToggle";
 import { useToast } from "../Toast/useToast";
+import { onErrorImg } from "../../utils/onErrorImg";
 
 import LikeNotActiveIcon from "../../assets/svgs/likeNotActive.svg?react";
 import LikeActiveIcon from "../../assets/svgs/likeActive.svg?react";
@@ -12,6 +13,7 @@ interface NailSnapCardProps {
   id: string;
   img: string;
   likeDefault: boolean;
+  aiFitActive: boolean;
   price: string;
   like: number;
   rowScroll?: boolean;
@@ -23,6 +25,7 @@ const NailSnapCard = ({
   price,
   like,
   likeDefault,
+  aiFitActive,
 }: NailSnapCardProps) => {
   const showToast = useToast();
   const showBottomUpSheet = useBottomUpSheet();
@@ -62,6 +65,7 @@ const NailSnapCard = ({
               price={price}
               likeCount={likeCount}
               likeActive={likeActive}
+              aiFitActive={aiFitActive}
               setLikeActive={setLikeActive}
             />
           ),
@@ -70,7 +74,12 @@ const NailSnapCard = ({
       className="flex w-1/3 shrink-0 flex-col bg-grayscale-100"
     >
       <div className="relative aspect-square w-full overflow-hidden bg-grayscale-900 bg-opacity-[0.02]">
-        <img src={img} alt="nail" className="h-full w-full object-cover" />
+        <img
+          src={img}
+          onError={onErrorImg}
+          alt="nail"
+          className="h-full w-full object-cover"
+        />
         <button
           onClick={(event) => handleLikeClicked(id, event)}
           className="absolute bottom-1 right-1"

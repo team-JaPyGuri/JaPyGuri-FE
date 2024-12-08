@@ -1,7 +1,7 @@
-export const getAddressFromCoords = async (
+export const reverseGeocode = async (
   lat: number,
   lng: number,
-): Promise<string> => {
+): Promise<string | null> => {
   return new Promise((resolve, reject) => {
     naver.maps.Service.reverseGeocode(
       {
@@ -11,10 +11,9 @@ export const getAddressFromCoords = async (
       (status, response) => {
         if (status !== naver.maps.Service.Status.OK) {
           console.error("Reverse geocoding failed:", status);
-          reject("주소를 가져올 수 없습니다.");
+          reject(null);
         } else {
-          const address =
-            response.v2.address.jibunAddress || "주소를 가져올 수 없습니다.";
+          const address = response.v2.address.jibunAddress || null;
           resolve(address);
         }
       },

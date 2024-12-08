@@ -5,13 +5,15 @@ import NailDetail from "../../components/BottomUpSheet/components/NailDetail";
 import { useEffect, useState } from "react";
 import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpSheet";
 import { stopPropagation } from "../../utils/stopPropagation";
-import { toggleLike } from "../../api/likeToggle";
+import { toggleLike } from "../../hooks/api/likeToggle";
 import { useToast } from "../Toast/useToast";
+import { onErrorImg } from "../../utils/onErrorImg";
 
 interface CardProps {
   id: string;
   img: string;
   likeDefault: boolean;
+  aiFitActive: boolean;
   price: string;
   like: number;
   rowScroll?: boolean;
@@ -23,6 +25,7 @@ const NailInfoCard = ({
   price,
   like,
   likeDefault,
+  aiFitActive,
   rowScroll = false,
 }: CardProps) => {
   const showToast = useToast();
@@ -63,6 +66,7 @@ const NailInfoCard = ({
               price={price}
               likeCount={likeCount}
               likeActive={likeActive}
+              aiFitActive={aiFitActive}
               setLikeActive={setLikeActive}
             />
           ),
@@ -74,6 +78,7 @@ const NailInfoCard = ({
         <img
           className="absolute left-0 top-0 h-full w-full object-cover object-center"
           src={img}
+          onError={onErrorImg}
           alt="nail"
         />
         <button

@@ -25,7 +25,7 @@ const Toast = ({ toastKey, message, link }: ToastProps) => {
     >
       {message}
       {link && (
-        <a target="_blank" href={link} className="underline">
+        <a href={link} className="underline">
           바로가기
         </a>
       )}

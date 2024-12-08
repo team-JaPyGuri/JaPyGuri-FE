@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect, useRef, useCallback } from "react";
-import { getLikeList } from "../../api/getLikeList";
+import { getLikeList } from "../../hooks/api/getLikeList";
+import { changeImgUrl } from "../../utils/changeImgUrl";
 
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";
@@ -16,6 +17,7 @@ interface NailData {
   design_key: string;
   design_url: string;
   is_active: boolean;
+  like_active: boolean;
   price: string;
   like_count: number;
 }
@@ -25,7 +27,7 @@ const Home = () => {
   const [nailSnapList, setNailSnapList] = useState<NailData[]>([]);
   const [nailLikeList, setNailLikeList] = useState<string[]>([]);
   const [page, setPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [hasMore, setHasMore] = useState(true);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
@@ -33,7 +35,9 @@ const Home = () => {
     const fetchNailLikeList = async () => {
       try {
         const res = await getLikeList();
-        const likedKeys = res.map((item: NailData) => item.design_key);
+        const likedKeys = res
+          ? res.map((item: NailData) => item.design_key)
+          : [];
         setNailLikeList(likedKeys);
       } catch (err) {
         console.error("Error fetching like list:", err);
@@ -41,6 +45,7 @@ const Home = () => {
     };
 
     fetchNailLikeList();
+    setIsLoading(false);
   }, []);
 
   useEffect(() => {
@@ -58,7 +63,8 @@ const Home = () => {
         );
         const updatedList = res.data.map((item: NailData) => ({
           ...item,
-          is_active: nailLikeList.includes(item.design_key),
+          like_active: nailLikeList.includes(item.design_key),
+          design_url: changeImgUrl(item.design_url),
         }));
         setHotNailList(updatedList);
       } catch (err) {
@@ -73,7 +79,7 @@ const Home = () => {
     setNailSnapList((prevList) =>
       prevList.map((item) => ({
         ...item,
-        is_active: nailLikeList.includes(item.design_key),
+        like_active: nailLikeList.includes(item.design_key),
       })),
     );
   }, [nailLikeList]);
@@ -96,7 +102,8 @@ const Home = () => {
 
       const updatedList = res.data.results.map((item: NailData) => ({
         ...item,
-        is_active: nailLikeList.includes(item.design_key),
+        like_active: nailLikeList.includes(item.design_key),
+        design_url: changeImgUrl(item.design_url),
       }));
 
       setNailSnapList((prevList) => [...prevList, ...updatedList]);

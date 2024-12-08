@@ -4,7 +4,8 @@ import Button from "../../../components/Button/Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "../../Toast/useToast";
-import { toggleLike } from "../../../api/likeToggle";
+import { toggleLike } from "../../../hooks/api/likeToggle";
+import { onErrorImg } from "../../../utils/onErrorImg";
 
 interface NailDetailProps {
   id: string;
@@ -12,6 +13,7 @@ interface NailDetailProps {
   price: string;
   likeCount: number;
   likeActive: boolean;
+  aiFitActive: boolean;
   setLikeActive: (likeActive: boolean) => void;
 }
 
@@ -21,6 +23,7 @@ const NailDetail = ({
   price,
   likeCount,
   likeActive,
+  aiFitActive,
   setLikeActive,
 }: NailDetailProps) => {
   const navigate = useNavigate();
@@ -51,6 +54,7 @@ const NailDetail = ({
       <div className="w-full flex-row px-4 py-3">
         <img
           src={img}
+          onError={onErrorImg}
           alt="Nail"
           className="aspect-square w-full rounded-[4px] object-cover object-center"
         />
@@ -83,7 +87,6 @@ const NailDetail = ({
           <span className="regular-13">좋아요</span>
         </button>
       </div>
-      <img className="w-full" />
       <div className="flex w-full flex-col gap-2 px-4 py-3">
         <div className="flex w-full flex-row gap-2">
           <Button
@@ -95,9 +98,13 @@ const NailDetail = ({
           >
             바로 예약하기
           </Button>
-          <Button>AI 피팅 체험하기</Button>
+          {aiFitActive && (
+            <Button onClick={() => navigate(`/camera/${id}`)}>
+              AI 피팅 체험하기
+            </Button>
+          )}
         </div>
-        <Button onClick={() => navigate(`/request-map/?${id}`)}>
+        <Button onClick={() => navigate(`/request-map/${id}`)}>
           해당 네일아트 요청하기
         </Button>
       </div>
