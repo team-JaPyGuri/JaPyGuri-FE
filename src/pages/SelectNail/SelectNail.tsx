@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import SubHeader from "../../components/Header/SubHeader";
 import ListView from "../../components/ListView/ListView";
-import { changeImgUrl } from "../../utils/changeImgUrl";
-import axios from "axios";
 
 import NailData from "../../types/NailData";
 import { SortType } from "../../types/Sorttype";
