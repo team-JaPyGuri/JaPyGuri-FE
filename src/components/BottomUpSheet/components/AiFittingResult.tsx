@@ -5,11 +5,12 @@ import { useToast } from "../../Toast/useToast";
 import { onErrorImg } from "../../../utils/onErrorImg";
 
 interface AiFittingResultProps {
+  designId: string;
   before: string;
   after: string;
 }
 
-const AiFittingResult = ({ before, after }: AiFittingResultProps) => {
+const AiFittingResult = ({ designId, before, after }: AiFittingResultProps) => {
   const navigate = useNavigate();
   const showToast = useToast();
   const sliderRef = useRef<HTMLDivElement>(null);
@@ -69,7 +70,7 @@ const AiFittingResult = ({ before, after }: AiFittingResultProps) => {
 
   const handleDownloadButtonClicked = async () => {
     const link = document.createElement("a");
-    link.href = await toDataURL("https" + after.substring(4));
+    link.href = await toDataURL("https" + after.substring(5));
     link.setAttribute("download", "download");
     document.body.appendChild(link);
     link.click();
@@ -124,7 +125,7 @@ const AiFittingResult = ({ before, after }: AiFittingResultProps) => {
             이미지 저장하기
           </Button>
         </div>
-        <Button onClick={() => navigate(`/request-map/`)}>
+        <Button onClick={() => navigate(`/request-map/${designId}`)}>
           해당 네일아트 요청하기
         </Button>
       </div>

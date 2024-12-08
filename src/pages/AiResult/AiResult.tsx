@@ -7,12 +7,10 @@ import Footer from "../../components/Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getTryOnHistory } from "../../hooks/api/getTryOnHistory";
-import { useToast } from "./../../components/Toast/useToast";
 import AiResultCard from "../../components/NailCard/AiResultCard";
 
 const AiResult = () => {
   const navigate = useNavigate();
-  const showToast = useToast();
   const [aiResultData, setAiResultData] = useState([]);
 
   useEffect(() => {
@@ -20,13 +18,14 @@ const AiResult = () => {
       try {
         const response = await getTryOnHistory();
         setAiResultData(response);
-      } catch {
-        showToast({ message: "서버와 통신할 수 없어요." });
+        console.log(response);
+      } catch (error) {
+        console.log("Error getting try-on-history request:", error);
       }
     };
 
     fetchTryOnHistory();
-  }, [showToast]);
+  }, []);
 
   return (
     <Layout>
@@ -40,9 +39,10 @@ const AiResult = () => {
       >
         {aiResultData &&
           aiResultData.map(
-            ({ created_at, original_image, predicted_image }) => (
+            ({ created_at, design_key, original_image, predicted_image }) => (
               <AiResultCard
                 key={created_at}
+                designId={design_key}
                 before={original_image}
                 after={predicted_image}
               />
@@ -51,7 +51,7 @@ const AiResult = () => {
       </ListView>
       <Footer />
       <NavigationBar />
-      <div className="fixed bottom-14 w-full min-w-[20rem] max-w-[37.5rem] px-4 py-3">
+      <div className="fixed bottom-16 w-full min-w-[20rem] max-w-[37.5rem] px-4 py-3">
         <Button onClick={() => navigate("/select-nail")}>
           네일아트 AI 피팅 시작하기
         </Button>
