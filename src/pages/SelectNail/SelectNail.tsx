@@ -9,6 +9,7 @@ import NailData from "../../types/NailData";
 import { SortType } from "../../types/Sorttype";
 
 import NailLikeCard from "../../components/NailCard/NailLikeCard";
+import { getAllDesign } from "../../hooks/api/getAllDesign";
 
 const SelectNail = () => {
   const [nailData, setNailData] = useState([] as NailData[]);
@@ -30,18 +31,10 @@ const SelectNail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(
-          `${import.meta.env.VITE_NAILO_API_URL}/api/home/`,
-          {
-            params: { type: "all", page: 1 },
-          },
-        );
-        const updatedList = res.data.results.map((item: NailData) => ({
-          ...item,
-          design_url: changeImgUrl(item.design_url),
-        }));
+        const res = await getAllDesign();
+        if (res === null) return;
 
-        setNailData((prevList) => [...prevList, ...updatedList]);
+        setNailData(res.filter((nail) => nail.is_active));
       } catch (err) {
         console.error("API Error:", err);
       }
