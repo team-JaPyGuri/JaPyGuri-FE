@@ -12,9 +12,10 @@ export default defineConfig({
     mkcert(),
     VitePWA({
       registerType: "autoUpdate",
+      includeAssets: ["favicon.ico", "apple-touch-icon.png", "mask-icon.svg"],
       devOptions: { enabled: true },
       manifest: {
-        name: "Nailo - 네일로",
+        name: "Nailo 네일로",
         short_name: "Nailo",
         description: "오늘 고른 네일, 예약은 바로 내일로.",
         theme_color: "#1a1b1f",
@@ -23,14 +24,26 @@ export default defineConfig({
         start_url: ".",
         icons: [
           {
-            src: "/android-chrome-192x192.png",
+            src: "pwa-64x64.png",
+            sizes: "64x64",
+            type: "image/png",
+          },
+          {
+            src: "pwa-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "/android-chrome-512x512.png",
+            src: "pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
+            purpose: "any",
+          },
+          {
+            src: "maskable-icon-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable",
           },
         ],
       },

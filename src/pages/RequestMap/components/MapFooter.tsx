@@ -40,7 +40,24 @@ const MapFooter = ({
         const bDistance = (latitude - blat) ^ (2 + (longitude - blng)) ^ 2;
         return aDistance - bDistance;
       })
-      .slice(0, 5);
+      .slice(0, 5)
+      .filter(
+        (marker) =>
+          marker.getOptions("title") !== "04d4a60a-f612-4119-967b-2971a6c3b41d",
+      );
+
+    if (socket)
+      socket.send(
+        JSON.stringify({
+          action: "request_service",
+          data: {
+            customer_key: localStorage.getItem("socketUserId"),
+            design_key: designId,
+            shop_key: "04d4a60a-f612-4119-967b-2971a6c3b41d",
+            contents: "",
+          },
+        }),
+      );
 
     requestShopList.forEach((marker) => {
       if (socket)
@@ -56,22 +73,10 @@ const MapFooter = ({
           }),
         );
     });
-    if (socket)
-      socket.send(
-        JSON.stringify({
-          action: "request_service",
-          data: {
-            customer_key: localStorage.getItem("socketUserId"),
-            design_key: designId,
-            shop_key: "04d4a60a-f612-4119-967b-2971a6c3b41d",
-            contents: "",
-          },
-        }),
-      );
 
     navigate("/");
     showToast({
-      message: `${requestShopList.length}개의 네일샵에 요청을 보냈어요. 응답이 오면 알려드릴게요.`,
+      message: `${requestShopList.length + 1}개의 네일샵에 요청을 보냈어요. 응답이 오면 알려드릴게요.`,
     });
   };
 

@@ -3,6 +3,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { stateSocket } from "../../stores/stateSocket";
 import { stateUser } from "../../stores/stateUser";
 import { useToast } from "../Toast/useToast";
+import { stateRequestResult } from "../../stores/stateRequestResult";
 
 const USER_KEY_REGEXP =
   /Connected as customer: 자파구리, key=(?<key>[0-9a-zA-Z/-]+)/;
@@ -12,6 +13,7 @@ const SHOP_KEY_REGEXP =
 const SocketInitializer = () => {
   const user = useRecoilValue(stateUser);
   const setSocket = useSetRecoilState(stateSocket);
+  const setRequesetResultData = useSetRecoilState(stateRequestResult);
   const showToast = useToast();
 
   useEffect(() => {
@@ -45,6 +47,8 @@ const SocketInitializer = () => {
           message: "AI 피팅이 완료되었어요. 지금 바로 확인해보세요.",
           link: "/ai-result",
         });
+      } else if (result.type === "response_list") {
+        setRequesetResultData(JSON.parse(event.data).designs.reverse());
       }
     };
 
