@@ -3,7 +3,6 @@ import { useRecoilValue } from "recoil";
 import { toastListState } from "../../stores/stateToast";
 import usePortal from "../../utils/usePortal";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 interface ToastProps {
   toastKey: number;
@@ -13,7 +12,6 @@ interface ToastProps {
 
 const Toast = ({ toastKey, message, link }: ToastProps) => {
   const [animation, setAnimation] = useState("fadeIn");
-  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => setAnimation("fadeOut"), 3000);
@@ -27,9 +25,9 @@ const Toast = ({ toastKey, message, link }: ToastProps) => {
     >
       {message}
       {link && (
-        <button onClick={() => navigate(link)} className="underline">
+        <a href={link} className="underline">
           바로가기
-        </button>
+        </a>
       )}
     </div>
   );
