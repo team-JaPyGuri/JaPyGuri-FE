@@ -4,6 +4,7 @@ import { stateSocket } from "../../stores/stateSocket";
 import { stateUser } from "../../stores/stateUser";
 import { useToast } from "../Toast/useToast";
 import { stateRequestResult } from "../../stores/stateRequestResult";
+import { stateRequestList } from "../../stores/stateRequestList";
 
 const USER_KEY_REGEXP =
   /Connected as customer: 자파구리, key=(?<key>[0-9a-zA-Z/-]+)/;
@@ -14,6 +15,7 @@ const SocketInitializer = () => {
   const user = useRecoilValue(stateUser);
   const setSocket = useSetRecoilState(stateSocket);
   const setRequesetResultData = useSetRecoilState(stateRequestResult);
+  const setRequestList = useSetRecoilState(stateRequestList);
   const showToast = useToast();
 
   useEffect(() => {
@@ -41,7 +43,10 @@ const SocketInitializer = () => {
           result.message.match(SHOP_KEY_REGEXP).groups.key,
         );
       } else if (result.type === "completed_request") {
-        console.log("WebSocket send request_service complete.");
+        showToast({
+          message:
+            "선택하신 샵에 요청이 전달되었어요. 응답이 오면 알려드릴게요.",
+        });
       } else if (result.type === "tryon_result") {
         showToast({
           message: "AI 피팅이 완료되었어요. 지금 바로 확인해보세요.",
@@ -49,6 +54,23 @@ const SocketInitializer = () => {
         });
       } else if (result.type === "response_list") {
         setRequesetResultData(JSON.parse(event.data).designs.reverse());
+      } else if (result.type === "request_list") {
+        setRequestList(JSON.parse(event.data).requests.reverse());
+      } else if (result.type === "completed_response") {
+        showToast({
+          message: "고객에게 요청이 전달되었어요.",
+        });
+      } else if (result.type === "new_request") {
+        showToast({
+          message: "새로운 요청이 도착했어요. 지금 바로 확인해보세요.",
+          link: "/dashboard",
+        });
+      } else if (result.type === "new_response") {
+        console.log(1);
+        showToast({
+          message: "샵 응답이 도착했어요. 지금 바로 확인해보세요.",
+          link: "/request-result",
+        });
       }
     };
 
@@ -60,20 +82,14 @@ const SocketInitializer = () => {
       console.log("WebSocket connection closed.");
     };
 
-    setSocket((prevSocket) => {
-      if (prevSocket) {
-        console.log("Closing previous WebSocket connection");
-        prevSocket.close();
-      }
-      return socket;
-    });
+    setSocket(socket);
 
     return () => {
       console.log("Cleaning up WebSocket connection");
       socket.close();
       setSocket(null);
     };
-  }, [user, setSocket]);
+  }, [user, setSocket, showToast, setRequesetResultData, setRequestList]);
 
   return null;
 };

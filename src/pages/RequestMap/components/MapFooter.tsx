@@ -76,7 +76,7 @@ const MapFooter = ({
 
     navigate("/");
     showToast({
-      message: `${requestShopList.length + 1}개의 네일샵에 요청을 보냈어요. 응답이 오면 알려드릴게요.`,
+      message: `${requestShopList.length + 1}개의 네일샵을 선택했어요.`,
     });
   };
 

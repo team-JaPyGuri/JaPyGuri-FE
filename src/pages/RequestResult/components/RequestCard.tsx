@@ -41,6 +41,8 @@ interface ResponseCardProps {
 }
 
 const ResponseCard = ({ requestDetail }: ResponseCardProps) => {
+  const requestResult =
+    requestDetail.request_details[requestDetail.request_details.length - 1];
   const formatFullDate = (date: Date) => {
     const yy = String(date.getFullYear());
     const dd = String(date.getDate()).padStart(2, "0");
@@ -58,9 +60,11 @@ const ResponseCard = ({ requestDetail }: ResponseCardProps) => {
             {requestDetail && requestDetail.shop_name}
           </span>
           <span
-            className={`semibold-13 ${requestDetail.request_details[0].status === "pending" ? "text-nail-red" : "text-nail-blue"}`}
+            className={`semibold-13 ${requestResult.status === "pending" ? "text-nail-red" : "text-nail-blue"}`}
           >
-            {requestDetail.request_details[0].status === "pending"
+            {requestDetail.request_details[
+              requestDetail.request_details.length - 1
+            ].status === "pending"
               ? "응답 대기중"
               : "응답 완료"}
           </span>
@@ -68,13 +72,17 @@ const ResponseCard = ({ requestDetail }: ResponseCardProps) => {
         <span className="regular-13 text-grayscale-600">
           {formatFullDate(new Date())}
         </span>
-        {requestDetail.request_details[0].response && (
+        {requestResult.response && (
           <>
             <span className="semibold-13 text-red">
-              {requestDetail.request_details[0].response.price}원 예상
+              {requestResult.status !== "rejected"
+                ? `${requestResult.response.price}원 예상`
+                : "시술 요청 거절"}
             </span>
             <span className="regular-13 text-grayscale-600">
-              {requestDetail.request_details[0].response.contents}
+              {requestResult.status !== "rejected"
+                ? requestResult.response?.contents
+                : "해당 네일아트를 시술할 수 없습니다."}
             </span>
           </>
         )}
@@ -128,7 +136,7 @@ const RequestCard = ({ designKey, responseData }: RequestCardProps) => {
           />
           <div className="flex flex-1 flex-col justify-between py-1">
             <span className="semibold-13 text-grayscale-900">
-              #프렌치 #글리터
+              네일아트 디자인 요청
             </span>
             <span className="regular-13 text-grayscale-600">
               {nailDetail ? nailDetail.like_count : 0}명이 이 디자인을 좋아해요.
@@ -138,7 +146,9 @@ const RequestCard = ({ designKey, responseData }: RequestCardProps) => {
               <span className="text-red">
                 {responseData &&
                   responseData.filter(
-                    (object) => object.request_details[0].status !== "pending",
+                    (object) =>
+                      object.request_details[object.request_details.length - 1]
+                        .status !== "pending",
                   ).length}
                 곳
               </span>
