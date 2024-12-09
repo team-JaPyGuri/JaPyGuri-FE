@@ -6,6 +6,29 @@ import { useToast } from "../Toast/useToast";
 import { stateRequestResult } from "../../stores/stateRequestResult";
 import { stateRequestList } from "../../stores/stateRequestList";
 
+interface RequestDataProps {
+  designKey: string;
+  shop_requests: ResponseDataProps[];
+}
+interface ResponseDataProps {
+  request_details: {
+    created_at: string;
+    request: {
+      price: number;
+      contents: string;
+    };
+    request_key: string;
+    response: {
+      response_key: string;
+      price: number;
+      contents: string;
+      created_at: string;
+    } | null;
+    status: string;
+  }[];
+  shop_name: string;
+}
+
 const USER_KEY_REGEXP =
   /Connected as customer: 자파구리, key=(?<key>[0-9a-zA-Z/-]+)/;
 const SHOP_KEY_REGEXP =
@@ -53,7 +76,15 @@ const SocketInitializer = () => {
           link: "/ai-result",
         });
       } else if (result.type === "response_list") {
-        setRequesetResultData(JSON.parse(event.data).designs.reverse());
+        const requestResultData = JSON.parse(event.data).designs;
+        requestResultData.sort((a: RequestDataProps, b: RequestDataProps) => {
+          const aData = a.shop_requests[0].request_details;
+          const bData = b.shop_requests[0].request_details;
+          const aTtime = aData[aData.length - 1].created_at;
+          const bTime = bData[bData.length - 1].created_at;
+          return new Date(bTime).getTime() - new Date(aTtime).getTime();
+        });
+        setRequesetResultData(requestResultData);
       } else if (result.type === "request_list") {
         setRequestList(JSON.parse(event.data).requests.reverse());
       } else if (result.type === "completed_response") {

@@ -125,7 +125,13 @@ const RequestCard = ({ designKey, responseData }: RequestCardProps) => {
       >
         <span className="medium-18 w-full pt-4 text-grayscale-900">
           {formatDate(
-            new Date(String(responseData[0].request_details[0].created_at)),
+            new Date(
+              String(
+                responseData[0].request_details[
+                  responseData[0].request_details.length - 1
+                ].created_at,
+              ),
+            ),
           )}
         </span>
         <div className="flex w-full flex-row gap-3 pb-4">
