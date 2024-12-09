@@ -49,8 +49,8 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
           data: {
             request_key: resquestKey,
             status: "rejected",
-            price: 0,
-            contents: "",
+            price: 1,
+            contents: "시술 불가",
           },
         }),
       );
@@ -133,7 +133,7 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
               className="regular-14 text-grayscale-6 w-full rounded-md border border-grayscale-400 px-4 py-2"
             />
           </div>
-          <div className="flex-2 flex flex-col gap-2">
+          <div className="flex flex-2 flex-col gap-2">
             <span className="semibold-14 w-full pl-2 text-grayscale-900">
               전달 사항
             </span>
