@@ -70,7 +70,7 @@ const AiFittingResult = ({ designId, before, after }: AiFittingResultProps) => {
 
   const handleDownloadButtonClicked = async () => {
     const link = document.createElement("a");
-    link.href = await toDataURL("https" + after.substring(5));
+    link.href = await toDataURL(after);
     link.setAttribute("download", "download");
     document.body.appendChild(link);
     link.click();
