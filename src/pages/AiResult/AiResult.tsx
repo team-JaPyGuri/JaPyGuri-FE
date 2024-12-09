@@ -18,7 +18,6 @@ const AiResult = () => {
       try {
         const response = await getTryOnHistory();
         setAiResultData(response);
-        console.log(response);
       } catch (error) {
         console.log("Error getting try-on-history request:", error);
       }
