@@ -70,7 +70,7 @@ const SocketInitializer = () => {
           message:
             "선택하신 샵에 요청이 전달되었어요. 응답이 오면 알려드릴게요.",
         });
-      } else if (result.type === "notify_tryon_result") {
+      } else if (result.type === "tryon_result") {
         showToast({
           message: "AI 피팅이 완료되었어요. 지금 바로 확인해보세요.",
           link: "/ai-result",
