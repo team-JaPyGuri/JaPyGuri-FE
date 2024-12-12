@@ -76,6 +76,7 @@ const AiFittingResult = ({ designId, before, after }: AiFittingResultProps) => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    showToast({ message: "이미지가 저장되었어요." });
   };
 
   return (
