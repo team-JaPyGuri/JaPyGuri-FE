@@ -45,6 +45,7 @@ const BottomUpSheet = ({ title, content, className }: BottomUpSheetProps) => {
 const BottomUpSheetContainer = () => {
   const setBottomUpSheet = useSetRecoilState(bottomUpSheetState);
   const bottomUpSheetContent = useRecoilValue(bottomUpSheetState);
+  const body = document.documentElement;
   const portalRoot = usePortal("bottom-up-sheet-portal");
   const location = useLocation();
 
@@ -53,7 +54,20 @@ const BottomUpSheetContainer = () => {
   useEffect(() => {
     if (bottomUpSheetContent.visible) {
       setShowZIndex(true);
+      const currentPosition = window.scrollY;
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.style.top = `-${currentPosition}px`;
+      body.style.left = "0";
+      body.style.right = "0";
     } else {
+      const savedScrollPosition = parseInt(body.style.top || "0", 10) * -1;
+      body.style.removeProperty("overflow");
+      body.style.removeProperty("position");
+      body.style.removeProperty("top");
+      body.style.removeProperty("left");
+      body.style.removeProperty("right");
+      window.scrollTo(0, savedScrollPosition);
       const timeout = setTimeout(() => {
         setShowZIndex(false);
         setBottomUpSheet((oldBottomUpSheetState) => ({
@@ -63,7 +77,7 @@ const BottomUpSheetContainer = () => {
       }, 300);
       return () => clearTimeout(timeout);
     }
-  }, [setBottomUpSheet, bottomUpSheetContent.visible]);
+  }, [setBottomUpSheet, bottomUpSheetContent.visible, body]);
 
   useEffect(() => {
     setBottomUpSheet((oldBottomUpSheetState) => ({
