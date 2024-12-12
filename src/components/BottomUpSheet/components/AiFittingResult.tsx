@@ -15,6 +15,7 @@ const AiFittingResult = ({ designId, before, after }: AiFittingResultProps) => {
   const showToast = useToast();
   const sliderRef = useRef<HTMLDivElement>(null);
   const [sliderPosition, setSliderPosition] = useState(50);
+  const [isAnimating, setIsAnimating] = useState(true);
   const isDragging = useRef(false);
 
   const startDrag = (e: React.MouseEvent | React.TouchEvent) => {
@@ -96,13 +97,14 @@ const AiFittingResult = ({ designId, before, after }: AiFittingResultProps) => {
             src={after}
             onError={onErrorImg}
             alt="After"
-            className="absolute right-0 top-0 aspect-square h-full object-cover object-right"
+            className={`${isAnimating && "animate-clipPath"} absolute right-0 top-0 aspect-square h-full object-cover object-right`}
             style={{
               clipPath: `inset(0 0 0 ${sliderPosition}%)`,
             }}
+            onAnimationEnd={() => setIsAnimating(false)}
           />
           <div
-            className="absolute bottom-0 top-0 z-10 h-full w-1 cursor-ew-resize border border-grayscale-400 bg-grayscale-100"
+            className={`${isAnimating && "animate-left"} absolute bottom-0 top-0 z-10 h-full w-1 cursor-ew-resize border border-grayscale-400 bg-grayscale-100`}
             style={{ left: `${sliderPosition}%` }}
             onMouseDown={startDrag}
             onTouchStart={startDrag}
