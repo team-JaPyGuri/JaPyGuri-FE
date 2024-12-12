@@ -17,7 +17,6 @@ const useUserTypeByRoute = () => {
           userType: "customer",
           userId: import.meta.env.VITE_API_USER_ID,
         });
-        console.log(1);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
