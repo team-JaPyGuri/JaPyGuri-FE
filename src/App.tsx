@@ -21,9 +21,6 @@ const AppRouter = () => {
   useUserTypeByRoute();
   return (
     <>
-      <BottomUpSheetContainer />
-      <ToastContainer />
-      <SocketInitializer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/like" element={<Like />} />
@@ -43,6 +40,9 @@ const App = () => {
   return (
     <RecoilRoot>
       <BrowserRouter>
+        <BottomUpSheetContainer />
+        <ToastContainer />
+        <SocketInitializer />
         <AppRouter />
       </BrowserRouter>
     </RecoilRoot>

@@ -1,13 +1,14 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getTryOnHistory } from "../../hooks/api/getTryOnHistory";
+
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";
 import ListView from "../../components/ListView/ListView";
+import AiResultCard from "../../components/NailCard/AiResultCard";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
-import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
-import { getTryOnHistory } from "../../hooks/api/getTryOnHistory";
-import AiResultCard from "../../components/NailCard/AiResultCard";
 
 const AiResult = () => {
   const navigate = useNavigate();

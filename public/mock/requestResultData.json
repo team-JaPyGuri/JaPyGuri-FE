@@ -1,0 +1,734 @@
+[
+  {
+    "design_key": "54ad89c5-a8a7-4008-8d76-588ac35870c4",
+    "design_name": "Design 22",
+    "shop_requests": [
+      {
+        "shop_name": "유어썸뷰티",
+        "request_details": [
+          {
+            "request_key": "2a9028b6-c955-47a1-b7c7-009eca8f1893",
+            "status": "accepted",
+            "created_at": "2024-12-13T09:08:42.848269+00:00",
+            "request": { "price": 38247, "contents": "" },
+            "response": {
+              "response_key": "4122cf7a-f366-4b3d-bc47-6ee693f6f14b",
+              "price": 12000,
+              "contents": "네일아트 요청 감사드립니다.",
+              "created_at": "2024-12-13T09:09:12.385677+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "shop_name": "윤빛네일",
+        "request_details": [
+          {
+            "request_key": "99336f3a-c41a-4353-ab92-e47be88c19dc",
+            "status": "pending",
+            "created_at": "2024-12-13T09:08:42.886139+00:00",
+            "request": { "price": 38247, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "기노네일",
+        "request_details": [
+          {
+            "request_key": "f3e1c4c5-2170-4364-96bd-cccd7b137ac5",
+            "status": "pending",
+            "created_at": "2024-12-13T09:08:42.900497+00:00",
+            "request": { "price": 38247, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일에스떼",
+        "request_details": [
+          {
+            "request_key": "134005d4-d99a-4f5e-b8eb-561afda6e9de",
+            "status": "pending",
+            "created_at": "2024-12-13T09:08:42.917839+00:00",
+            "request": { "price": 38247, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "매직네일아트",
+        "request_details": [
+          {
+            "request_key": "6b3de684-6d6c-4996-93bb-6a99ff5260bb",
+            "status": "pending",
+            "created_at": "2024-12-13T09:08:42.943136+00:00",
+            "request": { "price": 38247, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "크라스니네일",
+        "request_details": [
+          {
+            "request_key": "eb6e5c4f-774c-41ca-a016-507e9306ed57",
+            "status": "pending",
+            "created_at": "2024-12-13T09:08:42.964164+00:00",
+            "request": { "price": 38247, "contents": "" },
+            "response": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "design_key": "b051dae4-b479-4dc1-9c5c-c1dcb2be95ba",
+    "design_name": "Design 17",
+    "shop_requests": [
+      {
+        "shop_name": "유어썸뷰티",
+        "request_details": [
+          {
+            "request_key": "fec7e1ce-9116-4de6-aa0e-02a744aa272c",
+            "status": "rejected",
+            "created_at": "2024-11-30T12:28:19.234345+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": {
+              "response_key": "7ddebc49-aeb0-4106-9112-0ae450a8e1dc",
+              "price": 23566,
+              "contents": "",
+              "created_at": "2024-12-08T18:52:05.721538+00:00"
+            }
+          },
+          {
+            "request_key": "430461a5-cbb4-4f01-9da3-6f6e00062f25",
+            "status": "accepted",
+            "created_at": "2024-12-09T02:49:18.873043+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": {
+              "response_key": "720a4eaa-03d6-4ca8-abec-c56be93d82bd",
+              "price": 10000,
+              "contents": "문의 주셔서 감사드립니다. 해당 네일아트는 시술 가능합니다.",
+              "created_at": "2024-12-09T02:49:55.262969+00:00"
+            }
+          },
+          {
+            "request_key": "01c98aef-b0c8-43e2-b3c3-5ee8d6645dbc",
+            "status": "pending",
+            "created_at": "2024-12-11T07:51:27.310217+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "1188087e-a649-4aca-8678-f15772d58f61",
+            "status": "accepted",
+            "created_at": "2024-12-11T07:53:17.983553+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": {
+              "response_key": "03a6f57a-751a-43a3-a378-7d6db968109c",
+              "price": 50000,
+              "contents": "네일 시술 요청 감사드립니다.",
+              "created_at": "2024-12-11T07:53:34.070655+00:00"
+            }
+          },
+          {
+            "request_key": "c2701f18-c6cd-4c39-a678-46aa7713ca45",
+            "status": "accepted",
+            "created_at": "2024-12-11T07:58:01.838716+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": {
+              "response_key": "a0fc01ec-d18d-4da3-95e2-c294a7f3ecdd",
+              "price": 25000,
+              "contents": "네일아트 시술 문의 감사드립니다.",
+              "created_at": "2024-12-11T07:58:16.553462+00:00"
+            }
+          },
+          {
+            "request_key": "1da6a768-f2f5-41e1-aa6c-a4ea2146c339",
+            "status": "rejected",
+            "created_at": "2024-12-11T08:00:09.090741+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": {
+              "response_key": "30e92875-4c2d-4911-b83b-6f5857b7433e",
+              "price": 25000,
+              "contents": "네일아트 요청 감사드립니다.",
+              "created_at": "2024-12-11T08:00:23.927821+00:00"
+            }
+          },
+          {
+            "request_key": "c85fcdc8-7f75-438f-8d80-503c6c3c3dd8",
+            "status": "accepted",
+            "created_at": "2024-12-11T08:25:37.705496+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": {
+              "response_key": "92432787-9ce8-41ed-8f00-39c0604e83eb",
+              "price": 10000,
+              "contents": "해당 네일아트 시술 가능합니다.",
+              "created_at": "2024-12-11T08:25:49.590895+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "shop_name": "나라네일",
+        "request_details": [
+          {
+            "request_key": "e176f50c-d180-4eb3-ad17-f414e55cb8bf",
+            "status": "pending",
+            "created_at": "2024-11-30T12:28:19.255761+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "라비에네일",
+        "request_details": [
+          {
+            "request_key": "df795433-5af8-4fa9-9f79-b4c7e870e271",
+            "status": "pending",
+            "created_at": "2024-11-30T12:28:19.288111+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "라이크네일",
+        "request_details": [
+          {
+            "request_key": "3f58817f-64a4-4530-9d9f-89e113e0a080",
+            "status": "pending",
+            "created_at": "2024-11-30T12:28:19.315107+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일날다",
+        "request_details": [
+          {
+            "request_key": "827819f0-3e7e-4f77-bf33-8d04fcd61b47",
+            "status": "pending",
+            "created_at": "2024-12-09T02:49:18.943943+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "유리네일",
+        "request_details": [
+          {
+            "request_key": "7592b312-1340-45b9-8171-e7066c2d96cc",
+            "status": "pending",
+            "created_at": "2024-12-09T02:49:18.958853+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일라인",
+        "request_details": [
+          {
+            "request_key": "c7703899-8347-448c-8345-17c6e5d37677",
+            "status": "pending",
+            "created_at": "2024-12-09T02:49:18.972108+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "백설공주네일",
+        "request_details": [
+          {
+            "request_key": "4c86f37a-bd5b-4a07-9eba-337748afdbb6",
+            "status": "pending",
+            "created_at": "2024-12-09T02:49:19.001543+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일더블링",
+        "request_details": [
+          {
+            "request_key": "bbc77a42-b8ec-4bf1-aac9-3bcb22c3458b",
+            "status": "pending",
+            "created_at": "2024-12-09T02:49:19.018613+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일핏",
+        "request_details": [
+          {
+            "request_key": "c2deaddb-eba9-4a01-8722-e4e54c030aa7",
+            "status": "pending",
+            "created_at": "2024-12-11T07:51:27.330182+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "7ea76516-013f-4cff-b32a-1dab7a5f553e",
+            "status": "pending",
+            "created_at": "2024-12-11T07:58:01.858715+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "모드니에네일",
+        "request_details": [
+          {
+            "request_key": "9d3a7155-66a6-452c-85aa-288034c106ba",
+            "status": "pending",
+            "created_at": "2024-12-11T07:51:27.347725+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "드림드로잉",
+        "request_details": [
+          {
+            "request_key": "8e371fca-9afd-4c47-a323-7c4e2693db33",
+            "status": "pending",
+            "created_at": "2024-12-11T07:51:27.361482+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "69625dd7-076e-4b24-b288-b3a0ba757a75",
+            "status": "pending",
+            "created_at": "2024-12-11T07:58:01.944625+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일도꽃길",
+        "request_details": [
+          {
+            "request_key": "45fff78b-7f99-4106-ad74-8801bd6313c6",
+            "status": "pending",
+            "created_at": "2024-12-11T07:51:27.384371+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일 해봄",
+        "request_details": [
+          {
+            "request_key": "af7e02aa-d54d-48d5-8631-d56493997428",
+            "status": "pending",
+            "created_at": "2024-12-11T07:51:27.440971+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일미니",
+        "request_details": [
+          {
+            "request_key": "f34c689f-0c55-4054-8c3b-d5984fa9d68f",
+            "status": "pending",
+            "created_at": "2024-12-11T07:53:17.999333+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "c48e0fc2-f60d-4967-aae4-600b93e23eb6",
+            "status": "pending",
+            "created_at": "2024-12-11T07:58:01.880519+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "디어마인샵",
+        "request_details": [
+          {
+            "request_key": "641577ac-fd1a-4569-bce7-c25f64036172",
+            "status": "pending",
+            "created_at": "2024-12-11T07:53:18.018346+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "d8d955bf-25e3-4118-88a5-cd7bf48b06a2",
+            "status": "pending",
+            "created_at": "2024-12-11T07:58:01.903211+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "걸스네일",
+        "request_details": [
+          {
+            "request_key": "d096c548-11cb-44be-b8c7-004e3730b73c",
+            "status": "pending",
+            "created_at": "2024-12-11T07:53:18.033028+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "39f46bed-692d-4baf-9ef0-9133c584f922",
+            "status": "pending",
+            "created_at": "2024-12-11T07:58:01.992748+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "쿠키네일",
+        "request_details": [
+          {
+            "request_key": "6d5f39c3-15e0-4b01-ba0f-68fa925a9f89",
+            "status": "pending",
+            "created_at": "2024-12-11T07:53:18.046732+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "에스더네일",
+        "request_details": [
+          {
+            "request_key": "9c14b2c0-2e7d-4056-8a44-fb932d1737ba",
+            "status": "pending",
+            "created_at": "2024-12-11T07:53:18.062477+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "윤빛네일",
+        "request_details": [
+          {
+            "request_key": "d33b0e1e-8a60-430f-9c8d-0ca27357eb76",
+            "status": "pending",
+            "created_at": "2024-12-11T08:00:09.132033+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "39735468-3123-4bda-83b4-2b454e1b5f13",
+            "status": "pending",
+            "created_at": "2024-12-11T08:25:37.759758+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "기노네일",
+        "request_details": [
+          {
+            "request_key": "2ca088a7-1c4d-451e-94ef-0d49c6525990",
+            "status": "pending",
+            "created_at": "2024-12-11T08:00:09.157329+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "db4294d6-5ac1-40e0-aa67-305f7e2c5d81",
+            "status": "pending",
+            "created_at": "2024-12-11T08:25:37.774025+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일에스떼",
+        "request_details": [
+          {
+            "request_key": "3f030977-f15d-4aa9-abd3-41688f28835a",
+            "status": "pending",
+            "created_at": "2024-12-11T08:00:09.182557+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "매직네일아트",
+        "request_details": [
+          {
+            "request_key": "199d72dc-a62a-4cb0-8990-899f8089cc49",
+            "status": "pending",
+            "created_at": "2024-12-11T08:00:09.195822+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "크라스니네일",
+        "request_details": [
+          {
+            "request_key": "a315460f-6b45-4658-8b92-c8d2516d857e",
+            "status": "pending",
+            "created_at": "2024-12-11T08:00:09.221065+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          },
+          {
+            "request_key": "e7bb4aea-24a8-421d-a20a-071c6cde4531",
+            "status": "pending",
+            "created_at": "2024-12-11T08:25:37.725516+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "도쿄네일",
+        "request_details": [
+          {
+            "request_key": "850f4906-e4cc-4106-8e31-7b0d9285893b",
+            "status": "pending",
+            "created_at": "2024-12-11T08:25:37.738996+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "ON네일 가로수길점",
+        "request_details": [
+          {
+            "request_key": "022d7555-4c4e-4e22-9546-643202960911",
+            "status": "pending",
+            "created_at": "2024-12-11T08:25:37.791572+00:00",
+            "request": { "price": 23566, "contents": "" },
+            "response": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "design_key": "a58afa06-8bad-4e1e-811f-119aea666585",
+    "design_name": "Design 29",
+    "shop_requests": [
+      {
+        "shop_name": "유어썸뷰티",
+        "request_details": [
+          {
+            "request_key": "7d42a597-e43b-4548-b8d6-08053cbdb03a",
+            "status": "rejected",
+            "created_at": "2024-12-08T19:11:41.616916+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": {
+              "response_key": "77316572-db81-41e6-ac2e-7218c36abf7c",
+              "price": 49762,
+              "contents": "",
+              "created_at": "2024-12-08T19:12:46.844670+00:00"
+            }
+          },
+          {
+            "request_key": "584bec89-7b9b-4b98-a3b1-12c4483e9120",
+            "status": "accepted",
+            "created_at": "2024-12-09T04:54:07.533698+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": {
+              "response_key": "052370d9-5082-42f6-ad24-a3b62eca76c7",
+              "price": 212132,
+              "contents": "요청 감사합니다.",
+              "created_at": "2024-12-09T04:54:20.436389+00:00"
+            }
+          },
+          {
+            "request_key": "0226e427-78b1-4859-a275-66fb7f4f70e4",
+            "status": "rejected",
+            "created_at": "2024-12-10T06:42:11.984235+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": {
+              "response_key": "f9203fad-ea8c-4a0b-b79c-f3c089641056",
+              "price": 1,
+              "contents": "시술 불가",
+              "created_at": "2024-12-10T06:42:16.958264+00:00"
+            }
+          }
+        ]
+      },
+      {
+        "shop_name": "나라네일",
+        "request_details": [
+          {
+            "request_key": "b46fa94f-84bf-48ce-95cd-3a79f4cc9031",
+            "status": "pending",
+            "created_at": "2024-12-08T19:11:41.675409+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "라비에네일",
+        "request_details": [
+          {
+            "request_key": "eb748f84-03d9-4e86-8778-22333fac7657",
+            "status": "pending",
+            "created_at": "2024-12-08T19:11:41.695634+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "라이크네일",
+        "request_details": [
+          {
+            "request_key": "4810b2c4-202c-49fb-8aed-ca2b57d7401a",
+            "status": "pending",
+            "created_at": "2024-12-08T19:11:41.722707+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "부평네일 센스티브",
+        "request_details": [
+          {
+            "request_key": "04598e75-7892-44e4-803b-4e092913b5ec",
+            "status": "pending",
+            "created_at": "2024-12-09T04:54:07.611293+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "유블리네일",
+        "request_details": [
+          {
+            "request_key": "eec06a14-f63f-4f18-a3c3-b4c8fcfd78b9",
+            "status": "pending",
+            "created_at": "2024-12-09T04:54:07.639095+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "민트네일 백운역점",
+        "request_details": [
+          {
+            "request_key": "157441d3-bba2-46ad-9263-a2fd3546d3a3",
+            "status": "pending",
+            "created_at": "2024-12-09T04:54:07.656765+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "문네일살롱 부평점",
+        "request_details": [
+          {
+            "request_key": "54d00a8e-6c94-4070-b662-c5309b7ed72d",
+            "status": "pending",
+            "created_at": "2024-12-09T04:54:07.670113+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "미미네일",
+        "request_details": [
+          {
+            "request_key": "6ed332f5-f895-4bb2-8dc4-0fd7dca77d69",
+            "status": "pending",
+            "created_at": "2024-12-09T04:54:07.688989+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일핏",
+        "request_details": [
+          {
+            "request_key": "b5bfa1ad-612f-4cd6-9f2f-01c818468150",
+            "status": "pending",
+            "created_at": "2024-12-10T06:42:12.062583+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "드림드로잉",
+        "request_details": [
+          {
+            "request_key": "464ddc26-9ec9-4112-9746-6035332eb14f",
+            "status": "pending",
+            "created_at": "2024-12-10T06:42:12.094659+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "네일,꽃이피다",
+        "request_details": [
+          {
+            "request_key": "9174240e-858d-4a70-b942-08b120e98b75",
+            "status": "pending",
+            "created_at": "2024-12-10T06:42:12.132710+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "포쉬네일 인하대점",
+        "request_details": [
+          {
+            "request_key": "f1656ed0-28fe-4502-827c-e0e460d251a1",
+            "status": "pending",
+            "created_at": "2024-12-10T06:42:12.157496+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      },
+      {
+        "shop_name": "모도리 네일",
+        "request_details": [
+          {
+            "request_key": "6c85cf3a-0757-43d3-8e46-1ebb08c9c64f",
+            "status": "pending",
+            "created_at": "2024-12-10T06:42:12.183645+00:00",
+            "request": { "price": 49762, "contents": "" },
+            "response": null
+          }
+        ]
+      }
+    ]
+  }
+]

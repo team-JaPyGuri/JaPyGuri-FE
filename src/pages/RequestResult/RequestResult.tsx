@@ -9,8 +9,10 @@ import { useRecoilValue } from "recoil";
 import { stateSocket } from "../../stores/stateSocket";
 import RequestCard from "./components/RequestCard";
 import { stateRequestResult } from "../../stores/stateRequestResult";
+import useSendMessage from "../../hooks/socket/useSendMessage";
 
 const RequestResult = () => {
+  const sendMessage = useSendMessage();
   const requestResultData = useRecoilValue(stateRequestResult);
   const socket = useRecoilValue(stateSocket);
 
@@ -18,14 +20,12 @@ const RequestResult = () => {
     if (socket) {
       const handleOpen = () => {
         const customerKey = localStorage.getItem("socketUserId");
-        socket.send(
-          JSON.stringify({
-            action: "get_responses",
-            data: {
-              customer_key: customerKey,
-            },
-          }),
-        );
+        sendMessage({
+          action: "get_responses",
+          data: {
+            customer_key: customerKey,
+          },
+        });
       };
 
       if (socket.readyState === WebSocket.OPEN) {
@@ -38,7 +38,7 @@ const RequestResult = () => {
         socket.removeEventListener("open", handleOpen);
       };
     }
-  }, [socket]);
+  }, [socket, sendMessage]);
 
   return (
     <Layout>

@@ -10,7 +10,7 @@ import { onErrorImg } from "../../../utils/onErrorImg";
 interface NailDetailProps {
   id: string;
   img: string;
-  price: string;
+  price: number;
   likeCount: number;
   likeActive: boolean;
   aiFitActive: boolean;

@@ -2,6 +2,7 @@ import axios from "axios";
 import { base64ToBlob } from "../../utils/base64ToBlob";
 
 export const postTryOn = async (id: string, capturedImage: string) => {
+  if (import.meta.env.VITE_USE_MOCK_DATA === "true") return;
   try {
     const imageBlob = base64ToBlob(capturedImage, "image/png");
 

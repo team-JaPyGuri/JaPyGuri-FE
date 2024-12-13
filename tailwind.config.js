@@ -55,6 +55,16 @@ export default {
           "10%": { transform: "scale(1.2)" },
           "100%": { transform: "scale(1)" },
         },
+        clipPath: {
+          "0%": { clipPath: "inset(0 0 0 0%)" },
+          "50%": { clipPath: "inset(0 0 0 100%)" },
+          "100%": { clipPath: "inset(0 0 0 50%)" },
+        },
+        left: {
+          "0%": { left: "0%" },
+          "50%": { left: "100%" },
+          "100%": { left: "50%" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 0.3s ease-in-out forwards",
@@ -62,6 +72,8 @@ export default {
         slideIn: "slideIn 0.3s ease-in-out forwards",
         slideOut: "slideOut 0.3s ease-in-out forwards",
         likeActive: "likeActive 0.2s ease-in-out forwards",
+        clipPath: "clipPath 2s ease-in-out forwards",
+        left: "left 2s ease-in-out forwards",
       },
       aspectRatio: {
         camera: "3 / 4",

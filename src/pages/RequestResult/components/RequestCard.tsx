@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { onErrorImg } from "../../../utils/onErrorImg";
 import { getNailDetail } from "../../../hooks/api/getNailDetail";
-import { changeImgUrl } from "../../../utils/changeImgUrl";
+import { formatDateString } from "../../../utils/formatDateString";
 
 interface NailDetails {
   design_key: string;
@@ -43,14 +43,6 @@ interface ResponseCardProps {
 const ResponseCard = ({ requestDetail }: ResponseCardProps) => {
   const requestResult =
     requestDetail.request_details[requestDetail.request_details.length - 1];
-  const formatFullDate = (date: Date) => {
-    const yy = String(date.getFullYear());
-    const dd = String(date.getDate()).padStart(2, "0");
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    const hh = String(date.getHours()).padStart(2, "0");
-    const min = String(date.getMinutes()).padStart(2, "0");
-    return `${yy}년 ${mm}월 ${dd}일 ${hh}시 ${min}분 기준`;
-  };
 
   return (
     <div className="flex w-full flex-row gap-3 border-b border-grayscale-400 py-4">
@@ -70,7 +62,7 @@ const ResponseCard = ({ requestDetail }: ResponseCardProps) => {
           </span>
         </div>
         <span className="regular-13 text-grayscale-600">
-          {formatFullDate(new Date())}
+          {`${formatDateString({ date: new Date(), type: "full" })} 기준`}
         </span>
         {requestResult.response && (
           <>
@@ -108,13 +100,6 @@ const RequestCard = ({ designKey, responseData }: RequestCardProps) => {
     fetchNailData();
   }, [designKey]);
 
-  const formatDate = (date: Date) => {
-    const yy = String(date.getFullYear()).slice(-2);
-    const dd = String(date.getDate()).padStart(2, "0");
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    return `${yy}.${mm}.${dd}`;
-  };
-
   return (
     <div
       className={`${isCardOpen ? "max-h-[800px]" : "max-h-[156px]"} flex w-full flex-col overflow-hidden px-4 duration-300`}
@@ -124,19 +109,20 @@ const RequestCard = ({ designKey, responseData }: RequestCardProps) => {
         className="flex w-full cursor-pointer flex-col gap-4 border-b border-grayscale-400"
       >
         <span className="medium-18 w-full pt-4 text-grayscale-900">
-          {formatDate(
-            new Date(
+          {formatDateString({
+            date: new Date(
               String(
                 responseData[0].request_details[
                   responseData[0].request_details.length - 1
                 ].created_at,
               ),
             ),
-          )}
+            type: "short",
+          })}
         </span>
         <div className="flex w-full flex-row gap-3 pb-4">
           <img
-            src={nailDetail ? changeImgUrl(nailDetail.design_url) : ""}
+            src={nailDetail ? nailDetail.design_url : ""}
             onError={onErrorImg}
             className="h-20 w-20 overflow-hidden rounded-md object-cover object-center"
           />

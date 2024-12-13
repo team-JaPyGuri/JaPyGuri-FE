@@ -1,12 +1,13 @@
+import { useState, useEffect } from "react";
+import { getLikeList } from "../../hooks/api/getLikeList";
+
 import Layout from "../../components/Layout/Layout";
 import Header from "../../components/Header/Header";
+import ListView from "../../components/ListView/ListView";
+import NailSnapCard from "../../components/NailCard/NailSnapCard";
 import Footer from "../../components/Footer/Footer";
 import NavigationBar from "../../components/NavigationBar/NavigationBar";
 
-import { useState, useEffect } from "react";
-import ListView from "../../components/ListView/ListView";
-import NailSnapCard from "../../components/NailCard/NailSnapCard";
-import { getLikeList } from "../../hooks/api/getLikeList";
 import NailData from "../../types/NailData";
 import { SortType } from "../../types/Sorttype";
 
@@ -31,7 +32,7 @@ const Like = () => {
     const fetchData = async () => {
       try {
         const res = await getLikeList();
-        if (res !== null) setNailData(res);
+        if (res !== null && res !== undefined) setNailData(res);
       } catch (err) {
         console.error("Error fetching like list:", err);
       }

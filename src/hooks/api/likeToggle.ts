@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const toggleLike = async (id: string) => {
+  if (import.meta.env.VITE_USE_MOCK_DATA === "true") return;
   try {
     const response = await axios.post(
       `${import.meta.env.VITE_NAILO_API_URL}/api/like-toggle/${id}/`,
