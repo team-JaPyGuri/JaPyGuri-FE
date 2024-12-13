@@ -1,14 +1,15 @@
 import { useRef, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Layout from "../../components/Layout/Layout";
-import SubHeader from "../../components/Header/SubHeader";
-import Button from "../../components/Button/Button";
 import { useToast } from "../../components/Toast/useToast";
 import { useBottomUpSheet } from "../../components/BottomUpSheet/useBottomUpSheet";
+
+import Layout from "../../components/Layout/Layout";
+import SubHeader from "../../components/Header/SubHeader";
+import NoCamera from "./components/NoCamera";
+import Button from "../../components/Button/Button";
 import CameraResult from "../../components/BottomUpSheet/components/CameraResult";
 
 import ChangeCameraIcon from "../../assets/svgs/changeCamera.svg?react";
-import NoCamera from "./components/NoCamera";
 
 const Camera = () => {
   const showToast = useToast();

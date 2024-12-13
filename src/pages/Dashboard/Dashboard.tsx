@@ -8,6 +8,7 @@ import { useState, useEffect, useRef } from "react";
 import { stateRequestList } from "../../stores/stateRequestList";
 import Button from "../../components/Button/Button";
 import useSendMessage from "../../hooks/socket/useSendMessage";
+import { formatDateString } from "./../../utils/formatDateString";
 
 interface RequestResultData {
   request_key: string;
@@ -29,15 +30,6 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
   const [isCardOpen, setIsCardOpen] = useState(false);
   const nailPriceRef = useRef<HTMLInputElement>(null);
   const nailContentsRef = useRef<HTMLInputElement>(null);
-
-  const formatFullDate = (date: Date) => {
-    const yy = String(date.getFullYear());
-    const dd = String(date.getDate()).padStart(2, "0");
-    const mm = String(date.getMonth() + 1).padStart(2, "0");
-    const hh = String(date.getHours()).padStart(2, "0");
-    const min = String(date.getMinutes()).padStart(2, "0");
-    return `${yy}년 ${mm}월 ${dd}일 ${hh}시 ${min}분에 요청`;
-  };
 
   const handleRejectNailClicked = () => {
     if (!nailPriceRef.current || !nailContentsRef.current) return;
@@ -108,7 +100,7 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
             '{requestData.customer_name}' 님의 요청
           </span>
           <span className="regular-13 text-grayscale-600">
-            {formatFullDate(new Date(requestData.created_at))}
+            {`${formatDateString({ date: new Date(requestData.created_at), type: "full" })}에 요청`}
           </span>
         </div>
         <span className="regular-13 text-grayscale-600">
