@@ -13,12 +13,14 @@ import HotNailList from "./components/HotNailList";
 import NailSnap from "./components/NailSnap";
 import SubTitle from "./components/SubTitle";
 
+import allNailData from "../../../public/mock/allNailData.json";
+
 interface NailData {
   design_key: string;
   design_url: string;
   is_active: boolean;
   like_active: boolean;
-  price: string;
+  price: number;
   like_count: number;
 }
 
@@ -49,6 +51,18 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    if (import.meta.env.VITE_USE_MOCK_DATA === "true") {
+      setHotNailList(
+        allNailData
+          .reverse()
+          .slice(0, 8)
+          .map((item) => ({
+            ...item,
+            like_active: nailLikeList.includes(item.design_key),
+          })),
+      );
+      return;
+    }
     const fetchHotNailList = async () => {
       try {
         const res = await axios.get(
@@ -117,6 +131,15 @@ const Home = () => {
   }, [page, isLoading, hasMore, nailLikeList]);
 
   useEffect(() => {
+    if (import.meta.env.VITE_USE_MOCK_DATA === "true") {
+      setNailSnapList(
+        allNailData.map((item) => ({
+          ...item,
+          like_active: nailLikeList.includes(item.design_key),
+        })),
+      );
+      return;
+    }
     const currentObserverTarget = observerRef.current;
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
@@ -140,7 +163,7 @@ const Home = () => {
         observer.unobserve(currentObserverTarget);
       }
     };
-  }, [loadNailSnapList, isLoading, hasMore]);
+  }, [loadNailSnapList, isLoading, hasMore, nailLikeList]);
 
   return (
     <Layout>

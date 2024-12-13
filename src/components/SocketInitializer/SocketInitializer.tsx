@@ -6,6 +6,9 @@ import { useToast } from "../Toast/useToast";
 import { stateRequestResult } from "../../stores/stateRequestResult";
 import { stateRequestList } from "../../stores/stateRequestList";
 
+import requestResultData from "../../../public/mock/requestResultData.json";
+import requestListData from "../../../public/mock/requestListData.json";
+
 interface RequestDataProps {
   designKey: string;
   shop_requests: ResponseDataProps[];
@@ -43,6 +46,11 @@ const SocketInitializer = () => {
 
   useEffect(() => {
     if (!user) return;
+    if (import.meta.env.VITE_USE_MOCK_DATA === "true") {
+      setRequesetResultData(requestResultData);
+      setRequestList(requestListData);
+      return;
+    }
 
     const socketUrl = `${import.meta.env.VITE_NAILO_SOCKET_URL}/ws/${user.userType}/${user.userId}/`;
     const socket = new WebSocket(socketUrl);
@@ -86,6 +94,7 @@ const SocketInitializer = () => {
         });
         setRequesetResultData(requestResultData);
       } else if (result.type === "request_list") {
+        console.log(JSON.parse(event.data).requests.reverse().slice(0, 3));
         setRequestList(JSON.parse(event.data).requests.reverse());
       } else if (result.type === "completed_response") {
         showToast({

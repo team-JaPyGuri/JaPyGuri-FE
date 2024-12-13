@@ -14,7 +14,7 @@ interface NailSnapCardProps {
   img: string;
   likeDefault: boolean;
   aiFitActive: boolean;
-  price: string;
+  price: number;
   like: number;
   rowScroll?: boolean;
 }

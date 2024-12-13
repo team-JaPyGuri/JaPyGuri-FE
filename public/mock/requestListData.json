@@ -1,0 +1,29 @@
+[
+  {
+    "request_key": "2a9028b6-c955-47a1-b7c7-009eca8f1893",
+    "status": "accepted",
+    "created_at": "2024-12-13T09:08:42.848269+00:00",
+    "customer_name": "자파구리",
+    "design_name": "Design 22",
+    "price": 38247,
+    "contents": ""
+  },
+  {
+    "request_key": "c85fcdc8-7f75-438f-8d80-503c6c3c3dd8",
+    "status": "accepted",
+    "created_at": "2024-12-11T08:25:37.705496+00:00",
+    "customer_name": "자파구리",
+    "design_name": "Design 17",
+    "price": 23566,
+    "contents": ""
+  },
+  {
+    "request_key": "1da6a768-f2f5-41e1-aa6c-a4ea2146c339",
+    "status": "rejected",
+    "created_at": "2024-12-11T08:00:09.090741+00:00",
+    "customer_name": "자파구리",
+    "design_name": "Design 17",
+    "price": 23566,
+    "contents": ""
+  }
+]

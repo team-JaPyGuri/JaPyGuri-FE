@@ -32,7 +32,7 @@ const Like = () => {
     const fetchData = async () => {
       try {
         const res = await getLikeList();
-        if (res !== null) setNailData(res);
+        if (res !== null && res !== undefined) setNailData(res);
       } catch (err) {
         console.error("Error fetching like list:", err);
       }

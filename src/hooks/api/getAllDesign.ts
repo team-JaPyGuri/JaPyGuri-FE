@@ -1,5 +1,6 @@
 import axios from "axios";
 import { changeImgUrl } from "./../../utils/changeImgUrl";
+import allNailData from "../../../public/mock/allNailData.json";
 
 interface NailData {
   design_key: string;
@@ -11,6 +12,7 @@ interface NailData {
 }
 
 export const getAllDesign = async () => {
+  if (import.meta.env.VITE_USE_MOCK_DATA === "true") return allNailData;
   try {
     const response = await axios.get(
       `${import.meta.env.VITE_NAILO_API_URL}/api/designs/`,

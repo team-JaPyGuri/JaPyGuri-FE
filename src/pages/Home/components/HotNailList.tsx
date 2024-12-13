@@ -6,7 +6,7 @@ interface HotNailListProps {
     design_url: string;
     is_active: boolean;
     like_active: boolean;
-    price: string;
+    price: number;
     like_count: number;
   }> | null;
 }

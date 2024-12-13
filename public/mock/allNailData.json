@@ -1,0 +1,242 @@
+[
+  {
+    "design_key": "012869af-6557-4cab-b1a8-019445c1fed1",
+    "design_name": "Design 21",
+    "design_url": "/images/nail/nail1.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 25355
+  },
+  {
+    "design_key": "11aa7df0-1428-4841-9798-5f89c555897e",
+    "design_name": "Design 15",
+    "design_url": "/images/nail/nail2.webp",
+    "is_active": true,
+    "like_count": 1,
+    "price": 10630
+  },
+  {
+    "design_key": "17602685-0db6-4745-9a9f-78725d0316e4",
+    "design_name": "Design 25",
+    "design_url": "/images/nail/nail3.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 22434
+  },
+  {
+    "design_key": "176b458d-2e17-4059-80ce-1badd90cdd6f",
+    "design_name": "Design 8",
+    "design_url": "/images/nail/nail4.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 34101
+  },
+  {
+    "design_key": "1f569dce-c605-4628-b748-3a67a93401a6",
+    "design_name": "Design 14",
+    "design_url": "/images/nail/nail5.webp",
+    "is_active": true,
+    "like_count": 1,
+    "price": 21831
+  },
+  {
+    "design_key": "32620659-f500-471e-af55-ae4bb2a68636",
+    "design_name": "Design 11",
+    "design_url": "/images/nail/nail6.webp",
+    "is_active": true,
+    "like_count": 0,
+    "price": 42807
+  },
+  {
+    "design_key": "39de33a0-45c0-4e39-b9e6-6d53f8f2cd43",
+    "design_name": "Design 24",
+    "design_url": "/images/nail/nail7.webp",
+    "is_active": false,
+    "like_count": 1,
+    "price": 42551
+  },
+  {
+    "design_key": "3ce68c86-064c-4719-ac2a-4c3b2510b70b",
+    "design_name": "Design 26",
+    "design_url": "/images/nail/nail8.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 23970
+  },
+  {
+    "design_key": "4dd92501-35b6-423a-b6fb-96a6db56be0d",
+    "design_name": "Design 18",
+    "design_url": "/images/nail/nail9.webp",
+    "is_active": true,
+    "like_count": 1,
+    "price": 17113
+  },
+  {
+    "design_key": "53a7b343-c44d-44a0-97ed-cca2451b3762",
+    "design_name": "Design 3",
+    "design_url": "/images/nail/nail10.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 47752
+  },
+  {
+    "design_key": "54ad89c5-a8a7-4008-8d76-588ac35870c4",
+    "design_name": "Design 22",
+    "design_url": "/images/nail/nail11.webp",
+    "is_active": false,
+    "like_count": 30,
+    "price": 38247
+  },
+  {
+    "design_key": "5a98a36f-8758-4f47-9018-a9421da726eb",
+    "design_name": "Design 6",
+    "design_url": "/images/nail/nail12.webp",
+    "is_active": false,
+    "like_count": 1,
+    "price": 17030
+  },
+  {
+    "design_key": "5adc42b1-dd37-42c3-a44a-40770b28b69d",
+    "design_name": "Design 9",
+    "design_url": "/images/nail/nail13.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 29116
+  },
+  {
+    "design_key": "5b62b293-56d0-4243-ba29-35d5b492174d",
+    "design_name": "Design 2",
+    "design_url": "/images/nail/nail14.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 37580
+  },
+  {
+    "design_key": "630ef604-958d-4698-af1f-e1940b2505a3",
+    "design_name": "Design 19",
+    "design_url": "/images/nail/nail15.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 42498
+  },
+  {
+    "design_key": "661fa039-62e2-4426-9500-6c4a0dcad960",
+    "design_name": "Design 16",
+    "design_url": "/images/nail/nail16.webp",
+    "is_active": true,
+    "like_count": 61,
+    "price": 13595
+  },
+  {
+    "design_key": "67b5925f-609d-4028-8028-d5b4176ac8b0",
+    "design_name": "Design 1",
+    "design_url": "/images/nail/nail17.webp",
+    "is_active": true,
+    "like_count": 0,
+    "price": 42181
+  },
+  {
+    "design_key": "6f2747f1-5463-4a2f-906b-78ba24c3ee90",
+    "design_name": "Design 13",
+    "design_url": "/images/nail/nail18.webp",
+    "is_active": true,
+    "like_count": 0,
+    "price": 45904
+  },
+  {
+    "design_key": "7bf5027c-7eb7-4c86-8e1b-8bc6ed6d0e80",
+    "design_name": "Design 5",
+    "design_url": "/images/nail/nail19.webp",
+    "is_active": false,
+    "like_count": 1,
+    "price": 10539
+  },
+  {
+    "design_key": "7d3e0659-da73-489e-83b5-dbd5c49a9dc3",
+    "design_name": "Design 23",
+    "design_url": "/images/nail/nail20.webp",
+    "is_active": false,
+    "like_count": 69,
+    "price": 21676
+  },
+  {
+    "design_key": "8d80cf71-dfee-429f-8916-b2b29fd8c63a",
+    "design_name": "Design 4",
+    "design_url": "/images/nail/nail21.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 25967
+  },
+  {
+    "design_key": "8e5ce46b-9b35-4b5e-86c2-b7b1b2f0bd6c",
+    "design_name": "Design 10",
+    "design_url": "/images/nail/nail22.webp",
+    "is_active": true,
+    "like_count": 1,
+    "price": 43319
+  },
+  {
+    "design_key": "a58afa06-8bad-4e1e-811f-119aea666585",
+    "design_name": "Design 29",
+    "design_url": "/images/nail/nail23.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 49762
+  },
+  {
+    "design_key": "b051dae4-b479-4dc1-9c5c-c1dcb2be95ba",
+    "design_name": "Design 17",
+    "design_url": "/images/nail/nail24.webp",
+    "is_active": true,
+    "like_count": 71,
+    "price": 23566
+  },
+  {
+    "design_key": "bf29ca89-4b29-43bb-8e3b-7e37274bfcc8",
+    "design_name": "Design 7",
+    "design_url": "/images/nail/nail25.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 20315
+  },
+  {
+    "design_key": "c4dd8f83-48ef-4bca-a44c-856f841ed9d8",
+    "design_name": "Design 12",
+    "design_url": "/images/nail/nail26.webp",
+    "is_active": true,
+    "like_count": 0,
+    "price": 23063
+  },
+  {
+    "design_key": "e74408ae-98f2-45e8-b4b2-a3b2b23c6cbe",
+    "design_name": "Design 27",
+    "design_url": "/images/nail/nail27.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 41778
+  },
+  {
+    "design_key": "e8b28a71-dfdb-4b5a-851b-625720a4d63a",
+    "design_name": "Design 28",
+    "design_url": "/images/nail/nail28.webp",
+    "is_active": false,
+    "like_count": 0,
+    "price": 44167
+  },
+  {
+    "design_key": "eda92b89-59b4-46de-934d-16ceab61481f",
+    "design_name": "Design 20",
+    "design_url": "/images/nail/nail29.webp",
+    "is_active": false,
+    "like_count": 77,
+    "price": 35038
+  },
+  {
+    "design_key": "f83c8471-886c-4237-a510-3a689a33558e",
+    "design_name": "Design 30",
+    "design_url": "/images/nail/nail30.webp",
+    "is_active": false,
+    "like_count": 1,
+    "price": 47566
+  }
+]

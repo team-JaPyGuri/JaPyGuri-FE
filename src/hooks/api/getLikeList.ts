@@ -1,16 +1,19 @@
 import axios from "axios";
 import { changeImgUrl } from "./../../utils/changeImgUrl";
+import likeNailData from "../../../public/mock/likeNailData.json";
 
 interface NailData {
   design_key: string;
+  design_name: string;
   design_url: string;
   is_active: boolean;
   like_active: boolean;
-  price: string;
   like_count: number;
+  price: number;
 }
 
 export const getLikeList = async () => {
+  if (import.meta.env.VITE_USE_MOCK_DATA === "true") return likeNailData;
   try {
     const response = await axios.get(
       `${import.meta.env.VITE_NAILO_API_URL}/api/like-list/`,

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { onErrorImg } from "../../../utils/onErrorImg";
 import { getNailDetail } from "../../../hooks/api/getNailDetail";
-import { changeImgUrl } from "../../../utils/changeImgUrl";
 import { formatDateString } from "../../../utils/formatDateString";
 
 interface NailDetails {
@@ -123,7 +122,7 @@ const RequestCard = ({ designKey, responseData }: RequestCardProps) => {
         </span>
         <div className="flex w-full flex-row gap-3 pb-4">
           <img
-            src={nailDetail ? changeImgUrl(nailDetail.design_url) : ""}
+            src={nailDetail ? nailDetail.design_url : ""}
             onError={onErrorImg}
             className="h-20 w-20 overflow-hidden rounded-md object-cover object-center"
           />

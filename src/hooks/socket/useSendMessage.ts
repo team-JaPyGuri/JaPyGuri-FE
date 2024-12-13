@@ -38,6 +38,7 @@ const useSendMessage = () => {
   const socket = useRecoilValue(stateSocket);
   const sendMessage = useCallback(
     ({ action, data, onSuccess }: sendMessageProps) => {
+      if (import.meta.env.VITE_USE_MOCK_DATA === "true") return;
       if (!socket) {
         console.error("Socket is not connected.");
         return;
