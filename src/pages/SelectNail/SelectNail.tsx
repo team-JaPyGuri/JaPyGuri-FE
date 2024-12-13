@@ -31,8 +31,16 @@ const SelectNail = () => {
       try {
         const res = await getAllDesign();
         if (res === null) return;
-
-        setNailData(res.filter((nail) => nail.is_active));
+        console.log(res);
+        setNailData(
+          res
+            .filter((nail) => nail.is_active)
+            .map((item) => ({
+              ...item,
+              price: +item.price,
+              like_active: false,
+            })),
+        );
       } catch (err) {
         console.error("API Error:", err);
       }
