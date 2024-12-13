@@ -1,0 +1,78 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox  */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+}
+
+.semibold-20 {
+  @apply font-pretendard text-size-20 font-semibold leading-normal;
+}
+
+.semibold-16 {
+  @apply font-pretendard text-size-16 font-semibold leading-normal;
+}
+
+.semibold-14 {
+  @apply font-pretendard text-size-14 font-semibold leading-normal;
+}
+
+.semibold-13 {
+  @apply font-pretendard text-size-13 font-semibold leading-normal;
+}
+
+.semibold-11 {
+  @apply font-pretendard text-size-11 font-semibold leading-normal;
+}
+
+.medium-18 {
+  @apply font-pretendard text-size-18 font-medium leading-normal;
+}
+
+.medium-16 {
+  @apply font-pretendard text-size-16 font-medium leading-normal;
+}
+
+.medium-13 {
+  @apply font-pretendard text-size-13 font-medium leading-normal;
+}
+
+.regular-16 {
+  @apply font-pretendard text-size-16 font-regular leading-normal;
+}
+
+.regular-14 {
+  @apply font-pretendard text-size-14 font-regular leading-normal;
+}
+
+.regular-13 {
+  @apply font-pretendard text-size-13 font-regular leading-normal;
+}
