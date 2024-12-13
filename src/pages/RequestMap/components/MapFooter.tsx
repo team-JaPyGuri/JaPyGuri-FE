@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import Button from "../../../components/Button/Button";
 import { useToast } from "./../../../components/Toast/useToast";
+
+import Button from "../../../components/Button/Button";
 import Coordinates from "../../../types/Coordinates";
-import { useRecoilValue } from "recoil";
-import { stateSocket } from "../../../stores/stateSocket";
+import useSendMessage from "../../../hooks/socket/useSendMessage";
 
 interface MapFooterProps {
   centerCoords: Coordinates;
@@ -22,7 +22,7 @@ const MapFooter = ({
 }: MapFooterProps) => {
   const showToast = useToast();
   const navigate = useNavigate();
-  const socket = useRecoilValue(stateSocket);
+  const sendMessage = useSendMessage();
 
   const handleRequestButtonClicked = () => {
     if (!activeMarker.length) {
@@ -46,32 +46,26 @@ const MapFooter = ({
           marker.getOptions("title") !== "04d4a60a-f612-4119-967b-2971a6c3b41d",
       );
 
-    if (socket)
-      socket.send(
-        JSON.stringify({
-          action: "request_service",
-          data: {
-            customer_key: localStorage.getItem("socketUserId"),
-            design_key: designId,
-            shop_key: "04d4a60a-f612-4119-967b-2971a6c3b41d",
-            contents: "",
-          },
-        }),
-      );
+    sendMessage({
+      action: "request_service",
+      data: {
+        customer_key: localStorage.getItem("socketUserId"),
+        design_key: designId,
+        shop_key: "04d4a60a-f612-4119-967b-2971a6c3b41d",
+        contents: "",
+      },
+    });
 
     requestShopList.forEach((marker) => {
-      if (socket)
-        socket.send(
-          JSON.stringify({
-            action: "request_service",
-            data: {
-              customer_key: localStorage.getItem("socketUserId"),
-              design_key: designId,
-              shop_key: marker.getOptions("title"),
-              contents: "",
-            },
-          }),
-        );
+      sendMessage({
+        action: "request_service",
+        data: {
+          customer_key: localStorage.getItem("socketUserId"),
+          design_key: designId,
+          shop_key: marker.getOptions("title"),
+          contents: "",
+        },
+      });
     });
 
     navigate("/");

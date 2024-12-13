@@ -7,6 +7,7 @@ import { stateSocket } from "../../stores/stateSocket";
 import { useState, useEffect, useRef } from "react";
 import { stateRequestList } from "../../stores/stateRequestList";
 import Button from "../../components/Button/Button";
+import useSendMessage from "../../hooks/socket/useSendMessage";
 
 interface RequestResultData {
   request_key: string;
@@ -24,7 +25,7 @@ interface ResponseCardProps {
 
 const ResponseCard = ({ requestData }: ResponseCardProps) => {
   const showToast = useToast();
-  const socket = useRecoilValue(stateSocket);
+  const sendMessage = useSendMessage();
   const [isCardOpen, setIsCardOpen] = useState(false);
   const nailPriceRef = useRef<HTMLInputElement>(null);
   const nailContentsRef = useRef<HTMLInputElement>(null);
@@ -41,25 +42,24 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
   const handleRejectNailClicked = () => {
     if (!nailPriceRef.current || !nailContentsRef.current) return;
 
-    if (socket) {
-      const resquestKey = requestData.request_key;
-      socket.send(
-        JSON.stringify({
-          action: "respond_service",
-          data: {
-            request_key: resquestKey,
-            status: "rejected",
-            price: 1,
-            contents: "시술 불가",
-          },
-        }),
-      );
-      showToast({
-        message: "고객 요청을 거절했어요.",
-      });
-      setIsCardOpen(false);
-      nailPriceRef.current.value = nailContentsRef.current.value = "";
-    }
+    const resquestKey = requestData.request_key;
+    sendMessage({
+      action: "respond_service",
+      data: {
+        request_key: resquestKey,
+        status: "rejected",
+        price: 1,
+        contents: "시술 불가",
+      },
+      onSuccess: () => {
+        showToast({
+          message: "고객 요청을 거절했어요.",
+        });
+        setIsCardOpen(false);
+        if (nailPriceRef.current && nailContentsRef.current)
+          nailPriceRef.current.value = nailContentsRef.current.value = "";
+      },
+    });
   };
 
   const handleAcceptNailClicked = () => {
@@ -75,25 +75,24 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
       return;
     }
 
-    if (socket) {
-      const resquestKey = requestData.request_key;
-      socket.send(
-        JSON.stringify({
-          action: "respond_service",
-          data: {
-            request_key: resquestKey,
-            status: "accepted",
-            price: nailPrice,
-            contents: nailContents,
-          },
-        }),
-      );
-      showToast({
-        message: "고객 요청을 수락했어요.",
-      });
-      setIsCardOpen(false);
-      nailPriceRef.current.value = nailContentsRef.current.value = "";
-    }
+    const resquestKey = requestData.request_key;
+    sendMessage({
+      action: "respond_service",
+      data: {
+        request_key: resquestKey,
+        status: "accepted",
+        price: +nailPrice,
+        contents: nailContents,
+      },
+      onSuccess: () => {
+        showToast({
+          message: "고객 요청을 수락했어요.",
+        });
+        setIsCardOpen(false);
+        if (nailPriceRef.current && nailContentsRef.current)
+          nailPriceRef.current.value = nailContentsRef.current.value = "";
+      },
+    });
   };
 
   return (
@@ -160,6 +159,7 @@ const ResponseCard = ({ requestData }: ResponseCardProps) => {
 };
 
 const Dashboard = () => {
+  const sendMessage = useSendMessage();
   const requestResultList = useRecoilValue(stateRequestList);
   const socket = useRecoilValue(stateSocket);
 
@@ -167,14 +167,12 @@ const Dashboard = () => {
     if (socket) {
       const handleOpen = () => {
         const shopKey = localStorage.getItem("socketShopId");
-        socket.send(
-          JSON.stringify({
-            action: "get_requests",
-            data: {
-              shop_key: shopKey,
-            },
-          }),
-        );
+        sendMessage({
+          action: "get_requests",
+          data: {
+            shop_key: shopKey,
+          },
+        });
       };
 
       if (socket.readyState === WebSocket.OPEN) {
@@ -187,7 +185,7 @@ const Dashboard = () => {
         socket.removeEventListener("open", handleOpen);
       };
     }
-  }, [socket]);
+  }, [socket, sendMessage]);
 
   return (
     <main className="relative flex min-h-dvh w-full flex-col bg-grayscale-200">
